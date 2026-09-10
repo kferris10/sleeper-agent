@@ -152,11 +152,11 @@ def cmd_analyze(args: argparse.Namespace) -> int:
 
 
 FRIDAY_DIRECTIVE = (
-    "This is the FRIDAY pre-game update, not the main Tuesday packet. Waivers for this "
-    "week have already processed and the Tuesday packet was already delivered. Re-check "
-    "final injury designations (Out/Doubtful/Questionable) and practice reports for every "
+    "This is the FRIDAY MORNING pre-game update, not the main Tuesday packet. Waivers for "
+    "this week have already processed and the Tuesday packet was already delivered. Re-check "
+    "the week's practice reports and any injury designations announced so far for every "
     "recommended starter and their direct backups, and produce the final lineup. Only "
-    "recommend waiver/free-agent adds or trades if injury news makes one urgent."
+    "recommend free-agent adds or trades if injury news makes one urgent."
 )
 
 
