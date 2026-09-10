@@ -132,9 +132,13 @@ def test_get_deliverer_routes_by_channel():
         get_deliverer(Settings(delivery=DeliveryConfig(channel="carrier-pigeon")))
 
 
-def test_store_tracks_deliveries(tmp_path):
+def test_store_tracks_deliveries_per_tag(tmp_path):
     with Store(tmp_path / "history.db") as store:
-        assert not store.was_delivered("2026", 2)
-        store.mark_delivered("2026", 2, "email")
-        assert store.was_delivered("2026", 2)
-        assert not store.was_delivered("2026", 3)
+        assert not store.was_delivered("2026", 2, "tuesday")
+        store.mark_delivered("2026", 2, "email", "tuesday")
+        assert store.was_delivered("2026", 2, "tuesday")
+        # the Friday injury re-check is independent of the Tuesday packet
+        assert not store.was_delivered("2026", 2, "friday")
+        store.mark_delivered("2026", 2, "email", "friday")
+        assert store.was_delivered("2026", 2, "friday")
+        assert not store.was_delivered("2026", 3, "tuesday")

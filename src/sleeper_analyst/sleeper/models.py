@@ -293,6 +293,7 @@ class WeeklyContext(BaseModel):
     league_activity: list[ActivityItem]
     prior_analysis: dict[str, Any] | None = None  # last week's Analysis, for self-grading
     standings: list[Standing]
+    directive: str | None = None  # per-run instruction (e.g. Friday injury re-check)
 
 
 # ---------------------------------------------------------------------------

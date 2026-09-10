@@ -151,7 +151,16 @@ def cmd_analyze(args: argparse.Namespace) -> int:
     return 0
 
 
-def _write_packet(settings, context, analysis) -> tuple[Path, Path, str, str, str]:
+FRIDAY_DIRECTIVE = (
+    "This is the FRIDAY pre-game update, not the main Tuesday packet. Waivers for this "
+    "week have already processed and the Tuesday packet was already delivered. Re-check "
+    "final injury designations (Out/Doubtful/Questionable) and practice reports for every "
+    "recommended starter and their direct backups, and produce the final lineup. Only "
+    "recommend waiver/free-agent adds or trades if injury news makes one urgent."
+)
+
+
+def _write_packet(settings, context, analysis, tag: str = "") -> tuple[Path, Path, str, str, str]:
     """Render analysis → (md_path, html_path, subject, markdown, html)."""
     from sleeper_analyst.report import render_html, render_markdown, subject_line
 
@@ -162,7 +171,7 @@ def _write_packet(settings, context, analysis) -> tuple[Path, Path, str, str, st
     md_path.parent.mkdir(parents=True, exist_ok=True)
     md_path.write_text(markdown, encoding="utf-8")
     html_path.write_text(html, encoding="utf-8")
-    return md_path, html_path, subject_line(context), markdown, html
+    return md_path, html_path, subject_line(context, tag), markdown, html
 
 
 def cmd_deliver(args: argparse.Namespace) -> int:
@@ -203,7 +212,7 @@ def cmd_deliver(args: argparse.Namespace) -> int:
         print(f"Delivery failed: {exc}", file=sys.stderr)
         return 1
     with Store(settings.data_dir / "history.db") as store:
-        store.mark_delivered(context.season, context.upcoming_week, deliverer.channel)
+        store.mark_delivered(context.season, context.upcoming_week, deliverer.channel, "manual")
     print(f"Delivered via {deliverer.channel}: {subject}")
     return 0
 
@@ -235,9 +244,12 @@ def _run_pipeline(settings, args: argparse.Namespace) -> int:
     from sleeper_analyst.deliver import get_deliverer
     from sleeper_analyst.store import Store
 
+    tag = args.tag
     with SleeperClient() as client:
         players = PlayerCache(settings.data_dir).get(client)
         context = build_weekly_context(client, players, settings, week=args.week)
+    if tag == "friday":
+        context.directive = FRIDAY_DIRECTIVE
 
     context_path = settings.data_dir / f"context_week_{context.upcoming_week}.json"
     context_path.parent.mkdir(parents=True, exist_ok=True)
@@ -245,14 +257,18 @@ def _run_pipeline(settings, args: argparse.Namespace) -> int:
     print(f"Collected week {context.upcoming_week} → {context_path}")
 
     with Store(settings.data_dir / "history.db") as store:
-        if store.was_delivered(context.season, context.upcoming_week) and not args.force:
+        if store.was_delivered(context.season, context.upcoming_week, tag) and not args.force:
             print(
-                f"Week {context.upcoming_week} was already delivered; skipping "
+                f"Week {context.upcoming_week} ({tag}) was already delivered; skipping "
                 "(use --force to re-run)."
             )
             return 0
 
-        prior = store.get_analysis(context.season, context.completed_week)
+        # Feed the most recent analysis back in: last week's for the Tuesday
+        # packet, this week's Tuesday packet for the Friday re-check.
+        prior = store.get_analysis(context.season, context.upcoming_week if tag == "friday" else context.completed_week)
+        if prior is None and tag == "friday":
+            prior = store.get_analysis(context.season, context.completed_week)
         if prior:
             context.prior_analysis = json.loads(prior)
 
@@ -266,12 +282,12 @@ def _run_pipeline(settings, args: argparse.Namespace) -> int:
 
         analysis_path = settings.data_dir / f"analysis_week_{context.upcoming_week}.json"
         analysis_path.write_text(analysis.model_dump_json(indent=2), encoding="utf-8")
-        md_path, html_path, subject, markdown, html = _write_packet(settings, context, analysis)
+        md_path, html_path, subject, markdown, html = _write_packet(settings, context, analysis, tag)
         print(f"Wrote {analysis_path}, {md_path}, {html_path}")
 
         deliverer = get_deliverer(settings)
         deliverer.send(subject, markdown, html)
-        store.mark_delivered(context.season, context.upcoming_week, deliverer.channel)
+        store.mark_delivered(context.season, context.upcoming_week, deliverer.channel, tag)
         print(f"Delivered via {deliverer.channel}: {subject}")
     return 0
 
@@ -324,6 +340,10 @@ def main(argv: list[str] | None = None) -> int:
     p_run.add_argument("--week", type=int, help="upcoming week (default: current from /state/nfl)")
     p_run.add_argument("--config", type=Path, help="path to config.toml (default: ./config.toml)")
     p_run.add_argument("--force", action="store_true", help="re-run even if already delivered")
+    p_run.add_argument(
+        "--tag", default="tuesday", choices=["tuesday", "friday"],
+        help="run type: tuesday = full packet, friday = injury re-check (default: tuesday)",
+    )
     p_run.set_defaults(func=cmd_run)
 
     args = parser.parse_args(argv)

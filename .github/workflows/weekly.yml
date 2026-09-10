@@ -2,13 +2,19 @@ name: weekly
 
 on:
   schedule:
-    - cron: "0 12 * * 2" # Tuesday 12:00 UTC = 07:00 EST / 08:00 EDT
+    - cron: "0 12 * * 2" # Tuesday 12:00 UTC = 07:00 EST / 08:00 EDT — full packet
+    - cron: "30 22 * * 5" # Friday 22:30 UTC = 17:30 EST / 18:30 EDT — injury re-check, after final injury reports
   workflow_dispatch:
     inputs:
       force:
         description: "Re-run even if this week was already delivered"
         type: boolean
         default: false
+      tag:
+        description: "Run type"
+        type: choice
+        options: [tuesday, friday]
+        default: tuesday
 
 permissions:
   contents: write
@@ -33,7 +39,8 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
-        run: uv run sleeper-analyst run ${{ inputs.force && '--force' || '' }}
+          RUN_TAG: ${{ github.event.schedule == '30 22 * * 5' && 'friday' || inputs.tag || 'tuesday' }}
+        run: uv run sleeper-analyst run --tag "$RUN_TAG" ${{ inputs.force && '--force' || '' }}
 
       # data/ (contexts, analyses, history.db) is committed back so the next
       # run's self-grading has last week's analysis. data/cache/ is gitignored.

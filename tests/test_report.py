@@ -3,7 +3,12 @@ import pytest
 from conftest import UPCOMING_WEEK
 from test_analyze import make_valid_result
 from sleeper_analyst.collect import build_weekly_context
-from sleeper_analyst.report import render_html, render_markdown, subject_line
+from sleeper_analyst.report import (
+    lineup_changes,
+    render_html,
+    render_markdown,
+    subject_line,
+)
 from sleeper_analyst.sleeper.models import Analysis, WeeklyContext
 
 
@@ -33,28 +38,38 @@ def test_subject_line_names_week_and_league(context):
     subject = subject_line(context)
     assert f"Week {context.upcoming_week}" in subject
     assert context.league.name in subject
+    assert "Friday" not in subject
+    assert "Friday injury update" in subject_line(context, tag="friday")
 
 
-def test_markdown_contains_all_sections(analysis, context):
+def test_markdown_is_an_action_list(analysis, context):
     md = render_markdown(analysis, context)
-    assert f"# Week {context.upcoming_week} decision packet" in md
+    assert "do these in the Sleeper app" in md
+    assert "## 1. Set this lineup" in md
     for rec in analysis.lineup:
         assert rec.player in md
-    assert "- [ ] 1. Add" in md  # waiver checklist
-    assert "### To Rival Team" in md
-    assert "> You need depth" in md  # paste-ready pitch as blockquote
-    assert analysis.watchlist[0].player in md
-    assert analysis.confidence_notes in md
+    assert "Submit these waiver claims" in md
+    assert f"- [ ] 1. Add **{analysis.waivers[0].add}**" in md
+    assert "Send these trade offers" in md
+    assert "> You need depth" in md  # paste-ready pitch
+    # reasoning stays out of the email
+    assert analysis.recap.summary not in md
+    assert analysis.lineup[0].reason not in md
+    assert analysis.confidence_notes not in md
+    assert "Watchlist" not in md
 
 
-def test_markdown_flags_lineup_changes(analysis, context):
+def test_markdown_summarizes_changes(analysis, context):
     # make_valid_result mirrors current starters → no change markers
-    assert "← change" not in render_markdown(analysis, context)
+    md = render_markdown(analysis, context)
+    assert "No changes" in md and "← change" not in md
     # pretend the current starters are all different → every row flagged
     for p in context.my_team.players:
         p.is_starter = False
     md = render_markdown(analysis, context)
     assert md.count("← change") == len(analysis.lineup)
+    assert "Changes: " in md
+    assert len(lineup_changes(analysis, context)) == len(analysis.lineup)
 
 
 def test_html_escapes_and_renders(analysis, context):
@@ -63,7 +78,7 @@ def test_html_escapes_and_renders(analysis, context):
     assert "<script" not in html
     for rec in analysis.lineup:
         assert rec.player in html
-    assert "Waiver claims" in html
+    assert "waiver claims" in html
     # no change rows → no highlight style
     assert "background:#fff3cd" not in html
 

@@ -35,6 +35,7 @@ CREATE TABLE IF NOT EXISTS deliveries (
     season TEXT NOT NULL,
     week INTEGER NOT NULL,
     channel TEXT NOT NULL,
+    tag TEXT NOT NULL DEFAULT '',
     created_at TEXT NOT NULL
 );
 """
@@ -50,6 +51,11 @@ class Store:
         db_path.parent.mkdir(parents=True, exist_ok=True)
         self.conn = sqlite3.connect(db_path)
         self.conn.executescript(SCHEMA)
+        # migrate pre-tag deliveries tables (added for the Tuesday/Friday split)
+        try:
+            self.conn.execute("ALTER TABLE deliveries ADD COLUMN tag TEXT NOT NULL DEFAULT ''")
+        except sqlite3.OperationalError:
+            pass  # column already exists
 
     def close(self) -> None:
         self.conn.close()
@@ -85,16 +91,18 @@ class Store:
         ).fetchone()
         return row[0] if row else None
 
-    def was_delivered(self, season: str, week: int) -> bool:
+    def was_delivered(self, season: str, week: int, tag: str = "") -> bool:
+        """Delivered for this (week, tag)? Tuesday and Friday runs use distinct tags."""
         row = self.conn.execute(
-            "SELECT 1 FROM deliveries WHERE season = ? AND week = ? LIMIT 1",
-            (season, week),
+            "SELECT 1 FROM deliveries WHERE season = ? AND week = ? AND tag = ? LIMIT 1",
+            (season, week, tag),
         ).fetchone()
         return row is not None
 
-    def mark_delivered(self, season: str, week: int, channel: str) -> None:
+    def mark_delivered(self, season: str, week: int, channel: str, tag: str = "") -> None:
         with self.conn:
             self.conn.execute(
-                "INSERT INTO deliveries (season, week, channel, created_at) VALUES (?, ?, ?, ?)",
-                (season, week, channel, _now()),
+                "INSERT INTO deliveries (season, week, channel, tag, created_at) "
+                "VALUES (?, ?, ?, ?, ?)",
+                (season, week, channel, tag, _now()),
             )

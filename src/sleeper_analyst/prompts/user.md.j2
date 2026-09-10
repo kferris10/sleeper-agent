@@ -1,6 +1,9 @@
 # Week {{ ctx.upcoming_week }} decision packet request — {{ ctx.league.name }} ({{ ctx.season }})
 
 Completed week: {{ ctx.completed_week }} · Upcoming week: {{ ctx.upcoming_week }}
+{% if ctx.directive %}
+**Run directive:** {{ ctx.directive }}
+{% endif %}
 
 ## League settings
 
