@@ -4,6 +4,7 @@
 # player-map cache is ~large and refetchable; the rest of data/ is tracked so
 # the weekly GitHub Actions run can commit history back for self-grading
 data/cache/
+data/history.db
 
 # python
 .venv/
@@ -11,3 +12,7 @@ __pycache__/
 *.pyc
 .pytest_cache/
 dist/
+
+# misc
+*.html
+*.pdf
