@@ -1,0 +1,56 @@
+name: weekly
+
+on:
+  schedule:
+    - cron: "0 12 * * 2" # Tuesday 12:00 UTC = 07:00 EST / 08:00 EDT
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Re-run even if this week was already delivered"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: weekly
+  cancel-in-progress: false
+
+jobs:
+  packet:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v5
+        with:
+          python-version: "3.13"
+
+      - run: uv sync
+
+      - name: Run weekly pipeline
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+        run: uv run sleeper-analyst run ${{ inputs.force && '--force' || '' }}
+
+      # data/ (contexts, analyses, history.db) is committed back so the next
+      # run's self-grading has last week's analysis. data/cache/ is gitignored.
+      - name: Commit history back
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data
+          git diff --cached --quiet || (git commit -m "data: weekly run $(date -u +%F)" && git push)
+
+      - name: Upload packet artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: packet
+          path: |
+            data/packet_week_*.md
+            data/packet_week_*.html
+          if-no-files-found: ignore

@@ -1,0 +1,13 @@
+# secrets (SMTP_PASSWORD, webhook URLs, API key if not in the OS env)
+.env
+
+# player-map cache is ~large and refetchable; the rest of data/ is tracked so
+# the weekly GitHub Actions run can commit history back for self-grading
+data/cache/
+
+# python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+dist/

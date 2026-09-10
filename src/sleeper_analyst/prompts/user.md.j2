@@ -1,0 +1,67 @@
+# Week {{ ctx.upcoming_week }} decision packet request — {{ ctx.league.name }} ({{ ctx.season }})
+
+Completed week: {{ ctx.completed_week }} · Upcoming week: {{ ctx.upcoming_week }}
+
+## League settings
+
+- {{ ctx.league.num_teams }} teams · waivers: {{ ctx.league.waiver_type }}{% if ctx.league.waiver_type == "FAAB" %} (budget ${{ ctx.league.waiver_budget }}){% endif %} · trade deadline: week {{ ctx.league.trade_deadline_week }} · playoffs start: week {{ ctx.league.playoff_week_start }}
+- Roster slots: {{ ctx.league.roster_positions | join(", ") }}
+- Scoring (non-zero): {% for k, v in ctx.league.scoring_settings.items() %}{{ k }}={{ v }}{% if not loop.last %}, {% endif %}{% endfor %}
+
+## My team ({{ ctx.my_team.record }}, PF {{ ctx.my_team.points_for }}, PA {{ ctx.my_team.points_against }}{% if ctx.my_team.faab_remaining is not none %}, FAAB ${{ ctx.my_team.faab_remaining }}{% endif %}{% if ctx.my_team.waiver_position is not none %}, waiver priority #{{ ctx.my_team.waiver_position }}{% endif %})
+
+| player_id | Player | Pos | Team | Bye | Injury | Depth | Role |
+|---|---|---|---|---|---|---|---|
+{% for p in ctx.my_team.players -%}
+| {{ p.id }} | {{ p.name }} | {{ p.pos or "?" }} | {{ p.nfl_team or "FA" }} | {{ p.bye_week or "?" }} | {{ p.injury_status or "" }} | {{ p.depth_chart_order or "" }} | {% if p.is_ir %}IR slot{% elif p.is_starter %}starter{% else %}bench{% endif %} |
+{% endfor %}
+{% if ctx.last_matchup %}
+## Last week (week {{ ctx.completed_week }}): {{ "won" if ctx.last_matchup.my_points > ctx.last_matchup.their_points else "lost" }} vs {{ ctx.last_matchup.opponent }}, {{ ctx.last_matchup.my_points }}–{{ ctx.last_matchup.their_points }}
+
+My starters: {% for s in ctx.last_matchup.my_starters %}{{ s.slot }} {{ s.player }} {{ s.points }}{% if not loop.last %} · {% endif %}{% endfor %}
+
+My bench: {% for b in ctx.last_matchup.my_bench %}{{ b.player }} {{ b.points }}{% if not loop.last %} · {% endif %}{% endfor %}
+{% endif %}
+{% if ctx.upcoming_matchup %}
+## Upcoming opponent: {{ ctx.upcoming_matchup.opponent }} ({{ ctx.upcoming_matchup.opponent_record }})
+
+Their current starters: {% for s in ctx.upcoming_matchup.their_starters %}{{ s.slot }} {{ s.player }}{% if not loop.last %} · {% endif %}{% endfor %}
+{% endif %}
+
+## Standings
+
+{% for s in ctx.standings %}{{ loop.index }}. {{ s.team }} {{ s.wins }}-{{ s.losses }}{% if s.ties %}-{{ s.ties }}{% endif %} (PF {{ s.points_for }}){% if not loop.last %} · {% endif %}{% endfor %}
+
+## Other teams
+
+| Team | Record{% if ctx.league.waiver_type == "FAAB" %} | FAAB{% endif %} | Roster shape | Surplus | Recent adds | Recent drops |
+|---|---{% if ctx.league.waiver_type == "FAAB" %}|---{% endif %}|---|---|---|---|
+{% for t in ctx.other_teams -%}
+| {{ t.name }} | {{ t.record }}{% if ctx.league.waiver_type == "FAAB" %} | ${{ t.faab_remaining }}{% endif %} | {% for pos, n in t.positional_counts.items() %}{{ pos }}:{{ n }}{% if not loop.last %} {% endif %}{% endfor %} | {{ t.surplus | join(", ") }} | {{ t.recent_adds | join(", ") }} | {{ t.recent_drops | join(", ") }} |
+{% endfor %}
+
+## Free agents (ranked by trending adds; only these are addable)
+
+{% for pos, agents in ctx.free_agents.items() %}
+### {{ pos }}
+
+| player_id | Player | Team | Bye | Trend +/- | Injury | Depth |
+|---|---|---|---|---|---|---|
+{% for fa in agents -%}
+| {{ fa.id }} | {{ fa.name }} | {{ fa.nfl_team or "FA" }} | {{ fa.bye_week or "?" }} | {{ fa.trending_add }}/{{ fa.trending_drop }} | {{ fa.injury_status or "" }} | {{ fa.depth_chart_order or "" }} |
+{% endfor %}
+{% endfor %}
+
+## League activity (last ~2 weeks)
+
+{% for item in ctx.league_activity %}- wk{{ item.week }}: {{ item.description }}
+{% endfor %}
+{% if ctx.prior_analysis %}
+## My prior analysis (last week — grade these calls in the recap)
+
+```json
+{{ ctx.prior_analysis | tojson(indent=1) }}
+```
+{% endif %}
+
+Produce the week {{ ctx.upcoming_week }} decision packet now, following the output contract.

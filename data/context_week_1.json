@@ -1,0 +1,1106 @@
+{
+  "season": "2026",
+  "completed_week": 0,
+  "upcoming_week": 1,
+  "league": {
+    "name": "Chace's 41st League",
+    "season": "2026",
+    "scoring_settings": {
+      "sack": 1.0,
+      "fgm_40_49": 4.0,
+      "pass_int": -2.0,
+      "pts_allow_0": 10.0,
+      "pass_2pt": 2.0,
+      "rec_td": 6.0,
+      "fgm_30_39": 3.0,
+      "fgm_50_59": 5.0,
+      "rush_td": 6.0,
+      "rec_2pt": 2.0,
+      "fgmiss": -1.0,
+      "ff": 1.0,
+      "rec": 1.0,
+      "pts_allow_14_20": 1.0,
+      "def_2pt": 2.0,
+      "fgm_0_19": 3.0,
+      "int": 2.0,
+      "def_st_fum_rec": 1.0,
+      "fum_lost": -2.0,
+      "pts_allow_1_6": 7.0,
+      "fgm_60p": 6.0,
+      "fgmiss_20_29": -1.0,
+      "fgm_20_29": 3.0,
+      "xpm": 1.0,
+      "fgmiss_0_19": -1.0,
+      "rush_2pt": 2.0,
+      "fum_rec": 2.0,
+      "def_st_td": 6.0,
+      "def_td": 6.0,
+      "safe": 2.0,
+      "pass_yd": 0.04,
+      "blk_kick": 2.0,
+      "pass_td": 4.0,
+      "rush_yd": 0.1,
+      "fum": -1.0,
+      "pts_allow_28_34": -1.0,
+      "pts_allow_35p": -4.0,
+      "fum_rec_td": 6.0,
+      "rec_yd": 0.1,
+      "def_st_ff": 1.0,
+      "pts_allow_7_13": 4.0
+    },
+    "roster_positions": [
+      "QB",
+      "RB",
+      "RB",
+      "WR",
+      "WR",
+      "TE",
+      "FLEX",
+      "K",
+      "DEF",
+      "BN",
+      "BN",
+      "BN",
+      "BN",
+      "BN",
+      "BN",
+      "BN"
+    ],
+    "waiver_type": "priority",
+    "waiver_budget": 100,
+    "trade_deadline_week": 10,
+    "playoff_week_start": 14,
+    "num_teams": 12
+  },
+  "my_team": {
+    "roster_id": 12,
+    "record": "0-0",
+    "points_for": 0.0,
+    "points_against": 0.0,
+    "faab_remaining": null,
+    "waiver_position": 4,
+    "players": [
+      {
+        "id": "11631",
+        "name": "Brian Thomas",
+        "pos": "WR",
+        "nfl_team": "JAX",
+        "injury_status": null,
+        "depth_chart_order": 2,
+        "is_starter": false,
+        "is_ir": false,
+        "bye_week": 7
+      },
+      {
+        "id": "12489",
+        "name": "RJ Harvey",
+        "pos": "RB",
+        "nfl_team": "DEN",
+        "injury_status": null,
+        "depth_chart_order": 2,
+        "is_starter": true,
+        "is_ir": false,
+        "bye_week": 10
+      },
+      {
+        "id": "12493",
+        "name": "Oronde Gadsden",
+        "pos": "TE",
+        "nfl_team": "LAC",
+        "injury_status": null,
+        "depth_chart_order": 1,
+        "is_starter": true,
+        "is_ir": false,
+        "bye_week": 7
+      },
+      {
+        "id": "12519",
+        "name": "Luther Burden",
+        "pos": "WR",
+        "nfl_team": "CHI",
+        "injury_status": null,
+        "depth_chart_order": 2,
+        "is_starter": true,
+        "is_ir": false,
+        "bye_week": 10
+      },
+      {
+        "id": "4881",
+        "name": "Lamar Jackson",
+        "pos": "QB",
+        "nfl_team": "BAL",
+        "injury_status": null,
+        "depth_chart_order": 1,
+        "is_starter": true,
+        "is_ir": false,
+        "bye_week": 13
+      },
+      {
+        "id": "5850",
+        "name": "Josh Jacobs",
+        "pos": "RB",
+        "nfl_team": "GB",
+        "injury_status": "NA",
+        "depth_chart_order": 4,
+        "is_starter": false,
+        "is_ir": false,
+        "bye_week": 11
+      },
+      {
+        "id": "5859",
+        "name": "A.J. Brown",
+        "pos": "WR",
+        "nfl_team": "NE",
+        "injury_status": "Out",
+        "depth_chart_order": 1,
+        "is_starter": true,
+        "is_ir": false,
+        "bye_week": 11
+      },
+      {
+        "id": "6794",
+        "name": "Justin Jefferson",
+        "pos": "WR",
+        "nfl_team": "MIN",
+        "injury_status": null,
+        "depth_chart_order": 1,
+        "is_starter": true,
+        "is_ir": false,
+        "bye_week": 6
+      },
+      {
+        "id": "6797",
+        "name": "Justin Herbert",
+        "pos": "QB",
+        "nfl_team": "LAC",
+        "injury_status": null,
+        "depth_chart_order": 1,
+        "is_starter": false,
+        "is_ir": false,
+        "bye_week": 7
+      },
+      {
+        "id": "8131",
+        "name": "Isaiah Likely",
+        "pos": "TE",
+        "nfl_team": "NYG",
+        "injury_status": null,
+        "depth_chart_order": 1,
+        "is_starter": false,
+        "is_ir": false,
+        "bye_week": 8
+      },
+      {
+        "id": "8132",
+        "name": "Tyler Allgeier",
+        "pos": "RB",
+        "nfl_team": "ARI",
+        "injury_status": null,
+        "depth_chart_order": 2,
+        "is_starter": true,
+        "is_ir": false,
+        "bye_week": 14
+      },
+      {
+        "id": "8148",
+        "name": "Jameson Williams",
+        "pos": "WR",
+        "nfl_team": "DET",
+        "injury_status": null,
+        "depth_chart_order": 2,
+        "is_starter": false,
+        "is_ir": false,
+        "bye_week": 6
+      },
+      {
+        "id": "8154",
+        "name": "Brian Robinson",
+        "pos": "RB",
+        "nfl_team": "ATL",
+        "injury_status": null,
+        "depth_chart_order": 2,
+        "is_starter": false,
+        "is_ir": false,
+        "bye_week": 11
+      },
+      {
+        "id": "8259",
+        "name": "Cameron Dicker",
+        "pos": "K",
+        "nfl_team": "LAC",
+        "injury_status": null,
+        "depth_chart_order": 1,
+        "is_starter": true,
+        "is_ir": false,
+        "bye_week": 7
+      },
+      {
+        "id": "9225",
+        "name": "Tank Bigsby",
+        "pos": "RB",
+        "nfl_team": "PHI",
+        "injury_status": null,
+        "depth_chart_order": 2,
+        "is_starter": false,
+        "is_ir": false,
+        "bye_week": 10
+      },
+      {
+        "id": "LAR",
+        "name": "Los Angeles Rams",
+        "pos": "DEF",
+        "nfl_team": "LAR",
+        "injury_status": null,
+        "depth_chart_order": null,
+        "is_starter": true,
+        "is_ir": false,
+        "bye_week": 11
+      }
+    ]
+  },
+  "last_matchup": null,
+  "upcoming_matchup": {
+    "opponent": "chacetheace48",
+    "opponent_record": "0-0",
+    "their_starters": [
+      {
+        "slot": "QB",
+        "player": "Jayden Daniels",
+        "player_id": "11566",
+        "points": null
+      },
+      {
+        "slot": "RB1",
+        "player": "James Cook",
+        "player_id": "8138",
+        "points": null
+      },
+      {
+        "slot": "RB2",
+        "player": "Omarion Hampton",
+        "player_id": "12507",
+        "points": null
+      },
+      {
+        "slot": "WR1",
+        "player": "Garrett Wilson",
+        "player_id": "8146",
+        "points": null
+      },
+      {
+        "slot": "WR2",
+        "player": "Josh Downs",
+        "player_id": "9500",
+        "points": null
+      },
+      {
+        "slot": "TE",
+        "player": "Harold Fannin",
+        "player_id": "12506",
+        "points": null
+      },
+      {
+        "slot": "FLEX",
+        "player": "Jeremiyah Love",
+        "player_id": "13287",
+        "points": null
+      },
+      {
+        "slot": "K",
+        "player": "Matt Gay",
+        "player_id": "6083",
+        "points": null
+      },
+      {
+        "slot": "DEF",
+        "player": "Los Angeles Chargers",
+        "player_id": "LAC",
+        "points": null
+      }
+    ]
+  },
+  "other_teams": [
+    {
+      "name": "chacetheace48",
+      "record": "0-0",
+      "faab_remaining": null,
+      "positional_counts": {
+        "DB": 1,
+        "DEF": 1,
+        "K": 1,
+        "QB": 2,
+        "RB": 3,
+        "TE": 2,
+        "WR": 6
+      },
+      "surplus": [
+        "WR"
+      ],
+      "recent_adds": [
+        "Matt Gay"
+      ],
+      "recent_drops": [
+        "Caleb Douglas"
+      ]
+    },
+    {
+      "name": "bsummy51",
+      "record": "0-0",
+      "faab_remaining": null,
+      "positional_counts": {
+        "DEF": 1,
+        "K": 1,
+        "QB": 2,
+        "RB": 6,
+        "TE": 2,
+        "WR": 4
+      },
+      "surplus": [
+        "RB"
+      ],
+      "recent_adds": [],
+      "recent_drops": []
+    },
+    {
+      "name": "AndrewKyne",
+      "record": "0-0",
+      "faab_remaining": null,
+      "positional_counts": {
+        "DEF": 1,
+        "K": 1,
+        "QB": 2,
+        "RB": 5,
+        "TE": 2,
+        "WR": 5
+      },
+      "surplus": [
+        "RB",
+        "WR"
+      ],
+      "recent_adds": [],
+      "recent_drops": []
+    },
+    {
+      "name": "Jerlichman411",
+      "record": "0-0",
+      "faab_remaining": null,
+      "positional_counts": {
+        "DEF": 1,
+        "K": 1,
+        "QB": 2,
+        "RB": 4,
+        "TE": 2,
+        "WR": 6
+      },
+      "surplus": [
+        "WR"
+      ],
+      "recent_adds": [
+        "Las Vegas Raiders"
+      ],
+      "recent_drops": [
+        "Houston Texans"
+      ]
+    },
+    {
+      "name": "St.Brown & Down",
+      "record": "0-0",
+      "faab_remaining": null,
+      "positional_counts": {
+        "DEF": 1,
+        "K": 1,
+        "QB": 2,
+        "RB": 5,
+        "TE": 1,
+        "WR": 7
+      },
+      "surplus": [
+        "RB",
+        "WR"
+      ],
+      "recent_adds": [
+        "Dontayvion Wicks"
+      ],
+      "recent_drops": []
+    },
+    {
+      "name": "Not Chace Approved",
+      "record": "0-0",
+      "faab_remaining": null,
+      "positional_counts": {
+        "DEF": 1,
+        "K": 1,
+        "QB": 2,
+        "RB": 5,
+        "TE": 2,
+        "WR": 5
+      },
+      "surplus": [
+        "RB",
+        "WR"
+      ],
+      "recent_adds": [],
+      "recent_drops": []
+    },
+    {
+      "name": "PKessel's Coke Machine",
+      "record": "0-0",
+      "faab_remaining": null,
+      "positional_counts": {
+        "DEF": 1,
+        "K": 1,
+        "QB": 2,
+        "RB": 4,
+        "TE": 2,
+        "WR": 6
+      },
+      "surplus": [
+        "WR"
+      ],
+      "recent_adds": [],
+      "recent_drops": []
+    },
+    {
+      "name": "Big Ten All Star Team",
+      "record": "0-0",
+      "faab_remaining": null,
+      "positional_counts": {
+        "DEF": 1,
+        "K": 1,
+        "QB": 2,
+        "RB": 4,
+        "TE": 3,
+        "WR": 5
+      },
+      "surplus": [
+        "WR"
+      ],
+      "recent_adds": [],
+      "recent_drops": []
+    },
+    {
+      "name": "mrkw",
+      "record": "0-0",
+      "faab_remaining": null,
+      "positional_counts": {
+        "DEF": 1,
+        "K": 1,
+        "QB": 2,
+        "RB": 6,
+        "TE": 1,
+        "WR": 5
+      },
+      "surplus": [
+        "RB",
+        "WR"
+      ],
+      "recent_adds": [],
+      "recent_drops": []
+    },
+    {
+      "name": "ccharron33",
+      "record": "0-0",
+      "faab_remaining": null,
+      "positional_counts": {
+        "DEF": 1,
+        "K": 1,
+        "QB": 1,
+        "RB": 6,
+        "TE": 2,
+        "WR": 5
+      },
+      "surplus": [
+        "RB",
+        "WR"
+      ],
+      "recent_adds": [
+        "Michael Mayer"
+      ],
+      "recent_drops": [
+        "Cyrus Allen"
+      ]
+    },
+    {
+      "name": "eo33",
+      "record": "0-0",
+      "faab_remaining": null,
+      "positional_counts": {
+        "DEF": 1,
+        "K": 1,
+        "QB": 2,
+        "RB": 5,
+        "TE": 2,
+        "WR": 5
+      },
+      "surplus": [
+        "RB",
+        "WR"
+      ],
+      "recent_adds": [],
+      "recent_drops": []
+    }
+  ],
+  "free_agents": {
+    "DEF": [
+      {
+        "id": "ARI",
+        "name": "Arizona Cardinals",
+        "pos": "DEF",
+        "nfl_team": "ARI",
+        "trending_add": 0,
+        "trending_drop": 0,
+        "injury_status": null,
+        "depth_chart_order": null,
+        "bye_week": 14
+      },
+      {
+        "id": "ATL",
+        "name": "Atlanta Falcons",
+        "pos": "DEF",
+        "nfl_team": "ATL",
+        "trending_add": 0,
+        "trending_drop": 0,
+        "injury_status": null,
+        "depth_chart_order": null,
+        "bye_week": 11
+      },
+      {
+        "id": "BUF",
+        "name": "Buffalo Bills",
+        "pos": "DEF",
+        "nfl_team": "BUF",
+        "trending_add": 0,
+        "trending_drop": 0,
+        "injury_status": null,
+        "depth_chart_order": null,
+        "bye_week": 7
+      },
+      {
+        "id": "CAR",
+        "name": "Carolina Panthers",
+        "pos": "DEF",
+        "nfl_team": "CAR",
+        "trending_add": 0,
+        "trending_drop": 0,
+        "injury_status": null,
+        "depth_chart_order": null,
+        "bye_week": 5
+      }
+    ],
+    "K": [
+      {
+        "id": "11261",
+        "name": "Andre Szmyt",
+        "pos": "K",
+        "nfl_team": "CLE",
+        "trending_add": 0,
+        "trending_drop": 0,
+        "injury_status": null,
+        "depth_chart_order": 1,
+        "bye_week": 11
+      },
+      {
+        "id": "12713",
+        "name": "Andy Borregales",
+        "pos": "K",
+        "nfl_team": "NE",
+        "trending_add": 0,
+        "trending_drop": 0,
+        "injury_status": null,
+        "depth_chart_order": 1,
+        "bye_week": 11
+      },
+      {
+        "id": "11058",
+        "name": "Blake Grupe",
+        "pos": "K",
+        "nfl_team": "NYJ",
+        "trending_add": 0,
+        "trending_drop": 0,
+        "injury_status": null,
+        "depth_chart_order": 1,
+        "bye_week": 13
+      },
+      {
+        "id": "2020",
+        "name": "Cairo Santos",
+        "pos": "K",
+        "nfl_team": "CHI",
+        "trending_add": 0,
+        "trending_drop": 0,
+        "injury_status": null,
+        "depth_chart_order": 1,
+        "bye_week": 10
+      }
+    ],
+    "QB": [
+      {
+        "id": "1166",
+        "name": "Kirk Cousins",
+        "pos": "QB",
+        "nfl_team": "LV",
+        "trending_add": 62872,
+        "trending_drop": 0,
+        "injury_status": null,
+        "depth_chart_order": 1,
+        "bye_week": 13
+      },
+      {
+        "id": "5854",
+        "name": "Drew Lock",
+        "pos": "QB",
+        "nfl_team": "SEA",
+        "trending_add": 61923,
+        "trending_drop": 0,
+        "injury_status": null,
+        "depth_chart_order": 2,
+        "bye_week": 11
+      },
+      {
+        "id": "96",
+        "name": "Aaron Rodgers",
+        "pos": "QB",
+        "nfl_team": "PIT",
+        "trending_add": 0,
+        "trending_drop": 0,
+        "injury_status": null,
+        "depth_chart_order": 1,
+        "bye_week": 9
+      },
+      {
+        "id": "9228",
+        "name": "Bryce Young",
+        "pos": "QB",
+        "nfl_team": "CAR",
+        "trending_add": 0,
+        "trending_drop": 0,
+        "injury_status": null,
+        "depth_chart_order": 1,
+        "bye_week": 5
+      },
+      {
+        "id": "5870",
+        "name": "Daniel Jones",
+        "pos": "QB",
+        "nfl_team": "IND",
+        "trending_add": 0,
+        "trending_drop": 0,
+        "injury_status": null,
+        "depth_chart_order": 1,
+        "bye_week": 13
+      },
+      {
+        "id": "4017",
+        "name": "Deshaun Watson",
+        "pos": "QB",
+        "nfl_team": "CLE",
+        "trending_add": 0,
+        "trending_drop": 0,
+        "injury_status": null,
+        "depth_chart_order": 1,
+        "bye_week": 11
+      }
+    ],
+    "RB": [
+      {
+        "id": "10235",
+        "name": "Roschon Johnson",
+        "pos": "RB",
+        "nfl_team": "CHI",
+        "trending_add": 391392,
+        "trending_drop": 251056,
+        "injury_status": null,
+        "depth_chart_order": 3,
+        "bye_week": 10
+      },
+      {
+        "id": "8800",
+        "name": "Malik Davis",
+        "pos": "RB",
+        "nfl_team": "DAL",
+        "trending_add": 245385,
+        "trending_drop": 89568,
+        "injury_status": null,
+        "depth_chart_order": 2,
+        "bye_week": 14
+      },
+      {
+        "id": "5995",
+        "name": "Justice Hill",
+        "pos": "RB",
+        "nfl_team": "BAL",
+        "trending_add": 84879,
+        "trending_drop": 0,
+        "injury_status": null,
+        "depth_chart_order": 2,
+        "bye_week": 13
+      },
+      {
+        "id": "4147",
+        "name": "Samaje Perine",
+        "pos": "RB",
+        "nfl_team": "CIN",
+        "trending_add": 60264,
+        "trending_drop": 0,
+        "injury_status": null,
+        "depth_chart_order": 2,
+        "bye_week": 6
+      },
+      {
+        "id": "12491",
+        "name": "Corey Kiner",
+        "pos": "RB",
+        "nfl_team": "NE",
+        "trending_add": 59010,
+        "trending_drop": 0,
+        "injury_status": null,
+        "depth_chart_order": 5,
+        "bye_week": 11
+      },
+      {
+        "id": "13424",
+        "name": "Seth McGowan",
+        "pos": "RB",
+        "nfl_team": "IND",
+        "trending_add": 48552,
+        "trending_drop": 0,
+        "injury_status": null,
+        "depth_chart_order": 2,
+        "bye_week": 13
+      },
+      {
+        "id": "11576",
+        "name": "Braelon Allen",
+        "pos": "RB",
+        "nfl_team": "NYJ",
+        "trending_add": 0,
+        "trending_drop": 0,
+        "injury_status": null,
+        "depth_chart_order": 2,
+        "bye_week": 13
+      },
+      {
+        "id": "11370",
+        "name": "Chris Brooks",
+        "pos": "RB",
+        "nfl_team": "GB",
+        "trending_add": 0,
+        "trending_drop": 0,
+        "injury_status": null,
+        "depth_chart_order": 2,
+        "bye_week": 11
+      },
+      {
+        "id": "13337",
+        "name": "Emmett Johnson",
+        "pos": "RB",
+        "nfl_team": "KC",
+        "trending_add": 0,
+        "trending_drop": 74070,
+        "injury_status": null,
+        "depth_chart_order": 2,
+        "bye_week": 5
+      },
+      {
+        "id": "11237",
+        "name": "Jacob Saylors",
+        "pos": "RB",
+        "nfl_team": "DET",
+        "trending_add": 0,
+        "trending_drop": 0,
+        "injury_status": null,
+        "depth_chart_order": 2,
+        "bye_week": 6
+      }
+    ],
+    "TE": [
+      {
+        "id": "2505",
+        "name": "Darren Waller",
+        "pos": "TE",
+        "nfl_team": "CAR",
+        "trending_add": 265716,
+        "trending_drop": 71046,
+        "injury_status": null,
+        "depth_chart_order": 1,
+        "bye_week": 5
+      },
+      {
+        "id": "8127",
+        "name": "Charlie Kolar",
+        "pos": "TE",
+        "nfl_team": "LAC",
+        "trending_add": 100845,
+        "trending_drop": 0,
+        "injury_status": null,
+        "depth_chart_order": 3,
+        "bye_week": 7
+      },
+      {
+        "id": "8111",
+        "name": "Cade Otton",
+        "pos": "TE",
+        "nfl_team": "TB",
+        "trending_add": 52530,
+        "trending_drop": 0,
+        "injury_status": null,
+        "depth_chart_order": 1,
+        "bye_week": 10
+      },
+      {
+        "id": "13421",
+        "name": "Eli Raridon",
+        "pos": "TE",
+        "nfl_team": "NE",
+        "trending_add": 47068,
+        "trending_drop": 0,
+        "injury_status": null,
+        "depth_chart_order": 2,
+        "bye_week": 11
+      },
+      {
+        "id": "5001",
+        "name": "Dalton Schultz",
+        "pos": "TE",
+        "nfl_team": "HOU",
+        "trending_add": 0,
+        "trending_drop": 0,
+        "injury_status": null,
+        "depth_chart_order": 1,
+        "bye_week": 8
+      },
+      {
+        "id": "4066",
+        "name": "Evan Engram",
+        "pos": "TE",
+        "nfl_team": "DEN",
+        "trending_add": 0,
+        "trending_drop": 0,
+        "injury_status": null,
+        "depth_chart_order": 1,
+        "bye_week": 10
+      }
+    ],
+    "WR": [
+      {
+        "id": "11834",
+        "name": "Devaughn Vele",
+        "pos": "WR",
+        "nfl_team": "NO",
+        "trending_add": 320999,
+        "trending_drop": 52332,
+        "injury_status": null,
+        "depth_chart_order": 2,
+        "bye_week": 8
+      },
+      {
+        "id": "9502",
+        "name": "Tank Dell",
+        "pos": "WR",
+        "nfl_team": "HOU",
+        "trending_add": 198768,
+        "trending_drop": 48368,
+        "injury_status": "IR",
+        "depth_chart_order": 6,
+        "bye_week": 8
+      },
+      {
+        "id": "13311",
+        "name": "Chris Bell",
+        "pos": "WR",
+        "nfl_team": "MIA",
+        "trending_add": 127225,
+        "trending_drop": 0,
+        "injury_status": null,
+        "depth_chart_order": 4,
+        "bye_week": 6
+      },
+      {
+        "id": "4039",
+        "name": "Cooper Kupp",
+        "pos": "WR",
+        "nfl_team": "SEA",
+        "trending_add": 108306,
+        "trending_drop": 0,
+        "injury_status": null,
+        "depth_chart_order": 3,
+        "bye_week": 11
+      },
+      {
+        "id": "13296",
+        "name": "Caleb Douglas",
+        "pos": "WR",
+        "nfl_team": "MIA",
+        "trending_add": 95720,
+        "trending_drop": 63680,
+        "injury_status": null,
+        "depth_chart_order": 2,
+        "bye_week": 6
+      },
+      {
+        "id": "13285",
+        "name": "Malachi Fields",
+        "pos": "WR",
+        "nfl_team": "NYG",
+        "trending_add": 89055,
+        "trending_drop": 0,
+        "injury_status": null,
+        "depth_chart_order": 3,
+        "bye_week": 8
+      },
+      {
+        "id": "2078",
+        "name": "Odell Beckham",
+        "pos": "WR",
+        "nfl_team": "NYG",
+        "trending_add": 85281,
+        "trending_drop": 0,
+        "injury_status": null,
+        "depth_chart_order": 4,
+        "bye_week": 8
+      },
+      {
+        "id": "7090",
+        "name": "Darnell Mooney",
+        "pos": "WR",
+        "nfl_team": "NYG",
+        "trending_add": 62730,
+        "trending_drop": 0,
+        "injury_status": null,
+        "depth_chart_order": 2,
+        "bye_week": 8
+      },
+      {
+        "id": "13533",
+        "name": "Barion Brown",
+        "pos": "WR",
+        "nfl_team": "NO",
+        "trending_add": 54909,
+        "trending_drop": 0,
+        "injury_status": null,
+        "depth_chart_order": 4,
+        "bye_week": 8
+      },
+      {
+        "id": "3321",
+        "name": "Tyreek Hill",
+        "pos": "WR",
+        "nfl_team": null,
+        "trending_add": 50312,
+        "trending_drop": 94416,
+        "injury_status": "",
+        "depth_chart_order": null,
+        "bye_week": null
+      }
+    ]
+  },
+  "league_activity": [
+    {
+      "week": 1,
+      "type": "free_agent",
+      "description": "Free agent: added Matt Gay (chacetheace48); dropped Caleb Douglas (chacetheace48)"
+    },
+    {
+      "week": 1,
+      "type": "free_agent",
+      "description": "Free agent: added Michael Mayer (ccharron33); dropped Cyrus Allen (ccharron33)"
+    },
+    {
+      "week": 1,
+      "type": "free_agent",
+      "description": "Free agent: added Las Vegas Raiders (Jerlichman411); dropped Houston Texans (Jerlichman411)"
+    },
+    {
+      "week": 1,
+      "type": "free_agent",
+      "description": "Free agent: added Dontayvion Wicks (St.Brown & Down)"
+    }
+  ],
+  "prior_analysis": null,
+  "standings": [
+    {
+      "team": "chacetheace48",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
+      "points_for": 0.0
+    },
+    {
+      "team": "bsummy51",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
+      "points_for": 0.0
+    },
+    {
+      "team": "AndrewKyne",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
+      "points_for": 0.0
+    },
+    {
+      "team": "Jerlichman411",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
+      "points_for": 0.0
+    },
+    {
+      "team": "St.Brown & Down",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
+      "points_for": 0.0
+    },
+    {
+      "team": "Not Chace Approved",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
+      "points_for": 0.0
+    },
+    {
+      "team": "PKessel's Coke Machine",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
+      "points_for": 0.0
+    },
+    {
+      "team": "Big Ten All Star Team",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
+      "points_for": 0.0
+    },
+    {
+      "team": "mrkw",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
+      "points_for": 0.0
+    },
+    {
+      "team": "ccharron33",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
+      "points_for": 0.0
+    },
+    {
+      "team": "eo33",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
+      "points_for": 0.0
+    },
+    {
+      "team": "NotASmurf",
+      "wins": 0,
+      "losses": 0,
+      "ties": 0,
+      "points_for": 0.0
+    }
+  ]
+}
