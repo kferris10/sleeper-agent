@@ -161,3 +161,12 @@ def test_build_weekly_context_unknown_user(client, settings):
         assert "No roster owned by" in str(exc)
     else:
         raise AssertionError("expected ValueError for unknown user_id")
+
+
+def test_other_teams_include_full_rosters(client, settings):
+    players = client.get_players()
+    ctx = build_weekly_context(client, players, settings, week=UPCOMING_WEEK)
+    assert ctx.other_teams
+    for team in ctx.other_teams:
+        assert team.players, f"{team.name} has no player list"
+        assert all(p.name and p.id for p in team.players)

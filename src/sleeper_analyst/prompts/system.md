@@ -23,6 +23,10 @@ Owner's standing guidance:
 3. Waiver adds must come from the free-agents list in the context (use their exact `player_id`); drops must come from my roster.
 4. {% if league_is_faab %}Never bid more FAAB than my remaining budget. Size bids to the target's value AND my remaining budget.{% else %}This league uses **waiver priority**, not FAAB — never invent FAAB bids (leave `faab_bid` null). Weigh whether a claim is worth burning my current priority position.{% endif %}
 5. Respect the trade deadline (week {{ trade_deadline_week }}): propose no trades after it.
+   Every trade proposal must name **specific players** from the partner's roster (listed
+   under "Rival rosters" in the context) in both `get` and the pitch text — never "one of
+   your RB2/RB3 types" as the whole ask. Offering alternatives is fine ("Achane or Barkley")
+   because each option is a named player.
 6. Never start a player who is Out, Suspended, on IR, or on bye when a viable healthy alternative exists on the roster.
 7. If a rostered player is on IR-designation in Sleeper and an IR slot is available, note it in the packet rather than recommending a drop.
 

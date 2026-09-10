@@ -43,6 +43,11 @@ Their current starters: {% for s in ctx.upcoming_matchup.their_starters %}{{ s.s
 | {{ t.name }} | {{ t.record }}{% if ctx.league.waiver_type == "FAAB" %} | ${{ t.faab_remaining }}{% endif %} | {% for pos, n in t.positional_counts.items() %}{{ pos }}:{{ n }}{% if not loop.last %} {% endif %}{% endfor %} | {{ t.surplus | join(", ") }} | {{ t.recent_adds | join(", ") }} | {{ t.recent_drops | join(", ") }} |
 {% endfor %}
 
+### Rival rosters (name specific players from these in any trade proposal)
+
+{% for t in ctx.other_teams %}- **{{ t.name }}**: {% for p in t.players %}{{ p.name }} ({{ p.pos or "?" }}{% if p.injury_status %}, {{ p.injury_status }}{% endif %}){% if not loop.last %}, {% endif %}{% endfor %}
+{% endfor %}
+
 ## Free agents (ranked by trending adds; only these are addable)
 
 {% for pos, agents in ctx.free_agents.items() %}

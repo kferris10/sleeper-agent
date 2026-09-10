@@ -341,6 +341,184 @@
       ],
       "recent_drops": [
         "Caleb Douglas"
+      ],
+      "players": [
+        {
+          "id": "11566",
+          "name": "Jayden Daniels",
+          "pos": "QB",
+          "nfl_team": "WAS",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 7
+        },
+        {
+          "id": "12487",
+          "name": "Terrance Ferguson",
+          "pos": "TE",
+          "nfl_team": "LAR",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 11
+        },
+        {
+          "id": "12501",
+          "name": "Matthew Golden",
+          "pos": "WR",
+          "nfl_team": "GB",
+          "injury_status": null,
+          "depth_chart_order": 3,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 11
+        },
+        {
+          "id": "12506",
+          "name": "Harold Fannin",
+          "pos": "TE",
+          "nfl_team": "CLE",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 11
+        },
+        {
+          "id": "12507",
+          "name": "Omarion Hampton",
+          "pos": "RB",
+          "nfl_team": "LAC",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 7
+        },
+        {
+          "id": "12530",
+          "name": "Travis Hunter",
+          "pos": "DB",
+          "nfl_team": "JAX",
+          "injury_status": null,
+          "depth_chart_order": 4,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 7
+        },
+        {
+          "id": "13287",
+          "name": "Jeremiyah Love",
+          "pos": "RB",
+          "nfl_team": "ARI",
+          "injury_status": "Questionable",
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 14
+        },
+        {
+          "id": "13294",
+          "name": "Makai Lemon",
+          "pos": "WR",
+          "nfl_team": "PHI",
+          "injury_status": null,
+          "depth_chart_order": 3,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 10
+        },
+        {
+          "id": "13298",
+          "name": "KC Concepcion",
+          "pos": "WR",
+          "nfl_team": "CLE",
+          "injury_status": null,
+          "depth_chart_order": 2,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 11
+        },
+        {
+          "id": "6083",
+          "name": "Matt Gay",
+          "pos": "K",
+          "nfl_team": "LV",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 13
+        },
+        {
+          "id": "6804",
+          "name": "Jordan Love",
+          "pos": "QB",
+          "nfl_team": "GB",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 11
+        },
+        {
+          "id": "8138",
+          "name": "James Cook",
+          "pos": "RB",
+          "nfl_team": "BUF",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 7
+        },
+        {
+          "id": "8146",
+          "name": "Garrett Wilson",
+          "pos": "WR",
+          "nfl_team": "NYJ",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 13
+        },
+        {
+          "id": "9487",
+          "name": "Parker Washington",
+          "pos": "WR",
+          "nfl_team": "JAX",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 7
+        },
+        {
+          "id": "9500",
+          "name": "Josh Downs",
+          "pos": "WR",
+          "nfl_team": "IND",
+          "injury_status": null,
+          "depth_chart_order": 2,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 13
+        },
+        {
+          "id": "LAC",
+          "name": "Los Angeles Chargers",
+          "pos": "DEF",
+          "nfl_team": "LAC",
+          "injury_status": null,
+          "depth_chart_order": null,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 7
+        }
       ]
     },
     {
@@ -359,7 +537,185 @@
         "RB"
       ],
       "recent_adds": [],
-      "recent_drops": []
+      "recent_drops": [],
+      "players": [
+        {
+          "id": "11560",
+          "name": "Caleb Williams",
+          "pos": "QB",
+          "nfl_team": "CHI",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 10
+        },
+        {
+          "id": "11655",
+          "name": "Tyrone Tracy",
+          "pos": "RB",
+          "nfl_team": "NYG",
+          "injury_status": null,
+          "depth_chart_order": 3,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 8
+        },
+        {
+          "id": "12474",
+          "name": "Woody Marks",
+          "pos": "RB",
+          "nfl_team": "HOU",
+          "injury_status": null,
+          "depth_chart_order": 2,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 8
+        },
+        {
+          "id": "12490",
+          "name": "Bhayshul Tuten",
+          "pos": "RB",
+          "nfl_team": "JAX",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 7
+        },
+        {
+          "id": "12526",
+          "name": "Tetairoa McMillan",
+          "pos": "WR",
+          "nfl_team": "CAR",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 5
+        },
+        {
+          "id": "1945",
+          "name": "Chris Boswell",
+          "pos": "K",
+          "nfl_team": "PIT",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 9
+        },
+        {
+          "id": "4046",
+          "name": "Patrick Mahomes",
+          "pos": "QB",
+          "nfl_team": "KC",
+          "injury_status": "Questionable",
+          "depth_chart_order": 1,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 5
+        },
+        {
+          "id": "4217",
+          "name": "George Kittle",
+          "pos": "TE",
+          "nfl_team": "SF",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 8
+        },
+        {
+          "id": "4866",
+          "name": "Saquon Barkley",
+          "pos": "RB",
+          "nfl_team": "PHI",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 10
+        },
+        {
+          "id": "5022",
+          "name": "Dallas Goedert",
+          "pos": "TE",
+          "nfl_team": "PHI",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 10
+        },
+        {
+          "id": "5045",
+          "name": "Courtland Sutton",
+          "pos": "WR",
+          "nfl_team": "DEN",
+          "injury_status": null,
+          "depth_chart_order": 2,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 10
+        },
+        {
+          "id": "8134",
+          "name": "Khalil Shakir",
+          "pos": "WR",
+          "nfl_team": "BUF",
+          "injury_status": null,
+          "depth_chart_order": 2,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 7
+        },
+        {
+          "id": "9226",
+          "name": "De'Von Achane",
+          "pos": "RB",
+          "nfl_team": "MIA",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 6
+        },
+        {
+          "id": "9508",
+          "name": "Tyjae Spears",
+          "pos": "RB",
+          "nfl_team": "TEN",
+          "injury_status": null,
+          "depth_chart_order": 2,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 9
+        },
+        {
+          "id": "9997",
+          "name": "Zay Flowers",
+          "pos": "WR",
+          "nfl_team": "BAL",
+          "injury_status": "Questionable",
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 13
+        },
+        {
+          "id": "DET",
+          "name": "Detroit Lions",
+          "pos": "DEF",
+          "nfl_team": "DET",
+          "injury_status": null,
+          "depth_chart_order": null,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 6
+        }
+      ]
     },
     {
       "name": "AndrewKyne",
@@ -378,7 +734,185 @@
         "WR"
       ],
       "recent_adds": [],
-      "recent_drops": []
+      "recent_drops": [],
+      "players": [
+        {
+          "id": "10236",
+          "name": "Dalton Kincaid",
+          "pos": "TE",
+          "nfl_team": "BUF",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 7
+        },
+        {
+          "id": "11624",
+          "name": "Xavier Worthy",
+          "pos": "WR",
+          "nfl_team": "KC",
+          "injury_status": null,
+          "depth_chart_order": 2,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 5
+        },
+        {
+          "id": "11628",
+          "name": "Marvin Harrison",
+          "pos": "WR",
+          "nfl_team": "ARI",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 14
+        },
+        {
+          "id": "11786",
+          "name": "Cam Little",
+          "pos": "K",
+          "nfl_team": "JAX",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 7
+        },
+        {
+          "id": "12529",
+          "name": "TreVeyon Henderson",
+          "pos": "RB",
+          "nfl_team": "NE",
+          "injury_status": "Out",
+          "depth_chart_order": 1,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 11
+        },
+        {
+          "id": "6770",
+          "name": "Joe Burrow",
+          "pos": "QB",
+          "nfl_team": "CIN",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 6
+        },
+        {
+          "id": "6786",
+          "name": "CeeDee Lamb",
+          "pos": "WR",
+          "nfl_team": "DAL",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 14
+        },
+        {
+          "id": "6801",
+          "name": "Tee Higgins",
+          "pos": "WR",
+          "nfl_team": "CIN",
+          "injury_status": null,
+          "depth_chart_order": 2,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 6
+        },
+        {
+          "id": "6806",
+          "name": "J.K. Dobbins",
+          "pos": "RB",
+          "nfl_team": "DEN",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 10
+        },
+        {
+          "id": "7002",
+          "name": "Juwan Johnson",
+          "pos": "TE",
+          "nfl_team": "NO",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 8
+        },
+        {
+          "id": "7525",
+          "name": "DeVonta Smith",
+          "pos": "WR",
+          "nfl_team": "PHI",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 10
+        },
+        {
+          "id": "8136",
+          "name": "Rachaad White",
+          "pos": "RB",
+          "nfl_team": "WAS",
+          "injury_status": null,
+          "depth_chart_order": 2,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 7
+        },
+        {
+          "id": "8183",
+          "name": "Brock Purdy",
+          "pos": "QB",
+          "nfl_team": "SF",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 8
+        },
+        {
+          "id": "9224",
+          "name": "Chase Brown",
+          "pos": "RB",
+          "nfl_team": "CIN",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 6
+        },
+        {
+          "id": "9511",
+          "name": "Keaton Mitchell",
+          "pos": "RB",
+          "nfl_team": "LAC",
+          "injury_status": "Questionable",
+          "depth_chart_order": 2,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 7
+        },
+        {
+          "id": "PIT",
+          "name": "Pittsburgh Steelers",
+          "pos": "DEF",
+          "nfl_team": "PIT",
+          "injury_status": null,
+          "depth_chart_order": null,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 9
+        }
+      ]
     },
     {
       "name": "Jerlichman411",
@@ -400,6 +934,184 @@
       ],
       "recent_drops": [
         "Houston Texans"
+      ],
+      "players": [
+        {
+          "id": "11564",
+          "name": "Drake Maye",
+          "pos": "QB",
+          "nfl_team": "NE",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 11
+        },
+        {
+          "id": "12527",
+          "name": "Ashton Jeanty",
+          "pos": "RB",
+          "nfl_team": "LV",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 13
+        },
+        {
+          "id": "12534",
+          "name": "Kyle Monangai",
+          "pos": "RB",
+          "nfl_team": "CHI",
+          "injury_status": null,
+          "depth_chart_order": 2,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 10
+        },
+        {
+          "id": "13414",
+          "name": "Kaelon Black",
+          "pos": "RB",
+          "nfl_team": "SF",
+          "injury_status": null,
+          "depth_chart_order": 2,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 8
+        },
+        {
+          "id": "2216",
+          "name": "Mike Evans",
+          "pos": "WR",
+          "nfl_team": "SF",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 8
+        },
+        {
+          "id": "2747",
+          "name": "Jason Myers",
+          "pos": "K",
+          "nfl_team": "SEA",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 11
+        },
+        {
+          "id": "421",
+          "name": "Matthew Stafford",
+          "pos": "QB",
+          "nfl_team": "LAR",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 11
+        },
+        {
+          "id": "5846",
+          "name": "DK Metcalf",
+          "pos": "WR",
+          "nfl_team": "PIT",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 9
+        },
+        {
+          "id": "5927",
+          "name": "Terry McLaurin",
+          "pos": "WR",
+          "nfl_team": "WAS",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 7
+        },
+        {
+          "id": "7553",
+          "name": "Kyle Pitts",
+          "pos": "TE",
+          "nfl_team": "ATL",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 11
+        },
+        {
+          "id": "8121",
+          "name": "Romeo Doubs",
+          "pos": "WR",
+          "nfl_team": "NE",
+          "injury_status": null,
+          "depth_chart_order": 2,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 11
+        },
+        {
+          "id": "8137",
+          "name": "George Pickens",
+          "pos": "WR",
+          "nfl_team": "DAL",
+          "injury_status": null,
+          "depth_chart_order": 2,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 14
+        },
+        {
+          "id": "8676",
+          "name": "Rashid Shaheed",
+          "pos": "WR",
+          "nfl_team": "SEA",
+          "injury_status": null,
+          "depth_chart_order": 2,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 11
+        },
+        {
+          "id": "9480",
+          "name": "Brenton Strange",
+          "pos": "TE",
+          "nfl_team": "JAX",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 7
+        },
+        {
+          "id": "9509",
+          "name": "Bijan Robinson",
+          "pos": "RB",
+          "nfl_team": "ATL",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 11
+        },
+        {
+          "id": "LV",
+          "name": "Las Vegas Raiders",
+          "pos": "DEF",
+          "nfl_team": "LV",
+          "injury_status": null,
+          "depth_chart_order": null,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 13
+        }
       ]
     },
     {
@@ -421,7 +1133,196 @@
       "recent_adds": [
         "Dontayvion Wicks"
       ],
-      "recent_drops": []
+      "recent_drops": [],
+      "players": [
+        {
+          "id": "12518",
+          "name": "Tyler Warren",
+          "pos": "TE",
+          "nfl_team": "IND",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 13
+        },
+        {
+          "id": "12522",
+          "name": "Cam Ward",
+          "pos": "QB",
+          "nfl_team": "TEN",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 9
+        },
+        {
+          "id": "13281",
+          "name": "Jordyn Tyson",
+          "pos": "WR",
+          "nfl_team": "NO",
+          "injury_status": "IR",
+          "depth_chart_order": 11,
+          "is_starter": false,
+          "is_ir": true,
+          "bye_week": 8
+        },
+        {
+          "id": "13286",
+          "name": "Jadarian Price",
+          "pos": "RB",
+          "nfl_team": "SEA",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 11
+        },
+        {
+          "id": "13288",
+          "name": "Nicholas Singleton",
+          "pos": "RB",
+          "nfl_team": "TEN",
+          "injury_status": null,
+          "depth_chart_order": 3,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 9
+        },
+        {
+          "id": "13345",
+          "name": "Jonah Coleman",
+          "pos": "RB",
+          "nfl_team": "DEN",
+          "injury_status": null,
+          "depth_chart_order": 3,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 10
+        },
+        {
+          "id": "2449",
+          "name": "Stefon Diggs",
+          "pos": "WR",
+          "nfl_team": "WAS",
+          "injury_status": null,
+          "depth_chart_order": 2,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 7
+        },
+        {
+          "id": "5189",
+          "name": "Eddy Pineiro",
+          "pos": "K",
+          "nfl_team": "SF",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 8
+        },
+        {
+          "id": "5849",
+          "name": "Kyler Murray",
+          "pos": "QB",
+          "nfl_team": "MIN",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 6
+        },
+        {
+          "id": "7021",
+          "name": "Rico Dowdle",
+          "pos": "RB",
+          "nfl_team": "PIT",
+          "injury_status": null,
+          "depth_chart_order": 2,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 9
+        },
+        {
+          "id": "7526",
+          "name": "Jaylen Waddle",
+          "pos": "WR",
+          "nfl_team": "DEN",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 10
+        },
+        {
+          "id": "7547",
+          "name": "Amon-Ra St. Brown",
+          "pos": "WR",
+          "nfl_team": "DET",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 6
+        },
+        {
+          "id": "7569",
+          "name": "Nico Collins",
+          "pos": "WR",
+          "nfl_team": "HOU",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 8
+        },
+        {
+          "id": "8142",
+          "name": "Alec Pierce",
+          "pos": "WR",
+          "nfl_team": "IND",
+          "injury_status": "Questionable",
+          "depth_chart_order": 1,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 13
+        },
+        {
+          "id": "8155",
+          "name": "Breece Hall",
+          "pos": "RB",
+          "nfl_team": "NYJ",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 13
+        },
+        {
+          "id": "9486",
+          "name": "Dontayvion Wicks",
+          "pos": "WR",
+          "nfl_team": "PHI",
+          "injury_status": null,
+          "depth_chart_order": 2,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 10
+        },
+        {
+          "id": "JAX",
+          "name": "Jacksonville Jaguars",
+          "pos": "DEF",
+          "nfl_team": "JAX",
+          "injury_status": null,
+          "depth_chart_order": null,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 7
+        }
+      ]
     },
     {
       "name": "Not Chace Approved",
@@ -440,7 +1341,185 @@
         "WR"
       ],
       "recent_adds": [],
-      "recent_drops": []
+      "recent_drops": [],
+      "players": [
+        {
+          "id": "10219",
+          "name": "Chris Rodriguez",
+          "pos": "RB",
+          "nfl_team": "JAX",
+          "injury_status": null,
+          "depth_chart_order": 2,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 7
+        },
+        {
+          "id": "11539",
+          "name": "Jake Bates",
+          "pos": "K",
+          "nfl_team": "DET",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 6
+        },
+        {
+          "id": "11583",
+          "name": "Jonathon Brooks",
+          "pos": "RB",
+          "nfl_team": "CAR",
+          "injury_status": "Questionable",
+          "depth_chart_order": 2,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 5
+        },
+        {
+          "id": "11584",
+          "name": "Bucky Irving",
+          "pos": "RB",
+          "nfl_team": "TB",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 10
+        },
+        {
+          "id": "11620",
+          "name": "Rome Odunze",
+          "pos": "WR",
+          "nfl_team": "CHI",
+          "injury_status": "Questionable",
+          "depth_chart_order": 1,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 10
+        },
+        {
+          "id": "11632",
+          "name": "Malik Nabers",
+          "pos": "WR",
+          "nfl_team": "NYG",
+          "injury_status": "Questionable",
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 8
+        },
+        {
+          "id": "13346",
+          "name": "Denzel Boston",
+          "pos": "WR",
+          "nfl_team": "CLE",
+          "injury_status": null,
+          "depth_chart_order": 3,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 11
+        },
+        {
+          "id": "3214",
+          "name": "Hunter Henry",
+          "pos": "TE",
+          "nfl_team": "NE",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 11
+        },
+        {
+          "id": "6790",
+          "name": "D'Andre Swift",
+          "pos": "RB",
+          "nfl_team": "CHI",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 10
+        },
+        {
+          "id": "6819",
+          "name": "Michael Pittman",
+          "pos": "WR",
+          "nfl_team": "PIT",
+          "injury_status": null,
+          "depth_chart_order": 2,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 9
+        },
+        {
+          "id": "7523",
+          "name": "Trevor Lawrence",
+          "pos": "QB",
+          "nfl_team": "JAX",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 7
+        },
+        {
+          "id": "8150",
+          "name": "Kyren Williams",
+          "pos": "RB",
+          "nfl_team": "LAR",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 11
+        },
+        {
+          "id": "8161",
+          "name": "Malik Willis",
+          "pos": "QB",
+          "nfl_team": "MIA",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 6
+        },
+        {
+          "id": "9484",
+          "name": "Tucker Kraft",
+          "pos": "TE",
+          "nfl_team": "GB",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 11
+        },
+        {
+          "id": "9488",
+          "name": "Jaxon Smith-Njigba",
+          "pos": "WR",
+          "nfl_team": "SEA",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 11
+        },
+        {
+          "id": "DEN",
+          "name": "Denver Broncos",
+          "pos": "DEF",
+          "nfl_team": "DEN",
+          "injury_status": null,
+          "depth_chart_order": null,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 10
+        }
+      ]
     },
     {
       "name": "PKessel's Coke Machine",
@@ -458,7 +1537,185 @@
         "WR"
       ],
       "recent_adds": [],
-      "recent_drops": []
+      "recent_drops": [],
+      "players": [
+        {
+          "id": "10213",
+          "name": "Tre Tucker",
+          "pos": "WR",
+          "nfl_team": "LV",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 13
+        },
+        {
+          "id": "10859",
+          "name": "Sam LaPorta",
+          "pos": "TE",
+          "nfl_team": "DET",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 6
+        },
+        {
+          "id": "11635",
+          "name": "Ladd McConkey",
+          "pos": "WR",
+          "nfl_team": "LAC",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 7
+        },
+        {
+          "id": "11646",
+          "name": "Jalen Coker",
+          "pos": "WR",
+          "nfl_team": "CAR",
+          "injury_status": null,
+          "depth_chart_order": 2,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 5
+        },
+        {
+          "id": "12469",
+          "name": "Dylan Sampson",
+          "pos": "RB",
+          "nfl_team": "CLE",
+          "injury_status": null,
+          "depth_chart_order": 2,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 11
+        },
+        {
+          "id": "12711",
+          "name": "Tyler Loop",
+          "pos": "K",
+          "nfl_team": "BAL",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 13
+        },
+        {
+          "id": "3163",
+          "name": "Jared Goff",
+          "pos": "QB",
+          "nfl_team": "DET",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 6
+        },
+        {
+          "id": "4037",
+          "name": "Chris Godwin",
+          "pos": "WR",
+          "nfl_team": "TB",
+          "injury_status": null,
+          "depth_chart_order": 2,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 10
+        },
+        {
+          "id": "4984",
+          "name": "Josh Allen",
+          "pos": "QB",
+          "nfl_team": "BUF",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 7
+        },
+        {
+          "id": "5012",
+          "name": "Mark Andrews",
+          "pos": "TE",
+          "nfl_team": "BAL",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 13
+        },
+        {
+          "id": "6813",
+          "name": "Jonathan Taylor",
+          "pos": "RB",
+          "nfl_team": "IND",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 13
+        },
+        {
+          "id": "7588",
+          "name": "Javonte Williams",
+          "pos": "RB",
+          "nfl_team": "DAL",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 14
+        },
+        {
+          "id": "7611",
+          "name": "Rhamondre Stevenson",
+          "pos": "RB",
+          "nfl_team": "NE",
+          "injury_status": null,
+          "depth_chart_order": 2,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 11
+        },
+        {
+          "id": "8167",
+          "name": "Christian Watson",
+          "pos": "WR",
+          "nfl_team": "GB",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 11
+        },
+        {
+          "id": "8180",
+          "name": "Jalen Nailor",
+          "pos": "WR",
+          "nfl_team": "LV",
+          "injury_status": null,
+          "depth_chart_order": 2,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 13
+        },
+        {
+          "id": "NE",
+          "name": "New England Patriots",
+          "pos": "DEF",
+          "nfl_team": "NE",
+          "injury_status": null,
+          "depth_chart_order": null,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 11
+        }
+      ]
     },
     {
       "name": "Big Ten All Star Team",
@@ -476,7 +1733,185 @@
         "WR"
       ],
       "recent_adds": [],
-      "recent_drops": []
+      "recent_drops": [],
+      "players": [
+        {
+          "id": "10222",
+          "name": "Jayden Reed",
+          "pos": "WR",
+          "nfl_team": "GB",
+          "injury_status": null,
+          "depth_chart_order": 2,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 11
+        },
+        {
+          "id": "11563",
+          "name": "Bo Nix",
+          "pos": "QB",
+          "nfl_team": "DEN",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 10
+        },
+        {
+          "id": "11586",
+          "name": "Blake Corum",
+          "pos": "RB",
+          "nfl_team": "LAR",
+          "injury_status": null,
+          "depth_chart_order": 2,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 11
+        },
+        {
+          "id": "11603",
+          "name": "AJ Barner",
+          "pos": "TE",
+          "nfl_team": "SEA",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 11
+        },
+        {
+          "id": "12514",
+          "name": "Emeka Egbuka",
+          "pos": "WR",
+          "nfl_team": "TB",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 10
+        },
+        {
+          "id": "12517",
+          "name": "Colston Loveland",
+          "pos": "TE",
+          "nfl_team": "CHI",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 10
+        },
+        {
+          "id": "3451",
+          "name": "Ka'imi Fairbairn",
+          "pos": "K",
+          "nfl_team": "HOU",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 8
+        },
+        {
+          "id": "4983",
+          "name": "DJ Moore",
+          "pos": "WR",
+          "nfl_team": "BUF",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 7
+        },
+        {
+          "id": "8110",
+          "name": "Jake Ferguson",
+          "pos": "TE",
+          "nfl_team": "DAL",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 14
+        },
+        {
+          "id": "8151",
+          "name": "Kenneth Walker",
+          "pos": "RB",
+          "nfl_team": "KC",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 5
+        },
+        {
+          "id": "8205",
+          "name": "Isiah Pacheco",
+          "pos": "RB",
+          "nfl_team": "DET",
+          "injury_status": "IR",
+          "depth_chart_order": 4,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 6
+        },
+        {
+          "id": "9493",
+          "name": "Puka Nacua",
+          "pos": "WR",
+          "nfl_team": "LAR",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 11
+        },
+        {
+          "id": "9753",
+          "name": "Zach Charbonnet",
+          "pos": "RB",
+          "nfl_team": "SEA",
+          "injury_status": "PUP",
+          "depth_chart_order": 2,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 11
+        },
+        {
+          "id": "9756",
+          "name": "Jordan Addison",
+          "pos": "WR",
+          "nfl_team": "MIN",
+          "injury_status": null,
+          "depth_chart_order": 2,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 6
+        },
+        {
+          "id": "9758",
+          "name": "C.J. Stroud",
+          "pos": "QB",
+          "nfl_team": "HOU",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 8
+        },
+        {
+          "id": "SEA",
+          "name": "Seattle Seahawks",
+          "pos": "DEF",
+          "nfl_team": "SEA",
+          "injury_status": null,
+          "depth_chart_order": null,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 11
+        }
+      ]
     },
     {
       "name": "mrkw",
@@ -495,7 +1930,185 @@
         "WR"
       ],
       "recent_adds": [],
-      "recent_drops": []
+      "recent_drops": [],
+      "players": [
+        {
+          "id": "10229",
+          "name": "Rashee Rice",
+          "pos": "WR",
+          "nfl_team": "KC",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 5
+        },
+        {
+          "id": "11610",
+          "name": "Malik Washington",
+          "pos": "WR",
+          "nfl_team": "MIA",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 6
+        },
+        {
+          "id": "12015",
+          "name": "Harrison Mevis",
+          "pos": "K",
+          "nfl_team": "LAR",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 11
+        },
+        {
+          "id": "12508",
+          "name": "Jaxson Dart",
+          "pos": "QB",
+          "nfl_team": "NYG",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 8
+        },
+        {
+          "id": "12512",
+          "name": "Quinshon Judkins",
+          "pos": "RB",
+          "nfl_team": "CLE",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 11
+        },
+        {
+          "id": "12533",
+          "name": "Jacory Croskey-Merritt",
+          "pos": "RB",
+          "nfl_team": "WAS",
+          "injury_status": "Questionable",
+          "depth_chart_order": 1,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 7
+        },
+        {
+          "id": "12545",
+          "name": "Tyler Shough",
+          "pos": "QB",
+          "nfl_team": "NO",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 8
+        },
+        {
+          "id": "13279",
+          "name": "Carnell Tate",
+          "pos": "WR",
+          "nfl_team": "TEN",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 9
+        },
+        {
+          "id": "4034",
+          "name": "Christian McCaffrey",
+          "pos": "RB",
+          "nfl_team": "SF",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 8
+        },
+        {
+          "id": "4199",
+          "name": "Aaron Jones",
+          "pos": "RB",
+          "nfl_team": "MIN",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 6
+        },
+        {
+          "id": "7594",
+          "name": "Chuba Hubbard",
+          "pos": "RB",
+          "nfl_team": "CAR",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 5
+        },
+        {
+          "id": "8126",
+          "name": "Wan'Dale Robinson",
+          "pos": "WR",
+          "nfl_team": "TEN",
+          "injury_status": null,
+          "depth_chart_order": 2,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 9
+        },
+        {
+          "id": "8130",
+          "name": "Trey McBride",
+          "pos": "TE",
+          "nfl_team": "ARI",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 14
+        },
+        {
+          "id": "8228",
+          "name": "Jaylen Warren",
+          "pos": "RB",
+          "nfl_team": "PIT",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 9
+        },
+        {
+          "id": "9504",
+          "name": "Kayshon Boutte",
+          "pos": "WR",
+          "nfl_team": "HOU",
+          "injury_status": null,
+          "depth_chart_order": 2,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 8
+        },
+        {
+          "id": "PHI",
+          "name": "Philadelphia Eagles",
+          "pos": "DEF",
+          "nfl_team": "PHI",
+          "injury_status": null,
+          "depth_chart_order": null,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 10
+        }
+      ]
     },
     {
       "name": "ccharron33",
@@ -518,6 +2131,184 @@
       ],
       "recent_drops": [
         "Cyrus Allen"
+      ],
+      "players": [
+        {
+          "id": "11533",
+          "name": "Brandon Aubrey",
+          "pos": "K",
+          "nfl_team": "DAL",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 14
+        },
+        {
+          "id": "11604",
+          "name": "Brock Bowers",
+          "pos": "TE",
+          "nfl_team": "LV",
+          "injury_status": "Doubtful",
+          "depth_chart_order": 2,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 13
+        },
+        {
+          "id": "13293",
+          "name": "Ja'Kobi Lane",
+          "pos": "WR",
+          "nfl_team": "BAL",
+          "injury_status": null,
+          "depth_chart_order": 3,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 13
+        },
+        {
+          "id": "13305",
+          "name": "Mike Washington",
+          "pos": "RB",
+          "nfl_team": "LV",
+          "injury_status": null,
+          "depth_chart_order": 2,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 13
+        },
+        {
+          "id": "13417",
+          "name": "De'Zhaun Stribling",
+          "pos": "WR",
+          "nfl_team": "SF",
+          "injury_status": null,
+          "depth_chart_order": 3,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 8
+        },
+        {
+          "id": "2133",
+          "name": "Davante Adams",
+          "pos": "WR",
+          "nfl_team": "LAR",
+          "injury_status": null,
+          "depth_chart_order": 2,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 11
+        },
+        {
+          "id": "3294",
+          "name": "Dak Prescott",
+          "pos": "QB",
+          "nfl_team": "DAL",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 14
+        },
+        {
+          "id": "4035",
+          "name": "Alvin Kamara",
+          "pos": "RB",
+          "nfl_team": "NO",
+          "injury_status": "Questionable",
+          "depth_chart_order": 2,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 8
+        },
+        {
+          "id": "5947",
+          "name": "Jakobi Meyers",
+          "pos": "WR",
+          "nfl_team": "JAX",
+          "injury_status": "Questionable",
+          "depth_chart_order": 3,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 7
+        },
+        {
+          "id": "5967",
+          "name": "Tony Pollard",
+          "pos": "RB",
+          "nfl_team": "TEN",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 9
+        },
+        {
+          "id": "7543",
+          "name": "Travis Etienne",
+          "pos": "RB",
+          "nfl_team": "NO",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 8
+        },
+        {
+          "id": "8112",
+          "name": "Drake London",
+          "pos": "WR",
+          "nfl_team": "ATL",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 11
+        },
+        {
+          "id": "8408",
+          "name": "Jordan Mason",
+          "pos": "RB",
+          "nfl_team": "MIN",
+          "injury_status": null,
+          "depth_chart_order": 2,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 6
+        },
+        {
+          "id": "9221",
+          "name": "Jahmyr Gibbs",
+          "pos": "RB",
+          "nfl_team": "DET",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 6
+        },
+        {
+          "id": "9482",
+          "name": "Michael Mayer",
+          "pos": "TE",
+          "nfl_team": "LV",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 13
+        },
+        {
+          "id": "MIN",
+          "name": "Minnesota Vikings",
+          "pos": "DEF",
+          "nfl_team": "MIN",
+          "injury_status": null,
+          "depth_chart_order": null,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 6
+        }
       ]
     },
     {
@@ -537,7 +2328,185 @@
         "WR"
       ],
       "recent_adds": [],
-      "recent_drops": []
+      "recent_drops": [],
+      "players": [
+        {
+          "id": "10232",
+          "name": "Michael Wilson",
+          "pos": "WR",
+          "nfl_team": "ARI",
+          "injury_status": null,
+          "depth_chart_order": 2,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 14
+        },
+        {
+          "id": "11581",
+          "name": "MarShawn Lloyd",
+          "pos": "RB",
+          "nfl_team": "GB",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 11
+        },
+        {
+          "id": "11792",
+          "name": "Will Reichard",
+          "pos": "K",
+          "nfl_team": "MIN",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 6
+        },
+        {
+          "id": "12481",
+          "name": "Cam Skattebo",
+          "pos": "RB",
+          "nfl_team": "NYG",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 8
+        },
+        {
+          "id": "1466",
+          "name": "Travis Kelce",
+          "pos": "TE",
+          "nfl_team": "KC",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 5
+        },
+        {
+          "id": "3198",
+          "name": "Derrick Henry",
+          "pos": "RB",
+          "nfl_team": "BAL",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 13
+        },
+        {
+          "id": "4892",
+          "name": "Baker Mayfield",
+          "pos": "QB",
+          "nfl_team": "TB",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 10
+        },
+        {
+          "id": "5872",
+          "name": "Deebo Samuel",
+          "pos": "WR",
+          "nfl_team": "SF",
+          "injury_status": null,
+          "depth_chart_order": 2,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 8
+        },
+        {
+          "id": "5892",
+          "name": "David Montgomery",
+          "pos": "RB",
+          "nfl_team": "HOU",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 8
+        },
+        {
+          "id": "6904",
+          "name": "Jalen Hurts",
+          "pos": "QB",
+          "nfl_team": "PHI",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 10
+        },
+        {
+          "id": "7564",
+          "name": "Ja'Marr Chase",
+          "pos": "WR",
+          "nfl_team": "CIN",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 6
+        },
+        {
+          "id": "7567",
+          "name": "Kenny Gainwell",
+          "pos": "RB",
+          "nfl_team": "TB",
+          "injury_status": null,
+          "depth_chart_order": 2,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 10
+        },
+        {
+          "id": "8144",
+          "name": "Chris Olave",
+          "pos": "WR",
+          "nfl_team": "NO",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 8
+        },
+        {
+          "id": "8210",
+          "name": "Chig Okonkwo",
+          "pos": "TE",
+          "nfl_team": "WAS",
+          "injury_status": null,
+          "depth_chart_order": 1,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 7
+        },
+        {
+          "id": "9754",
+          "name": "Quentin Johnston",
+          "pos": "WR",
+          "nfl_team": "LAC",
+          "injury_status": null,
+          "depth_chart_order": 2,
+          "is_starter": false,
+          "is_ir": false,
+          "bye_week": 7
+        },
+        {
+          "id": "BAL",
+          "name": "Baltimore Ravens",
+          "pos": "DEF",
+          "nfl_team": "BAL",
+          "injury_status": null,
+          "depth_chart_order": null,
+          "is_starter": true,
+          "is_ir": false,
+          "bye_week": 13
+        }
+      ]
     }
   ],
   "free_agents": {
@@ -635,26 +2604,26 @@
     ],
     "QB": [
       {
-        "id": "1166",
-        "name": "Kirk Cousins",
-        "pos": "QB",
-        "nfl_team": "LV",
-        "trending_add": 62872,
-        "trending_drop": 0,
-        "injury_status": null,
-        "depth_chart_order": 1,
-        "bye_week": 13
-      },
-      {
         "id": "5854",
         "name": "Drew Lock",
         "pos": "QB",
         "nfl_team": "SEA",
-        "trending_add": 61923,
+        "trending_add": 64685,
         "trending_drop": 0,
         "injury_status": null,
         "depth_chart_order": 2,
         "bye_week": 11
+      },
+      {
+        "id": "1166",
+        "name": "Kirk Cousins",
+        "pos": "QB",
+        "nfl_team": "LV",
+        "trending_add": 62584,
+        "trending_drop": 0,
+        "injury_status": null,
+        "depth_chart_order": 1,
+        "bye_week": 13
       },
       {
         "id": "96",
@@ -707,8 +2676,8 @@
         "name": "Roschon Johnson",
         "pos": "RB",
         "nfl_team": "CHI",
-        "trending_add": 391392,
-        "trending_drop": 251056,
+        "trending_add": 359816,
+        "trending_drop": 246384,
         "injury_status": null,
         "depth_chart_order": 3,
         "bye_week": 10
@@ -718,8 +2687,8 @@
         "name": "Malik Davis",
         "pos": "RB",
         "nfl_team": "DAL",
-        "trending_add": 245385,
-        "trending_drop": 89568,
+        "trending_add": 230607,
+        "trending_drop": 88272,
         "injury_status": null,
         "depth_chart_order": 2,
         "bye_week": 14
@@ -729,7 +2698,7 @@
         "name": "Justice Hill",
         "pos": "RB",
         "nfl_team": "BAL",
-        "trending_add": 84879,
+        "trending_add": 80613,
         "trending_drop": 0,
         "injury_status": null,
         "depth_chart_order": 2,
@@ -740,7 +2709,7 @@
         "name": "Samaje Perine",
         "pos": "RB",
         "nfl_team": "CIN",
-        "trending_add": 60264,
+        "trending_add": 56608,
         "trending_drop": 0,
         "injury_status": null,
         "depth_chart_order": 2,
@@ -751,7 +2720,7 @@
         "name": "Corey Kiner",
         "pos": "RB",
         "nfl_team": "NE",
-        "trending_add": 59010,
+        "trending_add": 55782,
         "trending_drop": 0,
         "injury_status": null,
         "depth_chart_order": 5,
@@ -762,7 +2731,7 @@
         "name": "Seth McGowan",
         "pos": "RB",
         "nfl_team": "IND",
-        "trending_add": 48552,
+        "trending_add": 44008,
         "trending_drop": 0,
         "injury_status": null,
         "depth_chart_order": 2,
@@ -796,7 +2765,7 @@
         "pos": "RB",
         "nfl_team": "KC",
         "trending_add": 0,
-        "trending_drop": 74070,
+        "trending_drop": 73701,
         "injury_status": null,
         "depth_chart_order": 2,
         "bye_week": 5
@@ -819,8 +2788,8 @@
         "name": "Darren Waller",
         "pos": "TE",
         "nfl_team": "CAR",
-        "trending_add": 265716,
-        "trending_drop": 71046,
+        "trending_add": 261522,
+        "trending_drop": 70578,
         "injury_status": null,
         "depth_chart_order": 1,
         "bye_week": 5
@@ -830,7 +2799,7 @@
         "name": "Charlie Kolar",
         "pos": "TE",
         "nfl_team": "LAC",
-        "trending_add": 100845,
+        "trending_add": 95250,
         "trending_drop": 0,
         "injury_status": null,
         "depth_chart_order": 3,
@@ -841,7 +2810,7 @@
         "name": "Cade Otton",
         "pos": "TE",
         "nfl_team": "TB",
-        "trending_add": 52530,
+        "trending_add": 52512,
         "trending_drop": 0,
         "injury_status": null,
         "depth_chart_order": 1,
@@ -852,7 +2821,7 @@
         "name": "Eli Raridon",
         "pos": "TE",
         "nfl_team": "NE",
-        "trending_add": 47068,
+        "trending_add": 46389,
         "trending_drop": 0,
         "injury_status": null,
         "depth_chart_order": 2,
@@ -887,8 +2856,8 @@
         "name": "Devaughn Vele",
         "pos": "WR",
         "nfl_team": "NO",
-        "trending_add": 320999,
-        "trending_drop": 52332,
+        "trending_add": 304493,
+        "trending_drop": 51695,
         "injury_status": null,
         "depth_chart_order": 2,
         "bye_week": 8
@@ -898,8 +2867,8 @@
         "name": "Tank Dell",
         "pos": "WR",
         "nfl_team": "HOU",
-        "trending_add": 198768,
-        "trending_drop": 48368,
+        "trending_add": 187816,
+        "trending_drop": 46336,
         "injury_status": "IR",
         "depth_chart_order": 6,
         "bye_week": 8
@@ -909,7 +2878,7 @@
         "name": "Chris Bell",
         "pos": "WR",
         "nfl_team": "MIA",
-        "trending_add": 127225,
+        "trending_add": 134589,
         "trending_drop": 0,
         "injury_status": null,
         "depth_chart_order": 4,
@@ -920,7 +2889,7 @@
         "name": "Cooper Kupp",
         "pos": "WR",
         "nfl_team": "SEA",
-        "trending_add": 108306,
+        "trending_add": 107574,
         "trending_drop": 0,
         "injury_status": null,
         "depth_chart_order": 3,
@@ -931,8 +2900,8 @@
         "name": "Caleb Douglas",
         "pos": "WR",
         "nfl_team": "MIA",
-        "trending_add": 95720,
-        "trending_drop": 63680,
+        "trending_add": 90176,
+        "trending_drop": 63056,
         "injury_status": null,
         "depth_chart_order": 2,
         "bye_week": 6
@@ -942,7 +2911,7 @@
         "name": "Malachi Fields",
         "pos": "WR",
         "nfl_team": "NYG",
-        "trending_add": 89055,
+        "trending_add": 84065,
         "trending_drop": 0,
         "injury_status": null,
         "depth_chart_order": 3,
@@ -953,7 +2922,7 @@
         "name": "Odell Beckham",
         "pos": "WR",
         "nfl_team": "NYG",
-        "trending_add": 85281,
+        "trending_add": 80430,
         "trending_drop": 0,
         "injury_status": null,
         "depth_chart_order": 4,
@@ -964,7 +2933,7 @@
         "name": "Darnell Mooney",
         "pos": "WR",
         "nfl_team": "NYG",
-        "trending_add": 62730,
+        "trending_add": 59742,
         "trending_drop": 0,
         "injury_status": null,
         "depth_chart_order": 2,
@@ -975,7 +2944,7 @@
         "name": "Barion Brown",
         "pos": "WR",
         "nfl_team": "NO",
-        "trending_add": 54909,
+        "trending_add": 52308,
         "trending_drop": 0,
         "injury_status": null,
         "depth_chart_order": 4,
@@ -986,8 +2955,8 @@
         "name": "Tyreek Hill",
         "pos": "WR",
         "nfl_team": null,
-        "trending_add": 50312,
-        "trending_drop": 94416,
+        "trending_add": 49472,
+        "trending_drop": 92024,
         "injury_status": "",
         "depth_chart_order": null,
         "bye_week": null
@@ -1102,5 +3071,6 @@
       "ties": 0,
       "points_for": 0.0
     }
-  ]
+  ],
+  "directive": null
 }

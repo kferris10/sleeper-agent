@@ -1,8 +1,9 @@
 """Render an Analysis into the delivery packet (markdown + email-safe HTML).
 
-The email is a pure action list — set this lineup, submit these claims, send
-these offers — executable in the Sleeper app in a couple of minutes. All the
-reasoning stays in data/analysis_week_N.json (and the DB) for reference.
+The email leads with a pure action list — set this lineup, submit these
+claims, send these offers — executable in the Sleeper app in a couple of
+minutes, followed by the full breakdown (recap, reasoning, watchlist) for
+when the owner wants the why.
 """
 
 from __future__ import annotations
@@ -76,8 +77,65 @@ def render_markdown(analysis: Analysis, context: WeeklyContext) -> str:
             lines.append(f"> {t.pitch}")
             lines.append("")
 
-    lines.append(f"_Full reasoning: data/analysis_week_{context.upcoming_week}.json in the repo._")
+    # -- full breakdown below the fold --------------------------------------
+    lines.append("---")
     lines.append("")
+    lines.append("# Full breakdown")
+    lines.append("")
+
+    r = analysis.recap
+    lines.append(f"## Recap — week {context.completed_week}")
+    lines.append("")
+    lines.append(r.summary)
+    if r.self_grade:
+        lines.append(f"\n**Self-grade:** {r.self_grade}")
+    if r.what_worked:
+        lines.append("\nWhat worked: " + "; ".join(r.what_worked))
+    if r.what_hurt:
+        lines.append("\nWhat hurt: " + "; ".join(r.what_hurt))
+    lines.append("")
+
+    lines.append("## Lineup reasoning")
+    lines.append("")
+    lines.append("| Slot | Player | Why |")
+    lines.append("|---|---|---|")
+    for rec in analysis.lineup:
+        lines.append(f"| {rec.slot} | {rec.player} | {rec.reason} |")
+    lines.append("")
+
+    if analysis.bench:
+        lines.append("## Bench")
+        lines.append("")
+        for b in analysis.bench:
+            lines.append(f"- {b.player} — {b.reason}")
+        lines.append("")
+
+    if analysis.waivers:
+        lines.append("## Waiver reasoning")
+        lines.append("")
+        for w in analysis.waivers:
+            lines.append(f"- {w.priority}. {w.add} — {w.reason}")
+        lines.append("")
+
+    if analysis.trades:
+        lines.append("## Trade reasoning")
+        lines.append("")
+        for t in analysis.trades:
+            lines.append(f"- **{t.partner}**: helps me — {t.why_it_helps_me} "
+                         f"They accept because — {t.why_they_might_accept}")
+        lines.append("")
+
+    if analysis.watchlist:
+        lines.append("## Watchlist")
+        lines.append("")
+        for wl in analysis.watchlist:
+            lines.append(f"- {wl.player} — {wl.note}")
+        lines.append("")
+
+    if analysis.confidence_notes:
+        lines.append(f"_{analysis.confidence_notes}_")
+        lines.append("")
+
     return "\n".join(lines)
 
 
@@ -143,7 +201,61 @@ def render_html(analysis: Analysis, context: WeeklyContext) -> str:
                        f"for {esc(', '.join(t.get))}. Message to paste:</p>")
             out.append(f'<div style="{_STYLES["pitch"]}">{esc(t.pitch)}</div>')
 
-    out.append(f'<p style="{_STYLES["muted"]}">Full reasoning: '
-               f"data/analysis_week_{context.upcoming_week}.json in the repo.</p>")
+    # -- full breakdown below the fold --------------------------------------
+    out.append('<hr style="margin:24px 0;border:none;border-top:2px solid #16324f;">')
+    out.append(f'<h1 style="{_STYLES["h1"]}">Full breakdown</h1>')
+
+    r = analysis.recap
+    out.append(f'<h2 style="{_STYLES["h2"]}">Recap &mdash; week {context.completed_week}</h2>')
+    out.append(f"<p>{esc(r.summary)}</p>")
+    if r.self_grade:
+        out.append(f"<p><b>Self-grade:</b> {esc(r.self_grade)}</p>")
+    if r.what_worked or r.what_hurt:
+        out.append(f'<p style="{_STYLES["muted"]}">')
+        if r.what_worked:
+            out.append("Worked: " + esc("; ".join(r.what_worked)) + "<br>")
+        if r.what_hurt:
+            out.append("Hurt: " + esc("; ".join(r.what_hurt)))
+        out.append("</p>")
+
+    out.append(f'<h2 style="{_STYLES["h2"]}">Lineup reasoning</h2>')
+    out.append(f'<table style="{_STYLES["table"]}"><tr>'
+               f'<th style="{_STYLES["th"]}">Slot</th>'
+               f'<th style="{_STYLES["th"]}">Player</th>'
+               f'<th style="{_STYLES["th"]}">Why</th></tr>')
+    for rec in analysis.lineup:
+        out.append(f'<tr><td style="{_STYLES["td"]}">{esc(rec.slot)}</td>'
+                   f'<td style="{_STYLES["td"]}">{esc(rec.player)}</td>'
+                   f'<td style="{_STYLES["td"]}">{esc(rec.reason)}</td></tr>')
+    out.append("</table>")
+
+    if analysis.bench:
+        out.append(f'<h2 style="{_STYLES["h2"]}">Bench</h2><ul>')
+        for b in analysis.bench:
+            out.append(f"<li>{esc(b.player)} &mdash; {esc(b.reason)}</li>")
+        out.append("</ul>")
+
+    if analysis.waivers:
+        out.append(f'<h2 style="{_STYLES["h2"]}">Waiver reasoning</h2><ol>')
+        for w in analysis.waivers:
+            out.append(f"<li>{esc(w.add)} &mdash; {esc(w.reason)}</li>")
+        out.append("</ol>")
+
+    if analysis.trades:
+        out.append(f'<h2 style="{_STYLES["h2"]}">Trade reasoning</h2>')
+        for t in analysis.trades:
+            out.append(f'<p style="{_STYLES["muted"]}"><b>{esc(t.partner)}</b>: '
+                       f"helps me &mdash; {esc(t.why_it_helps_me)}<br>"
+                       f"They accept because &mdash; {esc(t.why_they_might_accept)}</p>")
+
+    if analysis.watchlist:
+        out.append(f'<h2 style="{_STYLES["h2"]}">Watchlist</h2><ul>')
+        for wl in analysis.watchlist:
+            out.append(f"<li>{esc(wl.player)} &mdash; {esc(wl.note)}</li>")
+        out.append("</ul>")
+
+    if analysis.confidence_notes:
+        out.append(f'<p style="{_STYLES["muted"]}"><i>{esc(analysis.confidence_notes)}</i></p>')
+
     out.append("</div>")
     return "\n".join(out)

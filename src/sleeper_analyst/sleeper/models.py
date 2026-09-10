@@ -252,6 +252,7 @@ class OtherTeam(BaseModel):
     surplus: list[str]
     recent_adds: list[str]
     recent_drops: list[str]
+    players: list[ContextPlayer] = Field(default_factory=list)  # so trades can name targets
 
 
 class FreeAgent(BaseModel):

@@ -375,6 +375,10 @@ def build_weekly_context(
                 surplus=_surplus(counts, league.roster_positions),
                 recent_adds=recent_adds.get(roster.roster_id, []),
                 recent_drops=recent_drops.get(roster.roster_id, []),
+                players=[
+                    _context_player(pid, players, roster, settings.byes)
+                    for pid in (roster.players or [])
+                ],
             )
         )
 
