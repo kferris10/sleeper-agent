@@ -1,175 +1,210 @@
 {
   "recap": {
-    "summary": "Season opener, no games in the books for this roster yet, so this is an outlook rather than a recap. The draft produced two genuine cornerstones in Lamar Jackson and Justin Jefferson plus a strong WR corps (Brian Thomas, Jameson Williams, Luther Burden), but the team enters Week 1 with two effectively dead roster spots: Josh Jacobs is on the NFL's Commissioner's Exempt List with a Nov. 17 court date, and A.J. Brown suffered a right ankle injury in New England's already-completed Wednesday opener. The result is a title-caliber top end with a genuinely thin, committee-based backfield. Title path runs through fixing RB via trade, not via this week's weak waiver pool.",
+    "summary": "No games in the books for this roster yet (completed week 0), so this is an outlook rather than a grade. The draft board came back strong at the top — Lamar Jackson, Justin Jefferson, Brian Thomas Jr., Oronde Gadsden II as a TE1 and a second startable QB in Justin Herbert — but the roster took two hits before my first lineup even locked: A.J. Brown suffered a high ankle sprain in the Patriots' Wednesday night opener at Seattle and is reported out at least four weeks, and Josh Jacobs sits on the commissioner's exempt list with NFL discipline still pending after his no-contest plea. That is two of my 16 spots producing zero right now, and it turns an already thin RB room into the season's defining problem, especially with the week 10-11 bye gauntlet (Harvey/Burden/Bigsby on 10; Jacobs/B-Rob/A.J. Brown/Rams on 11). Title path is intact — the top of this roster is championship-grade — but I need to convert QB depth and receiver surplus into a real RB2 in the next two weeks.",
     "what_worked": [
-      "Elite QB1 (Lamar) and elite WR1 (Jefferson) give a weekly points floor most 12-team rosters can't match",
-      "Top-ranked Week 1 D/ST (Rams) and the kicker on the slate's biggest favorite (Dicker, LAC -9.5) means zero streaming spend needed in Week 1",
-      "Rostering Jacobs is a cheap lottery ticket on a top-12 RB returning in time for the Weeks 14-17 playoff run"
+      "Elite, matchup-proof core: Lamar Jackson + Justin Jefferson is a weekly ceiling other teams in this league can't match",
+      "Drafting a genuine TE1 (Gadsden) instead of streaming the position frees my FLEX for pure upside",
+      "Rostering a second startable QB (Herbert) in a 1-QB league gives me the league's cleanest trade chip into two QB-desperate teams (mrkw, ccharron33)"
     ],
     "what_hurt": [
-      "Two roster spots frozen on Week 1 (Jacobs exempt list, A.J. Brown ankle) with no IR slot in this league's roster template",
-      "No RB with a locked-in workhorse role: Harvey is in a three-way Denver committee, Allgeier is a nominal RB1 in front of a rookie who will take his job",
-      "Bye gauntlet is already ugly: Harvey and Bigsby on Week 10, Jacobs and Brian Robinson on Week 11"
+      "A.J. Brown's high ankle sprain in the Week 1 opener — he was my WR2 in the default lineup and his game is already over, so leaving him in would have been a guaranteed zero",
+      "Josh Jacobs on the commissioner's exempt list with a likely six-game suspension — an RB1-priced pick producing nothing and occupying a bench spot with no IR slot in this league",
+      "RB depth behind them is all handcuff material: Brian Robinson is stuck behind Bijan in Atlanta and Tank Bigsby behind Saquon in Philadelphia — zero standalone value"
     ],
-    "self_grade": "Incomplete (draft grade: B) - premium top end, unresolved RB2/FLEX, two dead bench spots"
+    "self_grade": "B- (roster construction strong at the top, RB room and bye-week structure are a self-inflicted problem I need to trade my way out of)"
   },
   "lineup": [
     {
       "slot": "QB",
       "player_id": "4881",
       "player": "Lamar Jackson",
-      "reason": "Weekly league-winner at the position; rushing floor plus passing ceiling. No decision here."
+      "reason": "Locked-in QB1. Dual-threat floor and ceiling both far above the QB2 (Herbert); no bye until week 13."
     },
     {
       "slot": "RB1",
       "player_id": "12489",
       "player": "RJ Harvey",
-      "reason": "Denver's primary passing-down back with Dobbins back, and full-PPR scoring (1.0/rec) rewards that role. Ranked as a PPR flex-plus for Week 1 against a Kansas City defense that was middling against RB receiving work last year."
+      "reason": "Denver's lead back by role and my highest-leverage RB touch share. With Jacobs suspended, Harvey is effectively my RB1 for the foreseeable future."
     },
     {
       "slot": "RB2",
       "player_id": "8132",
       "player": "Tyler Allgeier",
-      "reason": "Listed as Arizona's No. 1 running back on the official Week 1 depth chart, ahead of rookie Jeremiyah Love. Game script is the risk (ARI at LAC, Chargers -9.5), but he's the only back on my roster with a confirmed starting early-down role, and his snaps come at the expense of my opponent's FLEX."
+      "reason": "The only other RB on the roster with a defined starting role. Brian Robinson (behind Bijan) and Bigsby (behind Saquon) are pure handcuffs, so this is the correct floor play."
     },
     {
       "slot": "WR1",
       "player_id": "6794",
       "player": "Justin Jefferson",
-      "reason": "Best receiver in football, target-share monster in a full-PPR format. Auto-start every week regardless of matchup."
+      "reason": "Best player on my roster. Vikings host Green Bay in the opener; start him in any weather, any script."
     },
     {
       "slot": "WR2",
       "player_id": "11631",
       "player": "Brian Thomas",
-      "reason": "Jacksonville's alpha perimeter receiver and the clear No. 2 WR on this roster. Volume plus deep-target upside; no reason to consider a sit."
+      "reason": "Promoted directly into A.J. Brown's vacated slot. Jacksonville's alpha target earner and a top-15 WR by target volume — the clear next man up."
     },
     {
       "slot": "TE",
       "player_id": "12493",
       "player": "Oronde Gadsden",
-      "reason": "Committee risk with Njoku and Kolar added is real, but he owns the highest ceiling in the room (four TE1 weeks including a 29-point game as a rookie) and plays in a Herbert/McDaniel offense as a 9.5-point home favorite. Ceiling call over Likely as a slight underdog."
+      "reason": "Chargers' TE1 with the offense's second-highest target projection behind McConkey. Starting him over Likely because he's the featured seam target, not a rotational piece."
     },
     {
       "slot": "FLEX",
       "player_id": "8148",
       "player": "Jameson Williams",
-      "reason": "Detroit vs. New Orleans projects as a game the Lions control and score in, and Williams is the biggest big-play threat available to me. Chosen over Burden, who missed the entire preseason with a groin issue and draws Carolina's top corner."
+      "reason": "Ceiling play in a neutral matchup, per standing guidance. Detroit's field-stretcher has the widest weekly outcome range on my bench — a 25+ point game swings this matchup, and chacetheace48's lineup (Daniels/Cook/Hampton/G. Wilson) sets a high bar that Burden's safer 8-12 points won't clear."
     },
     {
       "slot": "K",
       "player_id": "8259",
       "player": "Cameron Dicker",
-      "reason": "Kicker for the largest favorite on the Week 1 slate (LAC -9.5 vs. ARI). High scoring-drive volume; no streaming upgrade exists in the free-agent pool."
+      "reason": "Elite accuracy and a Chargers offense that stalls in scoring range often enough to produce big FG volume. No reason to stream week 1."
     },
     {
       "slot": "DEF",
       "player_id": "LAR",
       "player": "Los Angeles Rams",
-      "reason": "Consensus No. 1-to-2 Week 1 defense. Sixth in fantasy points among defenses last season before adding Myles Garrett and Trent McDuffie; sack and turnover upside is the exact profile this scoring system (sack 1.0, int 2.0, def_st_td 6.0) pays for."
+      "reason": "Top-tier pass rush generates sacks and turnovers, which this scoring rewards heavily (1.0/sack, 2.0/INT). Hold for week 1; I'll stream from week 2 on by matchup as planned."
     }
   ],
   "bench": [
     {
       "player": "A.J. Brown",
       "player_id": "5859",
-      "reason": "MUST SIT. New England's opener already played Wednesday night at Seattle; Brown left in the third quarter with a right ankle injury after 3 catches for 26 yards. His Week 1 is over and he is listed Out. Hold him - no IR slot exists in this league, so he occupies a bench spot until we learn the ankle's severity."
+      "reason": "OUT — high ankle sprain suffered in the Patriots' Wednesday opener at Seattle; reporting says at least four weeks and he left the stadium in a boot. His week 1 game is already complete, so starting him is a guaranteed zero. Hold him on the bench: this league has no IR slot, but a top-8 WR returning around week 6 is worth the bench spot for a playoff run, and I am not dropping him."
     },
     {
       "player": "Josh Jacobs",
       "player_id": "5850",
-      "reason": "MUST SIT. On the NFL's Commissioner's Exempt List to open 2026 - cannot practice or play. Green Bay's GM has said he anticipates Jacobs playing at some point this season, and his first court date is Nov. 17, which lines up with the Weeks 14-17 fantasy playoffs. Holding him is a deliberate championship-equity bet, not an oversight."
+      "reason": "Not active — on the NFL commissioner's exempt list after a no-contest plea, with discipline still undetermined (personal-conduct baseline for these cases is six games, and exempt-list time counts toward it). Ineligible to play or practice. No IR slot exists in this league, so he costs a real bench spot, but a returning lead back around weeks 7-8 is exactly the kind of playoff-timeline asset the roster needs. HOLD."
     },
     {
       "player": "Justin Herbert",
       "player_id": "6797",
-      "reason": "Unstartable behind Lamar in a 1-QB league, but the most valuable trade chip on the roster - one league team (ccharron33) is carrying only a single QB. Do not drop; convert him into an RB."
+      "reason": "QB2 behind Lamar in a 1-QB league — zero lineup value, maximum trade value. Actively being shopped to mrkw (Dart/Shough) and ccharron33 (Dak only) for an RB2 upgrade."
     },
     {
       "player": "Luther Burden",
       "player_id": "12519",
-      "reason": "Closest sit of the week. Expected to play and his role grows with DJ Moore gone and Odunze banged up, but he missed all three preseason games with a groin injury and faces Carolina's best corner. Promote him into the FLEX over Jameson Williams if Odunze is officially ruled out before kickoff."
+      "reason": "Loses the FLEX to Jameson Williams on ceiling. Legitimate breakout candidate in Chicago and the first man up if Jamo's usage disappoints or the matchup script changes."
     },
     {
       "player": "Isaiah Likely",
       "player_id": "8131",
-      "reason": "Legitimate TE1 role on his own team and roughly a coin flip with Gadsden. Held as the direct hedge if Gadsden's snap share collapses behind Njoku/Kolar in Week 1."
+      "reason": "TE1 in New York but redundant behind Gadsden. Useful bye cover (Gadsden off in 7, Likely in 8) and a sweetener in the mrkw trade, where they roster only one TE."
     },
     {
       "player": "Brian Robinson",
       "player_id": "8154",
-      "reason": "Backfield committee member in an offense the industry projects to struggle early. Bench stash and the primary Week 11 bye-week problem, not a Week 1 answer."
+      "reason": "Stuck behind Bijan Robinson in Atlanta — no standalone path to touches. Designated drop for the Justice Hill claim."
     },
     {
       "player": "Tank Bigsby",
       "player_id": "9225",
-      "reason": "Buried behind an elite starter with a Week 10 bye that collides with Harvey's. He is the designated drop for any post-waiver free-agent churn or as a trade sweetener."
+      "reason": "Saquon's backup in Philadelphia; only pays off if Barkley misses time, which I can't roster-hoard for. Designated drop for the Chris Brooks claim."
     }
   ],
-  "waivers": [],
+  "waivers": [
+    {
+      "priority": 1,
+      "add_player_id": "11370",
+      "add": "Chris Brooks",
+      "drop_player_id": "9225",
+      "drop": "Tank Bigsby",
+      "faab_bid": null,
+      "reason": "Worth burning waiver priority #4. Green Bay's backfield is genuinely open — Jacobs is on the exempt list indefinitely and the beat reporting names MarShawn Lloyd (rostered by eo33), Kaleb Johnson and Brooks as the committee, with Lloyd carrying only a handful of career carries. Brooks is the only piece of that backfield actually addable here, my RB room is the roster's fatal flaw, and I already own Jacobs, so I'm buying the upside of the exact situation I'm exposed to. Swapping a locked-behind-Saquon handcuff for touches in an unsettled backfield is strictly better opportunity. If he is not on waivers and can simply be added as a free agent, do that and keep priority #4."
+    },
+    {
+      "priority": 2,
+      "add_player_id": "5995",
+      "add": "Justice Hill",
+      "drop_player_id": "8154",
+      "drop": "Brian Robinson",
+      "faab_bid": null,
+      "reason": "Full-PPR passing-down back in Baltimore's offense — receptions are worth a full point here and Hill is the Ravens' primary third-down/two-minute back. Bye week 13 also dodges my week 10-11 gauntlet entirely, which Brian Robinson (bye 11) does not. If claim #1 lands, this processes at my new (last) priority, which is fine; if Hill clears waivers uncontested, add him as a free agent instead. Do NOT make this claim if it would cost priority ahead of the Brooks claim."
+    }
+  ],
   "trades": [
     {
-      "partner": "ccharron33",
+      "partner": "mrkw",
       "give": [
         "Justin Herbert (QB)",
-        "Luther Burden (WR)"
+        "Isaiah Likely (TE)"
       ],
       "get": [
-        "Tony Pollard (RB)",
-        "or Travis Etienne (RB)"
+        "Quinshon Judkins (RB)",
+        "or Chuba Hubbard (RB)"
       ],
-      "pitch": "Hey - you're sitting on six RBs while carrying exactly one QB. If Dak misses a Sunday your week is gone. Offer: Justin Herbert plus Luther Burden for Tony Pollard OR Travis Etienne, your pick. Burden's the Bears' clear No. 2 target now that DJ Moore is gone and Ben Johnson has been talking him up all offseason, so you'd get a set-and-forget QB2 and a WR with real breakout equity. You still keep Gibbs, Kamara, Mason and Washington behind whichever one you send. If Jordan Mason is the one you'd rather move, I'd do that deal too.",
-      "why_it_helps_me": "Turns my most valuable unstartable asset plus a bench WR into a weekly RB starter. My RB room is a Denver committee back and a placeholder Cardinals starter; upgrading either slot moves my scoring floor and ceiling more than any available free agent could.",
-      "why_they_might_accept": "They are the only team in the league carrying a single QB while holding six RBs - the roster shape screams for this swap. They also just churned free agency (added Michael Mayer), so they're actively managing and open to moves."
+      "pitch": "Hey — you're six deep at RB with McCaffrey, Aaron Jones, Hubbard, Judkins, Jaylen Warren and Croskey-Merritt, but you're starting Jaxson Dart or Tyler Shough at QB and you only carry one tight end in McBride. I'll send you Justin Herbert plus Isaiah Likely for Quinshon Judkins. That's an immediate weekly upgrade at the most important position on your roster plus a starting-caliber TE2 for McBride's bye, and you're paying out of a position where you literally cannot start everyone. If Judkins is untouchable, I'll do the same package for Chuba Hubbard instead.",
+      "why_it_helps_me": "Turns a bench QB that scores me zero points in a 1-QB league and a redundant TE2 into a weekly RB2 starter. With Jacobs suspended indefinitely and A.J. Brown out a month, RB is the position that decides whether I contend.",
+      "why_they_might_accept": "They are starting a rookie-tier QB with two low-end options and carrying a genuine RB logjam where two useful backs sit every week. Herbert is a top-8 fantasy QB and the TE2 solves their thinnest bench spot — they're converting surplus into starters."
     },
     {
       "partner": "bsummy51",
       "give": [
-        "Jameson Williams (WR)",
-        "Tank Bigsby (RB)"
+        "Brian Thomas (WR)"
       ],
       "get": [
-        "Bhayshul Tuten (RB)",
-        "or Woody Marks (RB)"
+        "De'Von Achane (RB)",
+        "or Saquon Barkley (RB)"
       ],
-      "pitch": "You're six deep at RB and only four deep at WR, and Zay Flowers is already questionable - one more receiver injury and you're starting a hole. I'll send Jameson Williams (weekly big-play guy in a top-five offense) plus Tank Bigsby for Bhayshul Tuten or Woody Marks, whichever one you like less. Barkley, Achane, Tracy and Spears all stay put, so your starting lineup doesn't change at all and your receiver room gets fixed. If you'd rather send Tyjae Spears instead of those two, I'm good with that as well.",
-      "why_it_helps_me": "A true 2-for-1 consolidation: it converts bench WR depth I can't start into a startable RB and reduces my Week 10-11 bye exposure, which is the single biggest structural risk to my season.",
-      "why_they_might_accept": "Their roster shape (RB:6, WR:4) means at least two of their backs are unstartable dead weight. Williams is a name-brand receiver with WR2 upside who plugs directly into their weakest position, and Bigsby keeps their RB count intact."
+      "pitch": "You've got six running backs — Barkley, Achane, Tracy, Woody Marks, Tuten, Spears — and only four wideouts behind McMillan, Sutton, Shakir and Flowers. I'll give you Brian Thomas Jr., a true alpha WR1 who sees double-digit targets, straight up for De'Von Achane. Achane or Barkley, your pick — I'd rather pay a real price than nickel-and-dime you. You end up with a top-10 WR every week instead of an RB3 who can't crack your lineup.",
+      "why_it_helps_me": "A clean consolidation that upgrades my weakest starting slot with a top-5 RB. My receiver room still runs Jefferson, Burden and Jameson Williams for four weeks and then gets A.J. Brown back for the playoff push — RB is where the marginal win comes from.",
+      "why_they_might_accept": "Their RB surplus is dead weight on the bench, and their WR corps has no true alpha. One-for-one, no picks, no clutter — they fix a starting weakness by paying from a position of overflow."
+    },
+    {
+      "partner": "ccharron33",
+      "give": [
+        "Justin Herbert (QB)"
+      ],
+      "get": [
+        "Travis Etienne (RB)",
+        "or Jordan Mason (RB)"
+      ],
+      "pitch": "You're the only team in the league carrying just one quarterback — if Dak misses a week you're starting nobody. Meanwhile you've got Gibbs, Kamara, Etienne, Pollard, Jordan Mason and Mike Washington at RB with Brock Bowers already out. I'll send Justin Herbert, a top-8 fantasy QB, for Travis Etienne. If you'd rather keep Etienne, I'll take Jordan Mason instead and we can call it done today.",
+      "why_it_helps_me": "Same logic as the mrkw offer — my QB2 scores zero every week; converting him into a startable RB is free lineup equity. Etienne would slot straight in as my RB2 and cover the week 10-11 bye crunch.",
+      "why_they_might_accept": "Single-QB rosters are one injury from a lost week, and they're paying from a six-deep RB room where at least three backs never start. Herbert is the best QB likely to be available to them all season."
     }
   ],
   "watchlist": [
     {
-      "player": "Rome Odunze (CHI WR)",
-      "note": "If he's ruled out, Luther Burden's target share spikes and Burden replaces Jameson Williams in my FLEX. Check the Sunday inactives."
+      "player": "Kaleb Johnson (GB RB)",
+      "note": "The Packers' recent trade addition and the other half of the post-Jacobs committee. If he's added to the free-agent pool or emerges as the early-down lead in week 1, he jumps to the top of next week's claim list ahead of Brooks."
     },
     {
-      "player": "A.J. Brown (5859, my roster)",
-      "note": "Right ankle, exited the opener. Severity report will land Thursday/Friday. If it's multi-week, he is a frozen bench spot with no IR relief in this league - reassess whether Herbert or Bigsby is the drop for a real waiver target instead."
+      "player": "MarShawn Lloyd (GB RB, rostered by eo33)",
+      "note": "Expected lead back with Jacobs out but has a tiny career sample. If eo33 sours on him after a committee week 1, he's a buy-low — and I own Jacobs, so I'd control that backfield's return."
     },
     {
-      "player": "Josh Jacobs (5850, my roster)",
-      "note": "Commissioner's Exempt List; court appearance Nov. 17. Any news of a resolution or a defined suspension length instantly turns him into a playoff-run RB1. Hold through at least the trade deadline."
+      "player": "Cooper Kupp (SEA WR, FA)",
+      "note": "Sam Darnold was injured in the Seattle opener with Drew Lock taking over. Lock has historically leaned on possession targets — if Kupp's routes and targets spike with Lock under center, he's a cheap plug-in while A.J. Brown is out."
     },
     {
-      "player": "Roschon Johnson (10235, FA)",
-      "note": "Top trending add league-wide with Monangai's knee week-to-week, but he's a complementary/goal-line piece behind D'Andre Swift and shares my Week 10 bye. Free-agent add only (never worth priority #4), and only if Swift gets hurt."
+      "player": "Darren Waller (CAR TE, FA)",
+      "note": "League-wide top trending add (250k+). I don't need him with Gadsden, but he's the TE I'd grab for Gadsden's week 7 bye if Likely is traded to mrkw."
     },
     {
-      "player": "Darren Waller (2505, FA)",
-      "note": "Heavy trending TE add and Carolina's clear TE1. Becomes my free-agency target for Bigsby's spot if Gadsden's Week 1 snap share confirms a three-way Chargers committee."
+      "player": "A.J. Brown (NE WR)",
+      "note": "High ankle sprain, at least four weeks per the MRI report. Track whether New England places him on IR — this league has no IR slot, so that's a bench-spot problem, not a stash. Target return: week 6-7, right before the bye gauntlet."
     },
     {
-      "player": "Cooper Kupp (4039, FA) / Devaughn Vele (11834, FA)",
-      "note": "Both spiking in adds. Monitor Week 1 route participation - if either emerges as a true every-down starter, that's a free-agency churn, not a priority burn."
+      "player": "Josh Jacobs (GB RB)",
+      "note": "Awaiting NFL discipline after the no-contest plea; exempt-list time counts toward any suspension, so a six-game baseline could mean a return around week 5-7. Any announced timeline immediately changes his trade value and my RB planning."
     },
     {
-      "player": "Oronde Gadsden (12493, my roster)",
-      "note": "Watch his snap and route share versus Njoku and Kolar in Week 1. Sub-60% routes means Isaiah Likely becomes the default TE start going forward."
+      "player": "TreVeyon Henderson (NE RB, rostered by AndrewKyne)",
+      "note": "Buy-low candidate that fits the weeks 14-17 playoff window. AndrewKyne has five RBs; if Henderson's return timeline firms up, I'd offer Luther Burden or a Brooks/Hill type plus change."
     },
     {
-      "player": "Jeremiyah Love (ARI RB, opponent's FLEX)",
-      "note": "Listed second on Arizona's depth chart behind my Allgeier. Every touch he takes hurts me twice this week; his trajectory also determines whether Allgeier is startable by Week 4."
+      "player": "Evan Engram (DEN TE, FA) and Cade Otton (TB TE, FA)",
+      "note": "Fallback TE streamers for week 7 if the Likely trade lands."
+    },
+    {
+      "player": "Buffalo / Baltimore / Atlanta DEF (FA)",
+      "note": "Rams are on bye in week 11, the same week as Jacobs, Brian Robinson and A.J. Brown. Start planning that stream now rather than paying a premium in-week."
     }
   ],
-  "confidence_notes": "Highest-confidence calls: Lamar, Jefferson, Brian Thomas, Rams D/ST, Dicker. Least certain, in order: (1) TE - Gadsden vs. Likely is close to a coin flip and hinges entirely on whether the Chargers actually split three tight ends; if beat writers report a true rotation before kickoff, flip to Likely. (2) FLEX - Jameson Williams over Luther Burden is a ceiling-based call made as a slight underdog; if Odunze is ruled out Sunday morning, start Burden instead. (3) RB2 - Allgeier has the depth-chart designation but faces the worst possible game script as a 9.5-point road underdog; if Arizona falls behind early, the rookie takes over the passing downs. There is no better alternative on my bench, so I'm living with it. (4) Waivers - I am deliberately declining to burn priority #4 on a pool whose best options are complementary backs and TE streamers; if a genuine workhorse RB or a WR1 target-share winner emerges from Week 1 injuries, that is when the priority gets spent. Roster is at the 16-man limit with no IR slot, so any add requires dropping Tank Bigsby (or Brian Robinson) - execute those as free-agent adds after waivers clear Wednesday, which costs nothing. Trade values are pitched by roster slot rather than by player name because the context did not include other teams' player-level rosters; confirm the specific back before sending."
+  "confidence_notes": "Highest confidence: benching A.J. Brown (MRI-confirmed high ankle sprain, out 4+ weeks, and his week 1 game has already been played) and holding rather than dropping both Brown and Jacobs. Lowest confidence, in order: (1) FLEX Jameson Williams over Luther Burden — this is a true coin flip decided by the ceiling-over-floor rule; if Detroit's week 1 game script or a Williams practice limitation surfaces, flip to Burden. (2) RB2 Tyler Allgeier — the roster data lists him second on Arizona's depth chart; if beat reporting before kickoff shows a true committee or a goal-line vulture, he's a 6-8 point play and I'd still start him only because there's no better option, which is exactly why the trades matter. (3) The Chris Brooks claim — Green Bay's committee could tilt entirely to Kaleb Johnson or MarShawn Lloyd, in which case I've spent priority #4 on a dart throw; if reporting Saturday names a clear lead back who isn't Brooks, skip the claim and keep priority. (4) Brian Thomas Jr.'s depth-chart listing in the source data reads as WR2 in Jacksonville, which conflicts with his target-share profile — I'm treating that as a stale or positional (X/Z) artifact and starting him. I was rate-limited on live searches after confirming the Brown and Jacobs situations, so matchup-level projections for the Rams DEF, Dicker and the Arizona/Denver backfields are based on role data in the context rather than fresh reporting — re-check inactives 90 minutes before kickoff. Trade note: Herbert appears in two separate offers (mrkw and ccharron33); send both, but the moment one is accepted, pull the other."
 }
