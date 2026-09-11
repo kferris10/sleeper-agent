@@ -2,8 +2,18 @@ name: weekly
 
 on:
   schedule:
+    # GitHub runs scheduled workflows on a best-effort queue and silently drops
+    # or delays them under load, so each day gets three slots an hour apart.
+    # `run --tag` is idempotent per (season, week, tag) via the deliveries table
+    # in data/history.db, which the job commits back — so whichever slot lands
+    # first sends the email and the rest stop right after the (free) collect,
+    # before the Claude call. Extra slots cost a Sleeper API fetch, nothing more.
     - cron: "0 12 * * 2" # Tuesday 12:00 UTC = 07:00 EST / 08:00 EDT — full packet
+    - cron: "0 13 * * 2"
+    - cron: "0 14 * * 2"
     - cron: "0 12 * * 5" # Friday 12:00 UTC = 07:00 EST / 08:00 EDT — injury re-check
+    - cron: "0 13 * * 5"
+    - cron: "0 14 * * 5"
   workflow_dispatch:
     inputs:
       force:
@@ -39,7 +49,10 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
-          RUN_TAG: ${{ github.event.schedule == '0 12 * * 5' && 'friday' || inputs.tag || 'tuesday' }}
+          # Any Friday cron (every Friday slot ends in "* 5") is the injury
+          # re-check; Tuesday slots and a bare dispatch fall through to the tag
+          # input, which defaults to tuesday.
+          RUN_TAG: ${{ endsWith(github.event.schedule, '* 5') && 'friday' || inputs.tag || 'tuesday' }}
         run: uv run sleeper-analyst run --tag "$RUN_TAG" ${{ inputs.force && '--force' || '' }}
 
       # data/ (contexts, analyses, history.db) is committed back so the next

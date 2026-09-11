@@ -2,9 +2,11 @@
 .env
 
 # player-map cache is ~large and refetchable; the rest of data/ is tracked so
-# the weekly GitHub Actions run can commit history back for self-grading
+# the weekly GitHub Actions run can commit history back for self-grading.
+# history.db MUST stay tracked: each Actions run is a fresh checkout, and the
+# deliveries table in it is the only thing stopping the retry cron slots from
+# sending duplicate emails. Do not add it here, do not `git rm --cached` it.
 data/cache/
-data/history.db
 
 # python
 .venv/

@@ -44,8 +44,10 @@ league member, act as the team's GM and produce a reply he can paste back. Do th
    sentences, and a **paste-ready reply message** written in Kevin's casual voice.
    Counters must name specific players from the other team's roster (options are fine:
    "Achane or Barkley") — never a vague "one of your RBs".
-6. Remember the trade deadline is week 10 and the league trades draft picks
-   (`traded_picks` endpoint) — picks can sweeten a deal.
+6. Remember the trade deadline is week 10. This league does **not** trade draft picks
+   (redraft, no keepers) — never offer or ask for one. Sweeten with players only, and
+   prefer even 2-for-2 shapes: both rosters sit at the 16-man limit with no IR slot, so
+   an uneven swap forces the short side to go stream a free agent, which managers resist.
 
 Kevin executes accepted trades in the Sleeper app himself; nothing here writes to Sleeper.
 
