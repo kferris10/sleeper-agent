@@ -1,6 +1,6 @@
 # 🏈 Week 1 Awards — Chace's 41st League
 
-Twelve teams, six games, and a *lot* of decisions that will not be repeated. League average: **120.2** points.
+12 teams, 6 games, and a *lot* of decisions that will not be repeated. League average: **120.2** points.
 
 ## 🏆 Team of the Week
 
@@ -107,7 +107,7 @@ And the one nobody got to enjoy: **Jalen Coker** (WR, CAR) beat his projection b
 
 ## 📊 The League vs. The Projections
 
-**4 of 12** teams beat their projected total. The other 8 of us are still calling it 'a process'.
+**4 of 12** teams beat their projected total. The other 8 of us are still calling it a process.
 
 | Team | Projected | Actual | Diff |
 | --- | ---: | ---: | ---: |
@@ -140,8 +140,6 @@ And the one nobody got to enjoy: **Jalen Coker** (WR, CAR) beat his projection b
 - chacetheace48 has nowhere to go but up. Statistically. Probably.
 - PKessel's Coke Machine peaked in week 1 and we all know it.
 - NotASmurf is now the league's designated 'check your lineup' reminder.
-
----
 
 ## 📣 If you only read one thing
 

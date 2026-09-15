@@ -90,3 +90,38 @@ def test_html_highlights_changes(analysis, context):
         p.is_starter = False
     html = render_html(analysis, context)
     assert html.count("&larr; change") == len(analysis.lineup)
+
+
+# -- awards section ---------------------------------------------------------
+
+
+def test_packet_omits_awards_when_none(analysis, context):
+    markdown = render_markdown(analysis, context)
+    html = render_html(analysis, context)
+    assert "League awards" not in markdown
+    assert "League awards" not in html
+
+
+def test_packet_appends_awards_below_the_decisions(analysis, context):
+    from test_awards import ROSTER_POSITIONS, make_team
+
+    from sleeper_analyst.awards import compute_awards
+
+    teams = [
+        make_team(1, "Alpha", [10.0] * 9, "Bravo", 45.0),
+        make_team(2, "Bravo", [5.0] * 9, "Alpha", 90.0),
+    ]
+    awards = compute_awards(teams, ROSTER_POSITIONS, week=context.completed_week,
+                            have_projections=False, have_draft=False)
+
+    markdown = render_markdown(analysis, context, awards)
+    html = render_html(analysis, context, awards)
+
+    # the actionable packet still leads; awards come after it
+    assert markdown.index("Set this lineup") < markdown.index("League awards")
+    assert html.index("Set this lineup") < html.index("League awards")
+    assert "Team of the Week" in markdown
+    assert "Team of the Week" in html
+    # the awards must sit inside the single-column wrapper, not after it
+    assert html.rstrip().endswith("</div>")
+    assert html.count("<div") == html.count("</div>")

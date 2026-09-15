@@ -160,12 +160,36 @@ FRIDAY_DIRECTIVE = (
 )
 
 
+def _load_awards(settings, week: int, tag: str = ""):
+    """League-wide award data for a completed week, or None.
+
+    Skipped on the Friday run: that email is a short pre-game injury re-check,
+    and the awards cover the same completed week Tuesday already reported, so
+    repeating them is pure noise.
+
+    Two of the three sources are unofficial Sleeper endpoints (draft picks and
+    projections), and the awards are the fun half of the packet, not the
+    actionable half. Nothing here is allowed to cost the owner the email, so
+    every failure degrades to "no awards section".
+    """
+    if week < 1 or tag == "friday":
+        return None
+    try:
+        from sleeper_analyst.awards import load_awards
+
+        return load_awards(settings, week)
+    except Exception as exc:  # noqa: BLE001 — the packet matters more than the awards
+        logger.warning("Skipping the awards section (week %s): %s", week, exc)
+        return None
+
+
 def _write_packet(settings, context, analysis, tag: str = "") -> tuple[Path, Path, str, str, str]:
     """Render analysis → (md_path, html_path, subject, markdown, html)."""
     from sleeper_analyst.report import render_html, render_markdown, subject_line
 
-    markdown = render_markdown(analysis, context)
-    html = render_html(analysis, context)
+    awards = _load_awards(settings, context.completed_week, tag)
+    markdown = render_markdown(analysis, context, awards)
+    html = render_html(analysis, context, awards)
     md_path = settings.data_dir / f"packet_week_{context.upcoming_week}.md"
     html_path = settings.data_dir / f"packet_week_{context.upcoming_week}.html"
     md_path.parent.mkdir(parents=True, exist_ok=True)
