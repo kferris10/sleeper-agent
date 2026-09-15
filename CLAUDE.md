@@ -14,6 +14,9 @@ uv run sleeper-analyst collect            # refresh data/context_week_N.json fro
 uv run sleeper-analyst analyze            # Claude analysis of the newest context (costs ~$1)
 uv run sleeper-analyst deliver --dry-run  # render packet without emailing
 uv run sleeper-analyst run [--tag friday] # full pipeline (idempotent per week+tag)
+
+uv run python scripts/league_recap.py [--week N]                  # award show as markdown
+uv run --with python-pptx python scripts/league_deck.py [--week N]  # award show as a deck
 ```
 
 ## Where the state lives
@@ -24,6 +27,25 @@ uv run sleeper-analyst run [--tag friday] # full pipeline (idempotent per week+t
   standings, free agents, recent transactions
 - `data/analysis_week_N.json` — the latest decision packet with all reasoning
 - `data/history.db` — SQLite history of contexts/analyses/deliveries
+- `data/recap_week_N.md` — the league award show (also appended to the Tuesday email)
+- `data/awards_week_N.pptx` — the same awards as a deck; gitignored
+
+## League awards
+
+`src/sleeper_analyst/awards.py` computes all 15 award categories for the whole
+league from one `compute_awards`; `report.py` renders them to markdown and
+email-safe HTML, and `scripts/league_deck.py` renders them to PowerPoint. The
+Tuesday email carries them, the Friday email does not (`_load_awards` in `cli.py`
+short-circuits on `tag == "friday"` before any network call).
+
+Two of its three data sources are **unofficial** and must stay failure-tolerant —
+draft picks, and projections from `api.sleeper.com` (a different host than the v1
+API the client wraps). Awards are the fun half of the packet; they are never
+allowed to cost the owner the actionable half, so every failure degrades to
+"no awards section".
+
+Note the league is redraft with exclusive rosters, so every started player is
+started by exactly one team — "most-started player" awards are meaningless here.
 
 ## Trade discussions (owner pastes a message from another manager)
 
@@ -59,3 +81,27 @@ Kevin executes accepted trades in the Sleeper app himself; nothing here writes t
 - Windows dev machine: read files with `encoding="utf-8-sig"` tolerance, beware
   PowerShell 5.1 BOM/encoding quirks
 - The weekly workflow commits `data/` back to the repo — pull before local runs
+
+## Keep the docs current
+
+This repo is written entirely by Claude, so the docs are the only handoff between
+sessions — a stale doc actively misleads the next one. Treat them as part of the
+change, not a follow-up, and update them in the same turn as the code:
+
+- **`README.md`** — how a human runs it. Update when a command, flag, output path,
+  or schedule changes.
+- **`CLAUDE.md`** (this file) — how Claude works on it. Update when a module's role,
+  a data source, or a convention changes. Record the *non-obvious* things: traps,
+  why a thing is the way it is, facts that took a live API call to learn.
+- **`plans/PROJECT_PLAN.md`** — the design. Update the repo layout, endpoint tables,
+  and data flow when they change. Mark unofficial/undocumented endpoints as such.
+
+Before finishing a change, sweep for staleness rather than assuming:
+
+```sh
+grep -rn "OLD_NAME" --include="*.py" --include="*.md" . | grep -v __pycache__
+```
+
+Check that every command shown in a doc still runs as written and every path it
+names still exists. Renaming a file means updating its docstring, both other docs,
+and any sibling script that mentions it.

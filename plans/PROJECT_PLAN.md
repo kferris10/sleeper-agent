@@ -2,7 +2,7 @@
 
 ## Goal
 
-Every Tuesday morning, a scheduled job pulls the league state from the Sleeper API, has Claude analyze it, and delivers a decision packet (recap, lineup, waiver claims, trade ideas) to the team owner, who executes the moves in the Sleeper app. The Sleeper API is read-only, so execution is human-in-the-loop by design.
+Every Tuesday morning, a scheduled job pulls the league state from the Sleeper API, has Claude analyze it, and delivers a decision packet (recap, lineup, waiver claims, trade ideas) plus a league-wide award show to the team owner, who executes the moves in the Sleeper app. A second, leaner Friday run re-checks injuries and finalizes the lineup. The Sleeper API is read-only, so execution is human-in-the-loop by design.
 
 ## Non-goals (v1)
 
@@ -36,6 +36,7 @@ sleeper-analyst/
 │   │   ├── models.py          # pydantic models for league, roster, matchup, transaction, player
 │   │   └── players.py         # player map cache (24h TTL on disk)
 │   ├── collect.py             # builds WeeklyContext from API + DB
+│   ├── awards.py              # league-wide weekly award math (see below)
 │   ├── analyze.py             # calls Claude, parses structured result
 │   ├── prompts/
 │   │   ├── system.md          # management philosophy + output contract
@@ -44,12 +45,16 @@ sleeper-analyst/
 │   │   ├── base.py
 │   │   ├── email.py
 │   │   └── webhook.py
-│   ├── report.py              # renders analysis → markdown/HTML
+│   ├── report.py              # renders analysis + awards → markdown/HTML
 │   └── store.py               # SQLite: weekly contexts, analyses, outcomes
+├── scripts/                   # standalone, outside the wheel and the pipeline
+│   ├── league_recap.py        # awards → markdown, without running the pipeline
+│   └── league_deck.py         # awards → PowerPoint (needs `uv run --with python-pptx`)
 ├── tests/
 │   ├── fixtures/              # recorded Sleeper JSON responses
 │   ├── test_client.py
 │   ├── test_collect.py
+│   ├── test_awards.py         # award math + both renderers, on synthetic leagues
 │   └── test_analyze.py        # parse/validate Claude output against schema
 └── .github/workflows/weekly.yml
 ```
@@ -70,14 +75,35 @@ sleeper-analyst/
 
 Rules: no auth needed; stay well under 1000 req/min; retry with backoff on 429/5xx; cache the player map on disk and refuse to refetch inside 24h.
 
+### Awards-only endpoints (undocumented — treat as unstable)
+
+| Purpose | Endpoint |
+|---|---|
+| The league's draft (for draft rounds) | `GET /league/{league_id}/drafts` |
+| Every pick, with `round` / `pick_no` | `GET /draft/{draft_id}/picks` |
+| Weekly per-player projections | `GET https://api.sleeper.com/projections/nfl/{season}/{week}?season_type=regular&position[]=…` |
+
+Projections are **not on the v1 host** the client wraps — different domain, no
+documented contract, `stats.pts_ppr` read positionally. Both of these feed award
+categories only, never a lineup decision, so `awards.py` catches their failures
+and drops the affected categories rather than propagating.
+
+Note `GET /league/{id}/traded_picks` is *future* pick trades, not draft results —
+it does not give you the round a player was taken in.
+
+`matchups/{week}` already returns every roster's `starters_points` and
+`players_points`, so the whole-league award math needs no extra per-team calls;
+`collect.py` simply narrows that payload to the owner's matchup.
+
 ## Data flow
 
 ```
-cron (Tue 07:00 local)
+cron (Tue + Fri 07:00 local)
   → collect.py   : API + DB → WeeklyContext (JSON, target < 30k tokens)
   → analyze.py   : WeeklyContext + prior analysis → Claude (web search enabled) → Analysis
   → store.py     : persist context + analysis
-  → report.py    : Analysis → markdown + HTML
+  → awards.py    : API → Awards for the completed week (Tuesday only; best-effort)
+  → report.py    : Analysis + Awards → markdown + HTML
   → deliver/     : send packet
 ```
 
@@ -129,6 +155,9 @@ Email/Slack message with:
 3. Waiver claims in priority order with FAAB bid and drop — formatted as a checklist the owner ticks off in the app
 4. Trade proposals with paste-ready pitch text
 5. Watchlist
+6. **League awards** (Tuesday only) — 15 categories covering all 12 teams, below
+   the decisions so the actionable half still leads. Shareable with the league;
+   this is the half the owner reads for fun, not to execute.
 
 Keep it scannable; the owner should be able to execute everything in under five minutes.
 

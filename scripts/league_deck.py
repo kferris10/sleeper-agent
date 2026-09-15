@@ -1,12 +1,12 @@
 """Render the weekly league awards as a PowerPoint deck.
 
-Consumes the same league_awards.compute_awards output as week1_recap.py, so the
-deck and the markdown post always agree.
+Consumes the same sleeper_analyst.awards.compute_awards output as the weekly
+email and league_recap.py, so the deck and the email always agree.
 
 python-pptx is not a project dependency -- it is only needed for this one script,
 so run it ephemerally rather than adding it to pyproject.toml:
 
-    uv run --with python-pptx python scripts/week1_deck.py --week 1
+    uv run --with python-pptx python scripts/league_deck.py --week 1
 """
 
 from __future__ import annotations
@@ -827,7 +827,10 @@ def build_deck(a: Awards, full: bool = False) -> Presentation:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--week", type=int, default=1)
+    parser.add_argument(
+        "--week", type=int, default=None,
+        help="completed week to award (default: the most recent one)",
+    )
     parser.add_argument("--config", type=Path, default=None)
     parser.add_argument(
         "--out", type=Path, default=None, help="default: data/awards_week_N.pptx"
@@ -843,7 +846,7 @@ def main() -> None:
     settings = load_settings(args.config)
     awards = load_awards(settings, args.week)
 
-    out_path = args.out or (settings.data_dir / f"awards_week_{args.week}.pptx")
+    out_path = args.out or (settings.data_dir / f"awards_week_{awards.week}.pptx")
     out_path.parent.mkdir(parents=True, exist_ok=True)
     build_deck(awards, full=args.full).save(str(out_path))
     logger.info("Wrote %s", out_path)

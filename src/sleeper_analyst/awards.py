@@ -2,8 +2,8 @@
 
 Fetches league-wide per-player scoring, draft rounds, and weekly projections,
 then reduces them to a single `Awards` object. Two renderers consume it:
-`week1_recap.py` (markdown) and `week1_deck.py` (PowerPoint), so the numbers in
-the deck and the numbers in the Slack post cannot drift apart.
+`league_recap.py` (markdown) and `league_deck.py` (PowerPoint), so the numbers in
+the deck, the markdown recap and the weekly email cannot drift apart.
 
 Deliberately standalone: it reuses SleeperClient / PlayerCache / load_settings but
 touches nothing in the collect -> analyze -> deliver pipeline, so the scheduled
@@ -437,8 +437,19 @@ def compute_awards(
     return a
 
 
-def load_awards(settings: Settings, week: int) -> Awards:
+def load_awards(settings: Settings, week: int | None = None) -> Awards:
+    """Awards for `week`, or for the most recently completed week if omitted.
+
+    Mirrors collect.build_weekly_context: /state/nfl reports the upcoming week,
+    so the week with results in it is the one before.
+    """
     with SleeperClient() as client:
+        if week is None:
+            week = client.get_state().week - 1
+            if week < 1:
+                raise ValueError(
+                    "No completed week yet this season — pass --week explicitly."
+                )
         teams, roster_positions, have_proj, have_draft = build_teams(
             settings, client, week
         )

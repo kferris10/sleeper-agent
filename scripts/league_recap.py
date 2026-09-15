@@ -5,7 +5,7 @@ rendering itself lives in sleeper_analyst.report.render_awards_markdown, which
 the weekly email also uses -- this script is just a standalone way to get the
 same section without running the whole pipeline.
 
-    uv run python scripts/week1_recap.py --week 1
+    uv run python scripts/league_recap.py --week 1
 """
 
 from __future__ import annotations
@@ -24,7 +24,10 @@ logger = logging.getLogger(__name__)
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--week", type=int, default=1)
+    parser.add_argument(
+        "--week", type=int, default=None,
+        help="completed week to award (default: the most recent one)",
+    )
     parser.add_argument("--config", type=Path, default=None)
     parser.add_argument(
         "--out", type=Path, default=None, help="default: data/recap_week_N.md"
@@ -43,7 +46,7 @@ def main() -> None:
         ]
     )
 
-    out_path = args.out or (settings.data_dir / f"recap_week_{args.week}.md")
+    out_path = args.out or (settings.data_dir / f"recap_week_{awards.week}.md")
     out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.write_text(markdown, encoding="utf-8")
     logger.info("Wrote %s", out_path)
