@@ -62,9 +62,12 @@ the same delivery channel.
 
 ## League awards
 
-The Tuesday packet ends with 15 award categories covering the whole league —
+The Tuesday packet ends with 16 award categories covering the whole league —
 team of the week, biggest bust vs. projection, points left on the bench, manager
-efficiency, the zero club, late-round steals. The Friday email skips them: it
+efficiency, the zero club, late-round steals, and a wall of shame collecting the
+week's self-inflicted wounds (a bench that outscored the lineup, the roster's top
+scorer left on it, a started RB/WR/TE who never got a carry or a catch, a game
+lost by exactly one bad start/sit). The Friday email skips them: it
 covers the same completed week Tuesday already reported.
 
 The same numbers render two other ways, both standalone (neither touches the
@@ -72,11 +75,11 @@ pipeline, so a broken script can't affect the scheduled run):
 
 ```sh
 uv run python scripts/league_recap.py                     # newest completed week
-uv run --with python-pptx python scripts/league_deck.py   # 7-slide standup cut
-uv run --with python-pptx python scripts/league_deck.py --week 3 --full  # a past week, all 16 slides
+uv run --with python-pptx python scripts/league_deck.py   # 8-slide standup cut
+uv run --with python-pptx python scripts/league_deck.py --week 3 --full  # a past week, all 17 slides
 ```
 
-The deck defaults to a 7-slide standup cut; `--full` gives one slide per award.
+The deck defaults to an 8-slide standup cut; `--full` gives one slide per award.
 `python-pptx` is deliberately not a project dependency — `uv run --with` keeps it
 out of `pyproject.toml`. Decks are gitignored (`*.pptx`).
 

@@ -9,9 +9,11 @@ worth pinning anyway.
 import pytest
 
 from sleeper_analyst.awards import (
+    SHAME_LIMIT,
     Row,
     Team,
     compute_awards,
+    compute_shame,
     optimal_lineup,
     worst_start_sit,
 )
@@ -36,6 +38,7 @@ def make_row(team: str, name: str, pos: str, points: float, **kw) -> Row:
         slot=kw.get("slot"),
         draft_round=kw.get("draft_round"),
         draft_pick=kw.get("draft_pick"),
+        stats=kw.get("stats"),
     )
 
 
@@ -189,6 +192,7 @@ ALL_CATEGORIES = [
     "Free Money",
     "The Projections",
     "Positional High Scores",
+    "Wall of Shame",
     "Bulletin Board",
     "If you only read one thing",
 ]
@@ -248,3 +252,91 @@ def test_preseason_has_no_completed_week_to_award(settings):
     from sleeper_analyst.cli import _load_awards
 
     assert _load_awards(settings, 0) is None
+
+
+# -- the wall of shame -------------------------------------------------------
+
+
+def shame_by_award(entries) -> dict[str, list]:
+    out: dict[str, list] = {}
+    for entry in entries:
+        out.setdefault(entry.award, []).append(entry)
+    return out
+
+
+def test_shame_names_the_benched_roster_leader(awards):
+    entry = shame_by_award(awards.shame)["Best Seat in the House"][0]
+    assert entry.team == "Bravo"
+    assert "Bench Star" in entry.detail
+
+
+def test_shame_catches_a_bench_that_outscored_the_lineup():
+    weak = make_team(
+        1, "Weak", [1.0] * 9, "Strong", 200.0,
+        bench=[make_row("Weak", f"Sub {i}", "WR", 20.0, started=False) for i in range(3)],
+    )
+    strong = make_team(2, "Strong", [22.0] * 9, "Weak", 9.0)
+    entries = compute_shame([weak, strong], [], [], have_stats=False)
+    wrong_nine = shame_by_award(entries)["Wrong Nine"][0]
+    assert wrong_nine.team == "Weak"
+    assert wrong_nine.severity == pytest.approx(60.0 - 9.0)
+
+
+def test_ghost_needs_the_box_score_and_zero_touches():
+    """A started RB/WR/TE with a line but no carries and no catches."""
+    played = {"gp": 1.0, "rush_att": 0.0, "rec": 0.0}
+    team = make_team(
+        1, "Solo", [5.0] * 9, "Other", 1.0,
+        bench=[make_row("Solo", "Ghost", "WR", 0.0, started=True, slot="WR2",
+                        stats=played)],
+    )
+    other = make_team(2, "Other", [0.1] * 9, "Solo", 45.0)
+
+    ghosts = shame_by_award(compute_shame([team, other], [], [], have_stats=True))
+    assert ghosts["Ghost in the Lineup"][0].team == "Solo"
+    assert "zero carries and zero catches" in ghosts["Ghost in the Lineup"][0].detail
+
+    # without the stats feed the same week cannot make the accusation
+    assert "Ghost in the Lineup" not in shame_by_award(
+        compute_shame([team, other], [], [], have_stats=False)
+    )
+
+
+def test_ghost_spares_players_with_no_box_score_line():
+    """No line means the feed did not know him, not that he did nothing."""
+    team = make_team(
+        1, "Solo", [5.0] * 9, "Other", 1.0,
+        bench=[make_row("Solo", "Unknown", "RB", 0.0, started=True, slot="RB2")],
+    )
+    other = make_team(2, "Other", [0.1] * 9, "Solo", 45.0)
+    entries = compute_shame([team, other], [], [], have_stats=True)
+    assert "Ghost in the Lineup" not in shame_by_award(entries)
+
+
+def test_shame_caps_each_category_and_the_wall():
+    """One wide category cannot crowd the rest off the slide."""
+    hero = make_row("Big", "Hero", "WR", 200.0, started=True, slot="WR1")
+    big = make_team(1, "Big", [50.0] * 9, "Small 2", 20.0)
+    big.rows.append(hero)
+    teams = [big] + [
+        make_team(i, f"Small {i}", [2.0] * 9, "Big" if i == 2 else f"Small {i - 1}", 450.0)
+        for i in range(2, 8)
+    ]
+    entries = compute_shame(teams, [], [], have_stats=False)
+    counts = {award: len(v) for award, v in shame_by_award(entries).items()}
+    assert counts["Outscored by One Guy"] == 2
+    assert len(entries) <= SHAME_LIMIT
+
+
+def test_shame_renders_in_both_renderers(awards):
+    md = render_awards_markdown(awards)
+    html = render_awards_html(awards)
+    entry = awards.shame[0]
+    assert "Wall of Shame" in md and "Wall of Shame" in html
+    assert entry.award in md
+    assert entry.award in html
+
+
+def test_missing_box_scores_are_disclosed(awards):
+    """have_stats defaults off in these fixtures, so the note must say so."""
+    assert "box-score stats were unavailable" in render_awards_markdown(awards)

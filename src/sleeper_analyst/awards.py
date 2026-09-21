@@ -9,9 +9,10 @@ Deliberately standalone: it reuses SleeperClient / PlayerCache / load_settings b
 touches nothing in the collect -> analyze -> deliver pipeline, so the scheduled
 Tuesday/Friday run cannot be affected by it.
 
-Two of the data sources are unofficial (draft picks, and projections, which live
-on a different host entirely). Each degrades on its own: if one is unavailable the
-awards that depend on it come back empty and the renderers skip those sections.
+Three of the data sources are unofficial (draft picks, and projections and box-score
+stats, which live on a different host entirely). Each degrades on its own: if one is
+unavailable the awards that depend on it come back empty and the renderers skip those
+sections.
 """
 
 from __future__ import annotations
@@ -32,6 +33,9 @@ FLEX_POSITIONS = {"RB", "WR", "TE"}
 ZERO_CLUB_THRESHOLD = 2.0
 LATE_ROUND_START = 9  # "drafted after round 8"
 POSITION_ORDER = ["QB", "RB", "WR", "TE", "K", "DEF"]
+TOUCH_POSITIONS = {"RB", "WR", "TE"}  # positions whose job is carries and catches
+SHAME_LIMIT = 9  # entries the recap and the email carry
+SHAME_SLIDE_ROWS = 6  # entries that fit on one slide without wrapping
 
 
 @dataclass
@@ -50,6 +54,7 @@ class Row:
     slot: str | None
     draft_round: int | None
     draft_pick: int | None
+    stats: dict[str, float] | None = None
 
     @property
     def vs_proj(self) -> float | None:
@@ -58,6 +63,20 @@ class Row:
     @property
     def is_late_pick(self) -> bool:
         return self.draft_round is not None and self.draft_round >= LATE_ROUND_START
+
+    @property
+    def touches(self) -> float | None:
+        """Carries + catches, or None when the box score is unavailable."""
+        if self.stats is None:
+            return None
+        return self.stats.get("rush_att", 0.0) + self.stats.get("rec", 0.0)
+
+    @property
+    def played(self) -> bool | None:
+        """Did he suit up at all? None when the box score is unavailable."""
+        if self.stats is None:
+            return None
+        return bool(self.stats.get("gp", 0.0))
 
 
 @dataclass
@@ -87,6 +106,10 @@ class Team:
         return [r for r in self.rows if not r.started]
 
     @property
+    def bench_points(self) -> float:
+        return sum(r.points for r in self.bench)
+
+    @property
     def projected(self) -> float | None:
         vals = [r.projected for r in self.starters if r.projected is not None]
         return sum(vals) if vals else None
@@ -108,6 +131,16 @@ class Efficiency:
 
 
 @dataclass
+class Shame:
+    """One entry on the wall of shame: what happened, to whom, how bad."""
+
+    award: str
+    team: str
+    detail: str
+    severity: float
+
+
+@dataclass
 class Awards:
     """Everything a renderer needs, already sorted and trimmed."""
 
@@ -115,6 +148,7 @@ class Awards:
     teams: list[Team]
     have_projections: bool
     have_draft: bool
+    have_stats: bool = False
 
     league_average: float = 0.0
     champ: Team | None = None
@@ -138,6 +172,7 @@ class Awards:
     vs_projection: list[Team] = field(default_factory=list)
     beat_projection: int = 0
     positional_best: list[tuple[str, Row]] = field(default_factory=list)
+    shame: list[Shame] = field(default_factory=list)
 
 
 # -- fetching ---------------------------------------------------------------
@@ -160,12 +195,11 @@ def fetch_draft_picks(
     }
 
 
-def fetch_projections(season: str, week: int) -> dict[str, float]:
-    """player_id -> projected PPR points. Empty dict if unavailable.
+def _fetch_weekly(kind: str, season: str, week: int) -> list[dict]:
+    """One week of league-wide player lines from the unofficial host.
 
-    The league is full PPR on otherwise-default scoring (rec 1.0, pass_td 4,
-    pass_yd 0.04, rush/rec_yd 0.1), so Sleeper's precomputed pts_ppr lines up
-    with how this league actually scores.
+    `kind` is "projections" or "stats" -- same shape, same params, different
+    path. Returns [] on any failure so the caller can degrade.
     """
     params = {
         "season_type": "regular",
@@ -174,22 +208,50 @@ def fetch_projections(season: str, week: int) -> dict[str, float]:
     }
     try:
         resp = httpx.get(
-            f"{PROJECTIONS_HOST}/projections/nfl/{season}/{week}",
+            f"{PROJECTIONS_HOST}/{kind}/nfl/{season}/{week}",
             params=params,
             timeout=30.0,
         )
         resp.raise_for_status()
         payload = resp.json()
     except (httpx.HTTPError, ValueError) as exc:
-        logger.warning("Projections unavailable (%s); skipping projection awards", exc)
-        return {}
+        logger.warning("%s unavailable (%s); skipping the awards that need it", kind, exc)
+        return []
+    return payload if isinstance(payload, list) else []
 
+
+def fetch_projections(season: str, week: int) -> dict[str, float]:
+    """player_id -> projected PPR points. Empty dict if unavailable.
+
+    The league is full PPR on otherwise-default scoring (rec 1.0, pass_td 4,
+    pass_yd 0.04, rush/rec_yd 0.1), so Sleeper's precomputed pts_ppr lines up
+    with how this league actually scores.
+    """
     out: dict[str, float] = {}
-    for entry in payload:
+    for entry in _fetch_weekly("projections", season, week):
         pid = entry.get("player_id")
         pts = (entry.get("stats") or {}).get("pts_ppr")
         if pid and pts is not None:
             out[str(pid)] = float(pts)
+    return out
+
+
+def fetch_stats(season: str, week: int) -> dict[str, dict[str, float]]:
+    """player_id -> that week's box score. Empty dict if unavailable.
+
+    Only the wall of shame needs this: the matchup endpoint gives points but no
+    usage, so "started a back who never got a carry" is unanswerable without it.
+    A player with no line at all is left out rather than assumed benched -- an
+    absent entry means the feed did not know about him, not that he did nothing.
+    """
+    out: dict[str, dict[str, float]] = {}
+    for entry in _fetch_weekly("stats", season, week):
+        pid = entry.get("player_id")
+        stats = entry.get("stats")
+        if pid and isinstance(stats, dict):
+            out[str(pid)] = {
+                k: float(v) for k, v in stats.items() if isinstance(v, (int, float))
+            }
     return out
 
 
@@ -211,7 +273,7 @@ def slot_labels(roster_positions: list[str]) -> list[str]:
 
 def build_teams(
     settings: Settings, client: SleeperClient, week: int
-) -> tuple[list[Team], list[str], bool, bool]:
+) -> tuple[list[Team], list[str], bool, bool, bool]:
     league_id = settings.league.league_id
     league = client.get_league(league_id)
     matchups = client.get_matchups(league_id, week)
@@ -221,6 +283,7 @@ def build_teams(
 
     draft = fetch_draft_picks(client, league_id)
     projections = fetch_projections(league.season, week)
+    stats = fetch_stats(league.season, week)
 
     roster_positions = league.roster_positions or []
     owner_of = {r.roster_id: r.owner_id for r in rosters}
@@ -275,6 +338,7 @@ def build_teams(
                     slot=slot_of.get(pid),
                     draft_round=pick[0] if pick else None,
                     draft_pick=pick[1] if pick else None,
+                    stats=stats.get(pid),
                 )
             )
 
@@ -292,7 +356,7 @@ def build_teams(
             )
         )
 
-    return teams, roster_positions, bool(projections), bool(draft)
+    return teams, roster_positions, bool(projections), bool(draft), bool(stats)
 
 
 # -- award math -------------------------------------------------------------
@@ -339,12 +403,169 @@ def worst_start_sit(team: Team) -> Blunder | None:
     return best
 
 
+def compute_shame(
+    teams: list[Team],
+    blunders: list[Blunder],
+    efficiency: list[Efficiency],
+    have_stats: bool,
+) -> list[Shame]:
+    """The week's self-inflicted wounds, worst category first.
+
+    Every check is independent and skips itself when its inputs are missing, so
+    a quiet week simply produces a shorter wall. `blunders` and `efficiency` are
+    the untrimmed lists -- the wall wants every team's worst click, not the top
+    three the Bench Burner slide shows.
+    """
+    out: list[Shame] = []
+    if not teams:
+        return out
+
+    counts: dict[str, int] = {}
+    started = [r for t in teams for r in t.rows if r.started]
+    best_starter = max(started, key=lambda r: r.points) if started else None
+    blunder_of = {b.team.roster_id: b for b in blunders}
+
+    def add(award: str, team: str, detail: str, severity: float, cap: int = 2) -> None:
+        """Record one entry, keeping the worst `cap` of each category.
+
+        Without the cap a wide category (half the league gets outscored by one
+        player most weeks) would fill all nine rows and crowd out the rarer,
+        funnier ones. Callers feed each category worst-first.
+        """
+        if counts.get(award, 0) >= cap:
+            return
+        counts[award] = counts.get(award, 0) + 1
+        out.append(Shame(award=award, team=team, detail=detail, severity=severity))
+
+    # The bench beat the starters.
+    for t in sorted(teams, key=lambda t: t.bench_points - t.points, reverse=True):
+        gap = t.bench_points - t.points
+        if gap > 0:
+            add(
+                "Wrong Nine",
+                t.name,
+                f"The bench outscored the starting lineup {fmt(t.bench_points)} "
+                f"to {fmt(t.points)}.",
+                gap,
+            )
+
+    # Best player on the roster never left the bench.
+    for t in teams:
+        top = max(t.rows, key=lambda r: r.points, default=None)
+        if top is None or top.started or top.points <= 0:
+            continue
+        best_started = max((r.points for r in t.starters), default=0.0)
+        add(
+            "Best Seat in the House",
+            t.name,
+            f"{top.name} ({top.pos}) led the whole roster with {fmt(top.points)} "
+            f"and watched from the bench; no starter cleared {fmt(best_started)}.",
+            top.points - best_started,
+        )
+
+    # Had the week's best player and lost anyway.
+    if best_starter is not None:
+        owner = next(
+            (t for t in teams if t.roster_id == best_starter.roster_id), None
+        )
+        if owner is not None and not owner.won and owner.margin != 0:
+            add(
+                "Wasted the Best Player Alive",
+                owner.name,
+                f"{best_starter.name} was the highest-scoring starter in the league "
+                f"({fmt(best_starter.points)}) and {owner.name} still lost to "
+                f"{owner.opponent} by {fmt(abs(owner.margin))}.",
+                abs(owner.margin),
+            )
+
+    # Started a skill player who never touched the ball.
+    if have_stats:
+        ghosts = [
+            r
+            for r in started
+            if r.pos in TOUCH_POSITIONS and r.touches == 0 and r.played is not None
+        ]
+        for r in sorted(ghosts, key=lambda r: (r.team, r.name)):
+            if r.played:
+                detail = (
+                    f"{r.name} ({r.pos}) dressed, played, and finished with zero "
+                    f"carries and zero catches."
+                )
+            else:
+                detail = (
+                    f"{r.name} ({r.pos}) never took the field at all — "
+                    f"started anyway."
+                )
+            add(
+                "Ghost in the Lineup",
+                r.team,
+                detail,
+                25.0 if not r.played else 20.0,
+                cap=3,
+            )
+
+    # A single bench decision cost the game.
+    for t in teams:
+        b = blunder_of.get(t.roster_id)
+        if b and not t.won and t.margin != 0 and b.gap > abs(t.margin):
+            add(
+                "Lost It on the Bench",
+                t.name,
+                f"Sat {b.benched.name} ({fmt(b.benched.points)}) for "
+                f"{b.started.name} ({fmt(b.started.points)}) and lost by "
+                f"{fmt(abs(t.margin))}. That click was the game.",
+                b.gap - abs(t.margin),
+            )
+
+    # Outscored by one man.
+    if best_starter is not None:
+        for t in sorted(teams, key=lambda t: t.points):
+            if t.roster_id != best_starter.roster_id and t.points < best_starter.points:
+                add(
+                    "Outscored by One Guy",
+                    t.name,
+                    f"Nine starters managed {fmt(t.points)}. {best_starter.name} "
+                    f"managed {fmt(best_starter.points)} by himself.",
+                    best_starter.points - t.points,
+                )
+
+    # Lost to the weakest winning score of the week.
+    winners = [t for t in teams if t.won]
+    if winners:
+        weakest = min(winners, key=lambda t: t.points)
+        victim = next((t for t in teams if t.name == weakest.opponent), None)
+        if victim is not None:
+            add(
+                "Lost to the Weakest Winner",
+                victim.name,
+                f"{weakest.name} posted the lowest winning score of the week "
+                f"({fmt(weakest.points)}) and {victim.name} still found a way to "
+                f"score less.",
+                weakest.points - victim.points,
+            )
+
+    # Left the most points on the table.
+    if efficiency:
+        worst = min(efficiency, key=lambda e: e.pct)
+        if worst.pct < 100:
+            add(
+                "Points Left on the Table",
+                worst.team.name,
+                f"Scored {fmt(worst.team.points)} of an available "
+                f"{fmt(worst.optimal)} — {worst.pct:.0f}% of the roster's best week.",
+                worst.optimal - worst.team.points,
+            )
+
+    return out[:SHAME_LIMIT]
+
+
 def compute_awards(
     teams: list[Team],
     roster_positions: list[str],
     week: int,
     have_projections: bool,
     have_draft: bool,
+    have_stats: bool = False,
 ) -> Awards:
     """Reduce the week to a sorted, trimmed set of award winners.
 
@@ -356,6 +577,7 @@ def compute_awards(
         teams=teams,
         have_projections=have_projections,
         have_draft=have_draft,
+        have_stats=have_stats,
     )
     if not teams:
         return a
@@ -434,6 +656,8 @@ def compute_awards(
         if at_pos:
             a.positional_best.append((pos, max(at_pos, key=lambda r: r.points)))
 
+    a.shame = compute_shame(teams, blunders, eff, have_stats)
+
     return a
 
 
@@ -450,10 +674,12 @@ def load_awards(settings: Settings, week: int | None = None) -> Awards:
                 raise ValueError(
                     "No completed week yet this season — pass --week explicitly."
                 )
-        teams, roster_positions, have_proj, have_draft = build_teams(
+        teams, roster_positions, have_proj, have_draft, have_stats = build_teams(
             settings, client, week
         )
-    return compute_awards(teams, roster_positions, week, have_proj, have_draft)
+    return compute_awards(
+        teams, roster_positions, week, have_proj, have_draft, have_stats
+    )
 
 
 # -- formatting -------------------------------------------------------------

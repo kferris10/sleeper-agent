@@ -27,6 +27,7 @@ from sleeper_analyst.awards import (
     Awards,
     LATE_ROUND_START,
     Row,
+    SHAME_SLIDE_ROWS,
     ZERO_CLUB_THRESHOLD,
     drafted_note,
     fmt,
@@ -657,6 +658,44 @@ def positional_slide(prs: Presentation, a: Awards):
     )
 
 
+def wall_of_shame_slide(prs: Presentation, a: Awards):
+    """Every self-inflicted wound of the week on one slide.
+
+    Laid out by hand rather than with table(): the detail column is a sentence,
+    and table() turns word wrap off so a long one would run off the slide.
+    """
+    slide = new_slide(prs)
+    entries = a.shame[:SHAME_SLIDE_ROWS]
+    if not entries:
+        header(
+            slide, "🧱 The Wall of Shame", "Nothing to see here",
+            "Nobody benched a star, nobody started a ghost, nobody blew a winnable "
+            "game. Suspicious.",
+        )
+        return
+
+    header(
+        slide, "🧱 The Wall of Shame",
+        f"{len(a.teams)} managers. {len(a.teams)} chances to do better.",
+        f"{len(entries)} decisions that deserve to be read aloud.",
+    )
+    # six rows of 0.6in from 2.9 finish at 6.5, clear of the footer rule even
+    # when a detail wraps to a second line
+    y = Inches(2.9)
+    step = Inches(0.6)
+    for entry in entries:
+        rect(slide, MARGIN, y + Inches(0.1), Inches(0.09), Inches(0.09), RED)
+        text(
+            slide, MARGIN + Inches(0.28), y, Inches(3.1), Inches(0.5),
+            f"{entry.award.upper()} · {entry.team}", size=13, color=RED, bold=True,
+        )
+        text(
+            slide, MARGIN + Inches(3.5), y, FULL_W - Inches(3.5), Inches(0.55),
+            entry.detail, size=13, color=WHITE,
+        )
+        y += step
+
+
 def closer_slide(prs: Presentation, a: Awards):
     slide = new_slide(prs)
     y = header(slide, "📣 If you only read one thing", f"Week {a.week}, in four lines")
@@ -797,6 +836,7 @@ def build_deck(a: Awards, full: bool = False) -> Presentation:
         if a.have_draft:
             builders += [late_round_slide, late_started_slide]
         builders += [bench_burner_slide, efficiency_slide, luck_slide, margins_slide]
+        builders.append(wall_of_shame_slide)
         if a.zero_club:
             builders.append(zero_club_slide)
         if a.have_draft:
@@ -810,7 +850,7 @@ def build_deck(a: Awards, full: bool = False) -> Presentation:
         builders = [high_low_slide]
         if a.have_projections:
             builders.append(hero_villain_slide)
-        builders += [bench_burner_slide, efficiency_slide]
+        builders += [bench_burner_slide, efficiency_slide, wall_of_shame_slide]
         if a.zero_club:
             builders.append(zero_club_slide)
         if a.have_draft:
@@ -838,7 +878,7 @@ def main() -> None:
     parser.add_argument(
         "--full",
         action="store_true",
-        help="every award on its own slide (~16) instead of the 7-slide standup cut",
+        help="every award on its own slide (~17) instead of the 8-slide standup cut",
     )
     args = parser.parse_args()
 

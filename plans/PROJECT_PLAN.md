@@ -82,11 +82,13 @@ Rules: no auth needed; stay well under 1000 req/min; retry with backoff on 429/5
 | The league's draft (for draft rounds) | `GET /league/{league_id}/drafts` |
 | Every pick, with `round` / `pick_no` | `GET /draft/{draft_id}/picks` |
 | Weekly per-player projections | `GET https://api.sleeper.com/projections/nfl/{season}/{week}?season_type=regular&position[]=…` |
+| Weekly per-player box scores (for the wall of shame) | `GET https://api.sleeper.com/stats/nfl/{season}/{week}?season_type=regular&position[]=…` |
 
-Projections are **not on the v1 host** the client wraps — different domain, no
-documented contract, `stats.pts_ppr` read positionally. Both of these feed award
-categories only, never a lineup decision, so `awards.py` catches their failures
-and drops the affected categories rather than propagating.
+Projections and stats are **not on the v1 host** the client wraps — different
+domain, no documented contract, same response shape for both paths (`stats.pts_ppr`
+for projections; `rush_att` / `rec` / `gp` for box scores). All three of these feed
+award categories only, never a lineup decision, so `awards.py` catches their
+failures and drops the affected categories rather than propagating.
 
 Note `GET /league/{id}/traded_picks` is *future* pick trades, not draft results —
 it does not give you the round a player was taken in.
@@ -155,7 +157,7 @@ Email/Slack message with:
 3. Waiver claims in priority order with FAAB bid and drop — formatted as a checklist the owner ticks off in the app
 4. Trade proposals with paste-ready pitch text
 5. Watchlist
-6. **League awards** (Tuesday only) — 15 categories covering all 12 teams, below
+6. **League awards** (Tuesday only) — 16 categories covering all 12 teams, below
    the decisions so the actionable half still leads. Shareable with the league;
    this is the half the owner reads for fun, not to execute.
 

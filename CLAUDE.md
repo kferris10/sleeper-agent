@@ -32,17 +32,25 @@ uv run --with python-pptx python scripts/league_deck.py [--week N]  # award show
 
 ## League awards
 
-`src/sleeper_analyst/awards.py` computes all 15 award categories for the whole
+`src/sleeper_analyst/awards.py` computes all 16 award categories for the whole
 league from one `compute_awards`; `report.py` renders them to markdown and
 email-safe HTML, and `scripts/league_deck.py` renders them to PowerPoint. The
 Tuesday email carries them, the Friday email does not (`_load_awards` in `cli.py`
 short-circuits on `tag == "friday"` before any network call).
 
-Two of its three data sources are **unofficial** and must stay failure-tolerant —
-draft picks, and projections from `api.sleeper.com` (a different host than the v1
-API the client wraps). Awards are the fun half of the packet; they are never
-allowed to cost the owner the actionable half, so every failure degrades to
-"no awards section".
+Three of its four data sources are **unofficial** and must stay failure-tolerant —
+draft picks, and projections and box-score stats from `api.sleeper.com` (a different
+host than the v1 API the client wraps; `_fetch_weekly` wraps both of the latter).
+Awards are the fun half of the packet; they are never allowed to cost the owner the
+actionable half, so every failure degrades to "no awards section".
+
+The **wall of shame** (`compute_shame`) is the one category built from the box
+scores: a started RB/WR/TE with zero carries and zero catches needs usage, which
+the matchup endpoint does not carry. A player with *no* line in the stats feed is
+never accused — an absent entry means the feed did not know him, not that he did
+nothing. Each check is capped (default two entries per category) so one wide
+category cannot fill the whole wall, and the deck shows the first
+`SHAME_SLIDE_ROWS`.
 
 Note the league is redraft with exclusive rosters, so every started player is
 started by exactly one team — "most-started player" awards are meaningless here.

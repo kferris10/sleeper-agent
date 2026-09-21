@@ -290,7 +290,7 @@ def render_html(
 # ---------------------------------------------------------------------------
 # League awards
 #
-# The fun half of the packet: all 15 categories for the whole league, appended
+# The fun half of the packet: all 16 categories for the whole league, appended
 # below the decision packet so the actionable part still leads. Both renderers
 # take an Awards (see awards.py) and emit a section, not a whole document --
 # the caller supplies its own top-level heading.
@@ -514,6 +514,20 @@ def render_awards_markdown(a: Awards) -> str:
         add(f"| {pos} | {r.name} | **{fmt(r.points)}** | {r.team} |")
     add("")
 
+    add("## 🧱 The Wall of Shame")
+    add("")
+    if a.shame:
+        add("Self-inflicted, every one of them:")
+        add("")
+        for entry in a.shame:
+            add(f"- **{entry.award} — {entry.team}.** {entry.detail}")
+    else:
+        add(
+            "Nobody benched a star, nobody started a ghost, nobody blew a winnable "
+            "game. Suspicious."
+        )
+    add("")
+
     add(f"## 🔮 Week {a.week + 1} Bulletin Board")
     add("")
     add(f"- {chump.name} has nowhere to go but up. Statistically. Probably.")
@@ -556,6 +570,11 @@ def _award_gaps(a: Awards) -> list[str]:
         notes.append("projections were unavailable, so projection-based awards are skipped")
     if not a.have_draft:
         notes.append("draft data was unavailable, so draft-round awards are skipped")
+    if not a.have_stats:
+        notes.append(
+            "box-score stats were unavailable, so the wall of shame cannot name "
+            "players who never touched the ball"
+        )
     return notes
 
 
@@ -574,7 +593,7 @@ def _awards_table(esc, headers: list[str], rows: list[list[str]]) -> str:
 
 
 def render_awards_html(a: Awards) -> str:
-    """Email-safe HTML for the same 15 categories, inline styles only."""
+    """Email-safe HTML for the same 16 categories, inline styles only."""
     esc = html_mod.escape
     out: list[str] = []
     add = out.append
@@ -781,6 +800,21 @@ def render_awards_html(a: Awards) -> str:
             [[pos, r.name, fmt(r.points), r.team] for pos, r in a.positional_best],
         )
     )
+
+    h2("&#129521; The Wall of Shame")
+    if a.shame:
+        add("<ul>")
+        for entry in a.shame:
+            add(
+                f"<li><b>{esc(entry.award)} &mdash; {esc(entry.team)}.</b> "
+                f"{esc(entry.detail)}</li>"
+            )
+        add("</ul>")
+    else:
+        add(
+            "<p>Nobody benched a star, nobody started a ghost, nobody blew a "
+            "winnable game. Suspicious.</p>"
+        )
 
     h2(f"&#128302; Week {a.week + 1} Bulletin Board")
     add("<ul>")
