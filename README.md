@@ -75,11 +75,11 @@ pipeline, so a broken script can't affect the scheduled run):
 
 ```sh
 uv run python scripts/league_recap.py                     # newest completed week
-uv run --with python-pptx python scripts/league_deck.py   # 8-slide standup cut
+uv run --with python-pptx python scripts/league_deck.py   # 10-slide standup cut
 uv run --with python-pptx python scripts/league_deck.py --week 3 --full  # a past week, all 17 slides
 ```
 
-The deck defaults to an 8-slide standup cut; `--full` gives one slide per award.
+The deck defaults to a 10-slide standup cut; `--full` gives one slide per award.
 `python-pptx` is deliberately not a project dependency — `uv run --with` keeps it
 out of `pyproject.toml`. Decks are gitignored (`*.pptx`).
 

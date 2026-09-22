@@ -721,6 +721,65 @@ def closer_slide(prs: Presentation, a: Awards):
     )
 
 
+def bulletin_lines(a: Awards) -> list[str]:
+    """Next week's trash talk. Same three jabs the email's bulletin board runs."""
+    lines = [
+        f"{a.chump.name} has nowhere to go but up. Statistically. Probably.",
+        f"{a.champ.name} peaked in week {a.week} and we all know it.",
+    ]
+    if a.blunders:
+        lines.append(
+            f"{a.blunders[0].team.name} is now the league's designated "
+            f"'check your lineup' reminder."
+        )
+    return lines
+
+
+def last_word_slide(prs: Presentation, a: Awards):
+    """The closer and the bulletin board on one slide: the week's verdict on the
+    left, next week's trash talk in the panel on the right."""
+    slide = new_slide(prs)
+    header(slide, "📣 If you only read one thing", f"Week {a.week}, in four lines")
+    lines = [
+        f"{a.champ.name} dropped {fmt(a.champ.points)} and looked unbeatable.",
+        f"{a.chump.name} managed {fmt(a.chump.points)} and looked unrecognizable.",
+    ]
+    if a.blunders:
+        top = a.blunders[0]
+        lines.append(
+            f"{top.team.name} left {fmt(top.gap)} points on the bench in a single "
+            f"slot — the week's most expensive click."
+        )
+    if a.unlucky:
+        lines.append(
+            f"Spare a thought for {a.unlucky.name}, who scored "
+            f"{fmt(a.unlucky.points)} and lost anyway."
+        )
+    bullets(slide, Inches(2.45), lines, size=16, width=Inches(7.35))
+
+    left, top, width = Inches(8.35), Inches(2.25), Inches(4.08)
+    rect(slide, left, top, width, Inches(3.75), PANEL)
+    pad = Inches(0.35)
+    inner = width - pad * 2
+    text(
+        slide, left + pad, top + Inches(0.35), inner, Inches(0.3),
+        f"🔮 WEEK {a.week + 1} BULLETIN BOARD", size=12, color=GOLD, bold=True,
+    )
+    y = top + Inches(0.95)
+    for line in bulletin_lines(a):
+        rect(slide, left + pad, y + Inches(0.12), Inches(0.07), Inches(0.07), GOLD)
+        text(
+            slide, left + pad + Inches(0.22), y, inner - Inches(0.22), Inches(0.9),
+            line, size=13, color=WHITE,
+        )
+        y += Inches(0.95)
+
+    text(
+        slide, MARGIN, Inches(6.1), Inches(7.35), Inches(0.6),
+        f"See you in week {a.week + 1}.", size=22, color=GOLD, bold=True,
+    )
+
+
 LEFT_COL = MARGIN
 RIGHT_COL = Inches(6.95)
 
@@ -855,6 +914,7 @@ def build_deck(a: Awards, full: bool = False) -> Presentation:
             builders.append(zero_club_slide)
         if a.have_draft:
             builders.append(bargain_bin_slide)
+        builders += [positional_slide, last_word_slide]
 
     for build in builders:
         build(prs, a)
@@ -878,7 +938,7 @@ def main() -> None:
     parser.add_argument(
         "--full",
         action="store_true",
-        help="every award on its own slide (~17) instead of the 8-slide standup cut",
+        help="every award on its own slide (~17) instead of the 10-slide standup cut",
     )
     args = parser.parse_args()
 

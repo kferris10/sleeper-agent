@@ -44,6 +44,12 @@ host than the v1 API the client wraps; `_fetch_weekly` wraps both of the latter)
 Awards are the fun half of the packet; they are never allowed to cost the owner the
 actionable half, so every failure degrades to "no awards section".
 
+The deck's standup cut closes with the positional high scores and `last_word_slide`,
+which pairs "if you only read one thing" with the week N+1 bulletin board. Those
+bulletin jabs live in two places — `bulletin_lines` in `league_deck.py` and the
+markdown/HTML renderers in `report.py` — so change both or the deck and the email
+start telling different jokes.
+
 The **wall of shame** (`compute_shame`) is the one category built from the box
 scores: a started RB/WR/TE with zero carries and zero catches needs usage, which
 the matchup endpoint does not carry. A player with *no* line in the stats feed is
