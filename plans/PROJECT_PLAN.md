@@ -2,7 +2,7 @@
 
 ## Goal
 
-Every Tuesday morning, a scheduled job pulls the league state from the Sleeper API, has Claude analyze it, and delivers a decision packet (recap, lineup, waiver claims, trade ideas) plus a league-wide award show to the team owner, who executes the moves in the Sleeper app. A second, leaner Friday run re-checks injuries and finalizes the lineup. The Sleeper API is read-only, so execution is human-in-the-loop by design.
+Every Tuesday morning, a scheduled job pulls the league state from the Sleeper API, has Claude analyze it, and delivers a decision packet (recap, lineup, waiver claims, trade ideas) plus a league-wide award show to the team owner, who executes the moves in the Sleeper app. A leaner Friday injury re-check exists but is manual-dispatch only. The Sleeper API is read-only, so execution is human-in-the-loop by design.
 
 ## Non-goals (v1)
 
@@ -100,7 +100,7 @@ it does not give you the round a player was taken in.
 ## Data flow
 
 ```
-cron (Tue + Fri 07:00 local)
+cron (Tue 08:00 Mountain)
   → collect.py   : API + DB → WeeklyContext (JSON, target < 30k tokens)
   → analyze.py   : WeeklyContext + prior analysis → Claude (web search enabled) → Analysis
   → store.py     : persist context + analysis

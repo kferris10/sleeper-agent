@@ -3,11 +3,12 @@
 Weekly Sleeper fantasy football analyst. Every Tuesday it pulls league state from the
 Sleeper API, has Claude analyze it, and delivers a decision packet (recap, lineup,
 waivers, trades) you execute in the Sleeper app, followed by a league-wide award
-show for last week. Friday adds a lean injury re-check. Full design:
+show for last week. A lean Friday injury re-check (`--tag friday`) is available
+but no longer scheduled — trigger it by hand from the Actions tab. Full design:
 `plans/PROJECT_PLAN.md`.
 
 **Status: Phase 3** — full pipeline: `run` chains collect → Claude analysis → email
-delivery, scheduled Tuesday and Friday mornings via GitHub Actions
+delivery, scheduled Tuesdays at 08:00 Mountain via GitHub Actions
 (`.github/workflows/weekly.yml`).
 
 > **This repository is AI-generated.** Every line of code, test, and document here

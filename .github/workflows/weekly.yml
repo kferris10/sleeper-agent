@@ -8,12 +8,14 @@ on:
     # in data/history.db, which the job commits back — so whichever slot lands
     # first sends the email and the rest stop right after the (free) collect,
     # before the Claude call. Extra slots cost a Sleeper API fetch, nothing more.
-    - cron: "0 12 * * 2" # Tuesday 12:00 UTC = 07:00 EST / 08:00 EDT — full packet
-    - cron: "0 13 * * 2"
-    - cron: "0 14 * * 2"
-    - cron: "0 12 * * 5" # Friday 12:00 UTC = 07:00 EST / 08:00 EDT — injury re-check
-    - cron: "0 13 * * 5"
-    - cron: "0 14 * * 5"
+    #
+    # Target is Tuesday 08:00 Mountain. Cron is UTC-only, so the season is split
+    # by month: Sep–Oct is MDT (UTC-6), Nov–Jan is MST (UTC-7). DST ends the
+    # first Sunday of November; in years where that falls after a Tuesday
+    # (e.g. Tue Nov 2 2027), that one run lands at 09:00 MDT.
+    # The Friday injury re-check is no longer scheduled; dispatch it manually.
+    - cron: "0 14-16 * 9,10 2" # Tue 14:00 UTC = 08:00 MDT, retries 09:00 / 10:00
+    - cron: "0 15-17 * 11,12,1 2" # Tue 15:00 UTC = 08:00 MST, retries 09:00 / 10:00
   workflow_dispatch:
     inputs:
       force:
@@ -49,10 +51,9 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
-          # Any Friday cron (every Friday slot ends in "* 5") is the injury
-          # re-check; Tuesday slots and a bare dispatch fall through to the tag
-          # input, which defaults to tuesday.
-          RUN_TAG: ${{ endsWith(github.event.schedule, '* 5') && 'friday' || inputs.tag || 'tuesday' }}
+          # Scheduled runs are always the Tuesday packet; a manual dispatch can
+          # still pick the friday injury re-check.
+          RUN_TAG: ${{ inputs.tag || 'tuesday' }}
         run: uv run sleeper-analyst run --tag "$RUN_TAG" ${{ inputs.force && '--force' || '' }}
 
       # data/ (contexts, analyses, history.db) is committed back so the next

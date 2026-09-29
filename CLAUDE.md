@@ -2,8 +2,10 @@
 
 Weekly Sleeper fantasy football analyst for Kevin's team ("NotASmurf") in Chace's 41st
 League (12 teams, waiver **priority** not FAAB, trade deadline week 10, playoffs from
-week 14). GitHub Actions runs the pipeline Tuesday and Friday mornings and emails a
-decision packet; Kevin executes the moves in the Sleeper app. This team is managed
+week 14). GitHub Actions runs the pipeline Tuesdays at 08:00 Mountain and emails a
+decision packet; Kevin executes the moves in the Sleeper app. The Friday injury
+re-check (`--tag friday`) still exists but is manual-dispatch only. Cron is UTC, so
+`weekly.yml` splits the season by month to follow MDT→MST. This team is managed
 entirely by Claude — recommendations are decisions, not suggestions.
 
 ## Commands
