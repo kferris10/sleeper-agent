@@ -1,9 +1,15 @@
 """Call Claude on a WeeklyContext and parse/validate the Analysis.
 
-Reasoning arrives inside <analysis>...</analysis>, the decision packet inside
-<result>...</result> as strict JSON. Every player_id in the result must exist
-in the context (lineup/drops from my roster, adds from the free-agent list) —
-a violation triggers one corrective re-prompt, then a hard failure.
+The decision packet arrives inside <result>...</result> as strict JSON; only
+that block is parsed (extract_result tolerates any prose before it). We do NOT
+ask the model to emit a separate reasoning block — on always-on-thinking models
+(opus-5 / fable family) a visible-reasoning request trips the
+`reasoning_extraction` safety classifier and the whole request is refused.
+Per-decision justification lives in each record's `reason` field instead.
+
+Every player_id in the result must exist in the context (lineup/drops from my
+roster, adds from the free-agent list) — a violation triggers one corrective
+re-prompt, then a hard failure.
 """
 
 from __future__ import annotations
@@ -186,7 +192,7 @@ def run_analysis(
             f"{user}\n\n---\n\nYour previous attempt failed validation: {exc}\n\n"
             "Produce the packet again. Fix every listed problem, copy player_id values "
             "exactly from the tables above, and follow the output contract "
-            "(<analysis>...</analysis> then <result>valid JSON</result>)."
+            "(<result>valid JSON</result>)."
         )
         raw = generate(system, retry_user)
         return validate_analysis(extract_result(raw), context), raw

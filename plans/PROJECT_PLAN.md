@@ -146,7 +146,7 @@ Validate with pydantic; every `player_id` must exist in the context (reject hall
 - Tools: `web_search` enabled, with the system prompt instructing Claude to check injury/practice reports and current-week projections for the players actually in play before finalizing lineup and waivers
 - `system.md` contains: management philosophy knobs from config (risk tolerance, FAAB aggressiveness, trade appetite, positions to prioritize), the output contract, and hard rules (must fill every roster slot legally; no dropping players on IR into a non-IR slot if IR slot available; respect trade deadline; never bid more FAAB than remaining)
 - `user.md.j2` renders WeeklyContext as compact markdown tables rather than raw JSON to save tokens
-- Ask for reasoning first inside `<analysis>` then the JSON inside `<result>`; parse only `<result>`
+- Ask only for the JSON packet inside `<result>`; parse that block (prose before it is tolerated). Do NOT request a separate `<analysis>`/reasoning block — on always-on-thinking models (opus-5 / fable family) a visible-reasoning request trips the `reasoning_extraction` safety classifier and the request is refused. Per-decision rationale lives in each record's `reason` field.
 - Temperature default; log full request/response to `store.py` for debugging
 
 ## Delivery packet format
