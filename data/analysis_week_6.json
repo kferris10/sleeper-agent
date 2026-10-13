@@ -1,0 +1,194 @@
+{
+  "recap": {
+    "summary": "Week 5 was a 83.3-113.3 loss to St.Brown & Down that dropped us to 1-4 with the league's worst PF (445.28) and worst PA (604.68). The margin was entirely self-inflicted: we started Lamar Jackson (0.0, did not play), Brian Thomas (0.0) and got 4.3 combined from the RB slots, while Justin Jefferson's 17.8 sat on the bench. Isaiah Likely's 32.4 and Jameson Williams' 18.7 were the only things keeping it respectable. The prior packet's biggest failure was roster-management, not projection — a zero at QB and a zero at WR1 is a forfeit in a 9-starter league.",
+    "what_worked": [
+      "Isaiah Likely at TE (32.4) — he is a genuine weekly starter at a scarce position and is now a sell-high asset",
+      "Jameson Williams at WR2 (18.7) before his Week 6 bye",
+      "Cleveland DEF (13.0) — the streaming-first philosophy is producing; CLE is worth holding another week"
+    ],
+    "what_hurt": [
+      "Starting Lamar Jackson while he was Out for a 0.0 when Justin Herbert (8.24) was on the bench — unforced error worth roughly 15-20 points",
+      "Brian Thomas 0.0 at WR1 while Justin Jefferson scored 17.8 on the bench",
+      "RB1/RB2 combined for 4.3 (Allgeier 3.6, Harvey 0.7); the backfield has no reliable volume and Josh Jacobs sat for a zero"
+    ],
+    "self_grade": "D — the lineup logic was defensible at TE/DEF but the team left ~35 points on the bench and started a player who was ruled out. That is the difference between 1-4 and 2-3."
+  },
+  "lineup": [
+    {
+      "slot": "QB",
+      "player_id": "6797",
+      "player": "Justin Herbert",
+      "reason": "Lamar Jackson is Out, so this is forced and should have been the call last week. Herbert is a full-time top-tier starter and the Chargers do not bye until Week 7, so he carries the position while Lamar heals. Do not re-insert Lamar until he is a full practice participant without a designation."
+    },
+    {
+      "slot": "RB1",
+      "player_id": "5850",
+      "player": "Josh Jacobs",
+      "reason": "Injury checks show Jacobs with no active designation and listed as healthy/active entering Week 6; he is Green Bay's bell-cow and by far the highest-volume back we own. His Week 5 zero is the one thing to verify at inactives — if he is not on the field, slide Tyler Allgeier here and Keaton Mitchell into the FLEX."
+    },
+    {
+      "slot": "RB2",
+      "player_id": "12489",
+      "player": "RJ Harvey",
+      "reason": "Denver's passing-down/explosive back and the only other RB we own with real touchdown equity. 0.7 last week is unacceptable, but the alternative (Allgeier in a committee in Arizona) has a lower ceiling and we are not in a position to chase floor at 1-4."
+    },
+    {
+      "slot": "WR1",
+      "player_id": "11631",
+      "player": "Brian Thomas",
+      "reason": "Jacksonville does not bye until Week 7 (the Week 6 byes are CIN, DET, MIN and MIA), so he plays. He goosed a zero last week and the context lists him third on the depth chart, which is a real concern, but he is still the most talented pass-catcher available to us this week with both Jefferson and Jameson Williams on bye. Confirm he is not carrying a shoulder designation on the Friday report."
+    },
+    {
+      "slot": "WR2",
+      "player_id": "12519",
+      "player": "Luther Burden",
+      "reason": "Chicago's WR1 by depth chart and coming off 8.9 points. With two of our top three receivers on bye, he is a mandatory start and has the target volume to post a 15+ week."
+    },
+    {
+      "slot": "TE",
+      "player_id": "8131",
+      "player": "Isaiah Likely",
+      "reason": "32.4 last week as the Giants' unquestioned TE1. Highest-confidence start on the roster this week; we are only shopping him because his trade value has never been higher, not because we would bench him."
+    },
+    {
+      "slot": "FLEX",
+      "player_id": "12493",
+      "player": "Oronde Gadsden",
+      "reason": "TE-eligible in the FLEX and the Chargers' every-down TE1 catching passes from the same QB we are starting, which gives this lineup a built-in correlation upside. As a roughly even-money underdog carrying the league's worst point total, the owner's standing guidance says take ceiling over floor — Gadsden's ceiling is a 15-20 point receiving game; Allgeier's realistic ceiling is 10 touches for 40 yards."
+    },
+    {
+      "slot": "K",
+      "player_id": "8259",
+      "player": "Cameron Dicker",
+      "reason": "Elite volume kicker on a scoring offense, no bye until Week 7. No reason to stream against him this week; the streaming decision at K arrives next week when the Chargers rest."
+    },
+    {
+      "slot": "DEF",
+      "player_id": "CLE",
+      "player": "Cleveland Browns",
+      "reason": "13.0 points last week and a pass rush that generates sacks in a scoring system that pays 1.0 per sack. Cleveland does not bye until Week 11. We stay with them for Week 6 and reassess Tuesday rather than burning a roster spot on the Colts stream now."
+    }
+  ],
+  "bench": [
+    {
+      "player": "Lamar Jackson",
+      "player_id": "4881",
+      "reason": "Ruled Out. Hard rule — he does not go in the lineup again until he practices in full. He remains the long-term QB1 and is not a drop candidate under any circumstances."
+    },
+    {
+      "player": "Justin Jefferson",
+      "player_id": "6794",
+      "reason": "Minnesota is on bye in Week 6. He is our best player and returns in Week 7, which is exactly when Brian Thomas (JAX) byes."
+    },
+    {
+      "player": "Jameson Williams",
+      "player_id": "8148",
+      "reason": "Detroit is on bye in Week 6 after an 18.7-point Week 5. Auto-start again in Week 7."
+    },
+    {
+      "player": "A.J. Brown",
+      "player_id": "5859",
+      "reason": "On IR. The roster-slot list in the league context shows no IR slot (9 starters + 7 bench = our 16 players), so he is occupying a bench spot — but he is a league-winning WR1 when he returns and we hold regardless. IMPORTANT: if Sleeper does in fact offer an IR slot for his designation, place him there immediately and we gain a free bench spot; note it rather than ever dropping him."
+    },
+    {
+      "player": "Tyler Allgeier",
+      "player_id": "8132",
+      "reason": "First man up if Josh Jacobs is a surprise inactive. In a committee in Arizona he is a sub-10-point floor play, which is not what a 1-4 team needs in the FLEX."
+    },
+    {
+      "player": "Keaton Mitchell",
+      "player_id": "9511",
+      "reason": "5.9 points of garbage-time value as the Chargers' RB2. He is the designated drop for the second waiver move; LAC also byes in Week 7, making him dead weight at exactly the wrong time."
+    },
+    {
+      "player": "Tank Bigsby",
+      "player_id": "9225",
+      "reason": "On IR as the fourth back in Philadelphia — a dead roster spot with no path to standalone value even when healthy. Designated drop for the Dameon Pierce claim, unless an IR slot is available for him, in which case park him there and drop Keaton Mitchell for Pierce instead."
+    }
+  ],
+  "waivers": [
+    {
+      "priority": 1,
+      "add_player_id": "8129",
+      "add": "Dameon Pierce",
+      "drop_player_id": "9225",
+      "drop": "Tank Bigsby",
+      "faab_bid": null,
+      "reason": "CONDITIONAL — submit this claim only if Saquon Barkley is listed Out or Doubtful on the Friday report; if Barkley is cleared, cancel and keep our #1 priority. Reporting has Pierce taking over as the Eagles' lead back after Will Shipley's foot injury (11 carries in Week 5), and Nick Sirianni has said only that he is 'hopeful' Barkley (hamstring) is cleared. A workhorse Eagles backfield is exactly the 'potential league-winner' the owner authorizes burning priority #1 on, and the drop costs nothing — Bigsby is the IR'd RB4 in that same backfield, so we are converting a dead spot into the live version of the same handcuff. Hamstrings also recur, which keeps Pierce valuable even if Barkley plays Week 6. If an IR slot exists for Bigsby, drop Keaton Mitchell (9511) here instead."
+    },
+    {
+      "priority": 2,
+      "add_player_id": "1479",
+      "add": "Keenan Allen",
+      "drop_player_id": "9511",
+      "drop": "Keaton Mitchell",
+      "faab_bid": null,
+      "reason": "Not worth priority — if it fails, grab him in free agency once waivers clear. This is a Week 7 move made now: next week Brian Thomas (JAX) byes on top of our entire Chargers block (Herbert, Gadsden, Dicker, Mitchell), which would leave us with Jefferson and Burden as the only healthy WRs. Allen is a high-floor, full-route-share slot receiver in a functional Indianapolis offense with a Week 13 bye, so he covers the hole without creating a new one. Mitchell is the right drop because he byes in Week 7 too and is behind Omarion Hampton anyway."
+    }
+  ],
+  "trades": [
+    {
+      "partner": "mrkw",
+      "give": [
+        "Justin Herbert",
+        "Tyler Allgeier"
+      ],
+      "get": [
+        "Quinshon Judkins",
+        "or Chuba Hubbard"
+      ],
+      "pitch": "You're 2-3 with the best RB room in the league (McCaffrey, Judkins, Hubbard, Jaylen Warren, Aaron Jones, Croskey-Merritt, Chris Rodriguez) and you're starting Tyler Shough at QB with no backup. That's a 10-point-a-week hole you can close right now. I'll send Justin Herbert plus Tyler Allgeier for Quinshon Judkins — or Chuba Hubbard if you'd rather keep Judkins. You turn a replacement-level QB slot into a top-five fantasy QB, you keep McCaffrey plus two of Hubbard/Warren/Jones, and you add Allgeier as cover for Arizona's committee. I need the RB, you need the QB — this is the cleanest fit in the league.",
+      "why_it_helps_me": "Classic 2-for-1 consolidation: it turns our worst starting slot (RB2, 0.7 points last week) into a real workhorse and clears a bench spot. Judkins is a buy-low because he is carrying a Questionable tag right now, and his usage profile holds through the Weeks 14-17 playoff window. Execute only once Lamar Jackson is confirmed back — until then Herbert is our only functioning QB.",
+      "why_they_might_accept": "They roster seven RBs and literally one QB. Shough is a weekly liability for a team two games out of first; Herbert is a positional upgrade of 8-12 points a week that costs them a back they can't start every week anyway."
+    },
+    {
+      "partner": "Jerlichman411",
+      "give": [
+        "Isaiah Likely",
+        "Keaton Mitchell"
+      ],
+      "get": [
+        "George Pickens",
+        "or Terry McLaurin"
+      ],
+      "pitch": "You're 1-4 with 600 points for — you're the unluckiest team in the league and you're one lineup fix from running off six wins. You're starting Kyle Pitts or Brenton Strange at TE while carrying six receivers you can't all play (Evans, Metcalf, McLaurin, Pickens, Doubs, Shaheed). I'll give you Isaiah Likely — he just went for 32.4 as the Giants' every-down TE1 — plus Keaton Mitchell as insurance behind Jeanty and Bijan, for George Pickens (or Terry McLaurin, your choice). You upgrade a starting slot by 10+ a week and lose nothing from your lineup.",
+      "why_it_helps_me": "We sell Likely at his absolute peak while still owning Oronde Gadsden, the Chargers' TE1, so the TE slot stays filled. In exchange we fix the real problem: with A.J. Brown on IR and Brian Thomas' role in question, our WR corps is one Jefferson injury from unstartable. Pickens/McLaurin is a weekly WR2 with WR1 weeks in it.",
+      "why_they_might_accept": "They have a genuine WR logjam and the worst starting TE situation among the contenders. At 1-4 with elite point totals they need to maximize every slot now, and TE is where the biggest point swing is available to them."
+    }
+  ],
+  "watchlist": [
+    {
+      "player": "Saquon Barkley (bsummy51)",
+      "note": "His Friday practice status is the single switch that determines whether we burn waiver priority #1 on Dameon Pierce. If he's cleared, cancel the claim and keep the priority."
+    },
+    {
+      "player": "Dameon Pierce (FA)",
+      "note": "If we don't land him, track Will Shipley's foot injury — any setback for either Philly back puts Pierce back in play as a free-agency pickup later in the week."
+    },
+    {
+      "player": "Kimani Vidal (FA, LAC)",
+      "note": "500k+ trending adds suggests a Chargers backfield change we couldn't fully verify. If Omarion Hampton's workload has shifted, Vidal becomes the better version of the Keaton Mitchell stash."
+    },
+    {
+      "player": "Indianapolis Colts DEF (FA)",
+      "note": "Top trending DEF add. Our streaming plan: if Cleveland draws a tough Week 7 spot, swap to IND (Week 13 bye, so it covers our Week 11 CLE bye too)."
+    },
+    {
+      "player": "Nick Folk (FA, K) / Trey Smack (FA, K)",
+      "note": "Week 7 kicker stream — Cameron Dicker byes with the rest of our Chargers block. Grab one next Tuesday via free agency, no priority needed."
+    },
+    {
+      "player": "Lamar Jackson (ours)",
+      "note": "Return timeline drives both the QB slot and whether the mrkw trade can be sent. Do not trade Herbert before Lamar practices in full."
+    },
+    {
+      "player": "A.J. Brown (ours, IR)",
+      "note": "Check whether Sleeper offers an IR slot for his designation; if so, moving him there frees a bench spot and makes the whole waiver plan cheaper. Also track his return date — he's the biggest swing asset on this roster."
+    },
+    {
+      "player": "Brian Thomas (ours)",
+      "note": "Listed third on the Jacksonville depth chart after a 0.0. If the Week 6 snap/target report confirms he's been phased out, he moves from WR1 to a bench/trade piece and Keenan Allen becomes a genuine starter."
+    }
+  ],
+  "confidence_notes": "Highest-confidence calls: Herbert at QB (forced), Likely at TE, and the two bye-driven benchings. Least certain, in order: (1) Josh Jacobs — live checks show him active with no designation, but he posted a 0.0 in Week 5 and the context flags him oddly, so verify inactives 90 minutes before kickoff; if he's out, Allgeier goes to RB1 and Keaton Mitchell to FLEX. (2) Brian Thomas — he's a start by default with Jefferson and Jameson Williams on bye, but a zero plus a third-string depth listing is a red flag; check the Friday injury report for a shoulder designation. (3) Gadsden over Allgeier in the FLEX is a deliberate ceiling play per the owner's underdog guidance — if the Chargers' game script or a Gadsden practice limitation surfaces, Allgeier is the safe swap. (4) The Pierce claim is explicitly conditional on Barkley's Friday status; do not submit it blind. One process caveat: my live-search budget was exhausted partway through, so the Barkley/Pierce/Shipley reporting and the Week 6 bye slate (CIN, DET, MIN, MIA) are verified, but Cleveland's and Dicker's specific Week 6 matchups and the Chargers'/Jaguars' latest practice reports were not — re-check those Friday before locking. News that would change the packet: Barkley ruled out (submit Pierce claim), Jacobs inactive (RB shuffle above), Lamar cleared (send the mrkw trade immediately), or Brian Thomas picking up a designation (Allen or Burden-plus-Allgeier reshuffle)."
+}
