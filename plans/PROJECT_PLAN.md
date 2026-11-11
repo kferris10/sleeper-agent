@@ -49,7 +49,8 @@ sleeper-analyst/
 │   └── store.py               # SQLite: weekly contexts, analyses, outcomes
 ├── scripts/                   # standalone, outside the wheel and the pipeline
 │   ├── league_recap.py        # awards → markdown, without running the pipeline
-│   └── league_deck.py         # awards → PowerPoint (needs `uv run --with python-pptx`)
+│   ├── league_deck.py         # awards → PowerPoint (needs `uv run --with python-pptx`)
+│   └── midseason_deck.py      # weeks 1..N → season review deck (reuses league_deck)
 ├── tests/
 │   ├── fixtures/              # recorded Sleeper JSON responses
 │   ├── test_client.py

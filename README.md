@@ -78,7 +78,13 @@ pipeline, so a broken script can't affect the scheduled run):
 uv run python scripts/league_recap.py                     # newest completed week
 uv run --with python-pptx python scripts/league_deck.py   # 10-slide standup cut
 uv run --with python-pptx python scripts/league_deck.py --week 3 --full  # a past week, all 17 slides
+uv run --with python-pptx python scripts/midseason_deck.py  # season-to-date review deck
 ```
+
+`midseason_deck.py` keeps four weekly slides (title swapped, high & low, wall of
+shame, positional highs) and adds standings with all-play record and luck,
+season awards, storylines, and season-long manager efficiency. It writes
+`data/midseason_week_N.pptx`. It re-fetches every week 1..N, so it takes a minute.
 
 The deck defaults to a 10-slide standup cut; `--full` gives one slide per award.
 `python-pptx` is deliberately not a project dependency — `uv run --with` keeps it

@@ -19,6 +19,7 @@ uv run sleeper-analyst run [--tag friday] # full pipeline (idempotent per week+t
 
 uv run python scripts/league_recap.py [--week N]                  # award show as markdown
 uv run --with python-pptx python scripts/league_deck.py [--week N]  # award show as a deck
+uv run --with python-pptx python scripts/midseason_deck.py [--week N]  # season-to-date review deck
 ```
 
 ## Where the state lives
@@ -31,6 +32,7 @@ uv run --with python-pptx python scripts/league_deck.py [--week N]  # award show
 - `data/history.db` — SQLite history of contexts/analyses/deliveries
 - `data/recap_week_N.md` — the league award show (also appended to the Tuesday email)
 - `data/awards_week_N.pptx` — the same awards as a deck; gitignored
+- `data/midseason_week_N.pptx` — season-to-date review deck; gitignored
 
 ## League awards
 
@@ -59,6 +61,15 @@ never accused — an absent entry means the feed did not know him, not that he d
 nothing. Each check is capped (default two entries per category) so one wide
 category cannot fill the whole wall, and the deck shows the first
 `SHAME_SLIDE_ROWS`.
+
+**Midseason deck** (`scripts/midseason_deck.py`) imports `league_deck` for styling
+and the reused weekly slides, then calls `build_teams` once per completed week and
+accumulates the season itself (no season endpoint involved). Its records match
+Sleeper's `rosters[].settings` wins/losses/fpts. Two definitions that are easy to
+get wrong: "Waiver Wire Hall of Fame" counts **undrafted** players only, because
+"drafted by another team" also catches trades, which aren't waiver pickups. And
+"Season Bench Burner" means the most points left on the bench, which is not the
+same team as the lowest efficiency %.
 
 Note the league is redraft with exclusive rosters, so every started player is
 started by exactly one team — "most-started player" awards are meaningless here.
