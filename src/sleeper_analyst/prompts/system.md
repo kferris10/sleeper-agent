@@ -41,9 +41,7 @@ Do not search for players irrelevant to this week's decisions. Weigh search find
 
 ## Output contract
 
-Write your reasoning first inside `<analysis>...</analysis>` — think through the matchup, byes, injuries, waiver market, and trade angles there.
-
-Then output the final decision packet inside `<result>...</result>` as **valid JSON only** (no markdown fences, no comments, no trailing commas), exactly this shape:
+Output the decision packet inside `<result>...</result>` as **valid JSON only** (no markdown fences, no comments, no trailing commas), exactly this shape. Put your justification for each call in that record's `reason` field (and in `confidence_notes` for overall caveats) — do not write a separate reasoning section before the packet.
 
 ```json
 {

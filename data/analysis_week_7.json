@@ -1,0 +1,213 @@
+{
+  "recap": {
+    "summary": "Week 6 was a 77.80–82.58 loss to Big Ten All Star Team — a 4.78-point defeat with three zeros in the starting nine. Lamar Jackson (Out) was started again for 0.0 while Justin Herbert sat on the bench for 8.76, which by itself was the game. Jameson Williams was started at WR2 while Detroit was on bye (0.0), and Brian Thomas posted a second straight 0.0 at WR1. Isaiah Likely (23.9) and Luther Burden (17.5) carried the scoring, and RJ Harvey (14.6) finally produced. We fall to 1-5 with the league's worst PF/PA combination. Grading the prior packet: the Herbert-over-Lamar call was correct but was not executed in the app — that is now the single most important process fix. The packet's Josh Jacobs RB1 call was wrong (he posted 0.0 again and the context has him buried at depth 4 / bench role in Green Bay) and the owner's deviation to Allgeier/Burden was the better lineup. The conditional Dameon Pierce claim was correctly left unsubmitted (Barkley's team never freed the backfield and Pierce went to ccharron33 for nothing), so waiver priority #1 is still in hand — which is exactly what saves us this week.",
+    "what_worked": [
+      "Isaiah Likely at TE (23.9) — second straight elite week; he is now a legitimate sell-high consolidation chip because Oronde Gadsden backs him up",
+      "RJ Harvey at RB2 (14.6) — the ceiling-over-floor call finally paid; he stays locked in",
+      "Keeping waiver priority #1 by not submitting the conditional Pierce claim — it is the reason we can guarantee a QB this week",
+      "Cleveland DEF (10.0) — the stream-and-hold call keeps producing in a 1.0-per-sack system"
+    ],
+    "what_hurt": [
+      "Lamar Jackson started while Out (0.0) with Herbert's 8.76 on the bench — a 4.78-point loss turned on this alone, and it is the second straight week it happened",
+      "Jameson Williams started during Detroit's bye for 0.0 — an avoidable roster-management zero, not a projection miss",
+      "Brian Thomas 0.0 at WR1 for the second straight week; the depth-3 listing in the context is now corroborated by production and he is no longer a default starter",
+      "Josh Jacobs 0.0 again from the bench (depth 4, bench role) — he is functionally dead roster weight, not a bye-gauntlet answer"
+    ],
+    "self_grade": "C- — the individual projections (Likely, Harvey, Burden) were fine, but the packet again failed to prevent zeros at QB and WR, and the Jacobs RB1 recommendation was flatly wrong. Two straight one-score losses created entirely by inactive/bye starters."
+  },
+  "lineup": [
+    {
+      "slot": "QB",
+      "player_id": "4881",
+      "player": "Lamar Jackson",
+      "reason": "FORCED SLOT WITH A CONDITION — read this one carefully. Justin Herbert is on the Chargers' Week 7 bye, so Lamar is the only QB on our roster who has a game. Live reporting has him day-to-day with the ankle and roughly 50/50 to return this week against Cincinnati, with Week 8 the latest target, so this is no longer the automatic zero it was in Weeks 5-6. ACTION: the primary plan is the waiver claim below — the moment Tanner McKee (9230) processes, he goes in this slot and Lamar goes to the bench. Start Lamar ONLY if he practices in full and is active on Sunday's inactives list. Under no circumstance leave an Out-tagged Lamar in the lineup a third straight week."
+    },
+    {
+      "slot": "RB1",
+      "player_id": "8132",
+      "player": "Tyler Allgeier",
+      "reason": "Context has him as Arizona's depth-1 back with a starter role, and he is the only RB we own with a guaranteed every-week workload. 5.8 last week is a modest floor, but he is now ahead of Josh Jacobs on merit — Jacobs has posted 0.0 in back-to-back weeks while listed fourth on Green Bay's chart, which is a role problem, not an injury problem, and injury reports will not warn us about it."
+    },
+    {
+      "slot": "RB2",
+      "player_id": "12489",
+      "player": "RJ Harvey",
+      "reason": "14.6 last week as Denver's explosive/passing-down back with real touchdown equity. He is the highest-ceiling RB on the roster and we are a 1-5 underdog that needs ceiling. Denver's bye is Week 10, so he is available through the full stretch before the deadline."
+    },
+    {
+      "slot": "WR1",
+      "player_id": "6794",
+      "player": "Justin Jefferson",
+      "reason": "Back from Minnesota's Week 6 bye and the best player on the roster by a wide margin. Depth-1, full route share, no designation. Auto-start every week he has a game."
+    },
+    {
+      "slot": "WR2",
+      "player_id": "12519",
+      "player": "Luther Burden",
+      "reason": "17.5 last week as Chicago's depth-1 receiver, and the owner's FLEX deviation in Week 6 proved the volume is real. No injury tag, bye not until Week 10. He is a weekly starter now, not a bye-week fill-in."
+    },
+    {
+      "slot": "TE",
+      "player_id": "8131",
+      "player": "Isaiah Likely",
+      "reason": "23.9 and 32.4 in his last two full games as the Giants' every-down TE1 — the single biggest positional edge on this roster. He is in two trade proposals below precisely because his value has never been higher, but until a deal is accepted he starts, and his Week 8 bye is the only thing that moves him."
+    },
+    {
+      "slot": "FLEX",
+      "player_id": "8148",
+      "player": "Jameson Williams",
+      "reason": "Back from Detroit's bye after an 18.7-point Week 5 — last week's 0.0 was purely the bye-week lineup error, not performance. He is the ceiling play over A.J. Brown (Questionable, 4.7 last week, bench role in the context) and over Allgeier-plus-a-sit. As a home-dog-profile team at 1-5 we take the boom WR, per standing guidance."
+    },
+    {
+      "slot": "K",
+      "player_id": "8259",
+      "player": "Cameron Dicker",
+      "reason": "FORCED PLACEHOLDER — the Chargers are on bye in Week 7 and Dicker is the only kicker on the roster, so this slot cannot be legally filled any other way until the free-agent kicker lands. ACTION: as soon as Chase McLaughlin (6650) is added, he starts here and Dicker sits for one week; Dicker is NOT the drop — he is an elite-volume kicker we keep for Weeks 8-17."
+    },
+    {
+      "slot": "DEF",
+      "player_id": "CLE",
+      "player": "Cleveland Browns",
+      "reason": "10.0 and 13.0 the last two weeks from a pass rush that cashes the 1.0-per-sack and turnover scoring. Cleveland does not bye until Week 11, and with two roster spots already being spent on the QB and K streams this week there is no room to also churn the defense. We reassess the Jets DEF (top trending add) next Tuesday and definitely before the Week 11 Cleveland bye."
+    }
+  ],
+  "bench": [
+    {
+      "player": "Justin Herbert",
+      "player_id": "6797",
+      "reason": "Chargers bye (Week 7). He is the reason we survived Lamar's absence and he returns as the Week 8 starter if Lamar is still limited. Never a drop candidate; he is also our most liquid trade asset the moment Lamar is confirmed healthy."
+    },
+    {
+      "player": "Josh Jacobs",
+      "player_id": "5850",
+      "reason": "Benched on role, not health. Reporting has him off the injury report entirely, yet he has scored 0.0 in consecutive weeks and the league context lists him fourth on Green Bay's depth chart with a bench role. That combination means snaps, not soft tissue. He is the throw-in in the mrkw proposal below — his name value to another owner now exceeds his value to our lineup."
+    },
+    {
+      "player": "A.J. Brown",
+      "player_id": "5859",
+      "reason": "Questionable for New England after a limited practice week and only 4.7 points in his first game back. He is off IR and healthy enough to hold, but we are not betting a FLEX slot on a receiver working back into a role. If he practices in full and the designation is lifted, he is the one swap I would accept over Jameson Williams."
+    },
+    {
+      "player": "Brian Thomas",
+      "player_id": "11631",
+      "reason": "Jacksonville is on bye in Week 7 — ineligible regardless. Beyond the bye: two straight 0.0 games and a depth-3 listing mean he comes back from the bye as a bench/upside hold, not a default WR1. If Week 8 brings a third dud he becomes the drop for a trending waiver add."
+    },
+    {
+      "player": "Oronde Gadsden",
+      "player_id": "12493",
+      "reason": "Chargers bye. He is the insurance policy that makes trading Isaiah Likely safe — depth-1 TE in Los Angeles catching passes from Herbert. Hold through any Likely deal."
+    },
+    {
+      "player": "Keaton Mitchell",
+      "player_id": "9511",
+      "reason": "DROP CANDIDATE — Chargers bye this week, buried behind Omarion Hampton, and 0.4 points the last time he saw the field. He is the designated drop for the kicker stream."
+    },
+    {
+      "player": "Tank Bigsby",
+      "player_id": "9225",
+      "reason": "DROP CANDIDATE WITH AN IR CAVEAT — he carries an IR designation while sitting fifth in Philadelphia's backfield. The league's roster configuration (9 starters + 7 bench = our 16 players) shows no IR slot, which means he is burning a live bench spot we need for the QB stream. IMPORTANT: if Sleeper does offer an IR slot for his designation, park him there instead — that frees the spot, and then Keaton Mitchell becomes the only drop needed for both adds."
+    }
+  ],
+  "waivers": [
+    {
+      "priority": 1,
+      "add_player_id": "9230",
+      "add": "Tanner McKee",
+      "drop_player_id": "9225",
+      "drop": "Tank Bigsby",
+      "faab_bid": null,
+      "reason": "BURN PRIORITY #1 ON THIS. We have exactly zero startable quarterbacks in Week 7 — Herbert is on the Chargers bye and Lamar is a 50/50 ankle. A zero at QB has already cost us two one-score games this season; a third is the season. McKee is confirmed as Philadelphia's starter with Jalen Hurts sidelined (he is rostered on IR by eo33), which means we are claiming a full-time starting QB in a top-tier offense, not a bye-week body. Bigsby is the drop because he is an IR'd RB5 occupying a live bench spot (unless Sleeper offers an IR slot — see bench note — in which case drop Keaton Mitchell here and skip the second drop). On the priority cost: #1 priority is only worth hoarding if a league-winner appears, and nothing in this FA pool qualifies — Omar Cooper and Konata Mumpfield are depth-4 and depth-2 flyers, Tyrone Tracy is third on the Giants' chart. Guaranteeing a functioning starting lineup is worth more than holding a lottery ticket at 1-5. FALLBACKS if the claim somehow fails: Geno Smith (1373, depth-1 NYJ, Week 13 bye) or Cam Ward (12522, depth-1 TEN), both grabbable in free agency after waivers clear."
+    },
+    {
+      "priority": 2,
+      "add_player_id": "6650",
+      "add": "Chase McLaughlin",
+      "drop_player_id": "9511",
+      "drop": "Keaton Mitchell",
+      "faab_bid": null,
+      "reason": "Do NOT spend priority on this — submit it as a claim only if the app forces it, otherwise take him in free agency the moment waivers clear. Dicker is on the Chargers bye and we must have a kicker who plays. McLaughlin is the top trending kicker in the pool, depth-1 in a Tampa offense that generates volume, and his Week 10 bye is irrelevant because Dicker reclaims the slot in Week 8. Mitchell is dead weight: Chargers bye this week, RB2 behind Hampton, 0.4 points in his last appearance. FALLBACK: Jake Bates (11539, depth-1 DET, bye already passed) — functionally interchangeable, take whichever is still available."
+    }
+  ],
+  "trades": [
+    {
+      "partner": "mrkw",
+      "give": [
+        "A.J. Brown",
+        "Josh Jacobs"
+      ],
+      "get": [
+        "Chuba Hubbard",
+        "or Jaylen Warren"
+      ],
+      "pitch": "You're 3-3 with seven running backs and four receivers, and two of those four (Rashee Rice, Caleb Douglas) are Out. You physically cannot fill your WR slots right now while you're sitting two startable backs every Sunday. I'll send you A.J. Brown — a true alpha WR1 in New England who's already off IR and back on the field — plus Josh Jacobs for depth, and I'll take Chuba Hubbard back. If you'd rather keep Hubbard, I'll do the same deal for Jaylen Warren instead. You turn your worst starting slot into an every-week WR1 and still roster McCaffrey plus three other backs. I need bodies in a backfield that's about to hit byes; you need a receiver this week.",
+      "why_it_helps_me": "Converts two players I cannot start — Jacobs is a healthy scratch in all but name (0.0 in back-to-back weeks, depth 4 in Green Bay) and A.J. Brown is Questionable and behind three healthy receivers in my lineup — into a weekly RB2/FLEX. My bye gauntlet is real: Harvey is out Week 10 and I'm down to Allgeier alone at RB. Hubbard or Warren gives me a startable back through the Week 14-17 playoff window, which is the only window that matters.",
+      "why_they_might_accept": "They have a 7-RB, 4-WR roster with two receivers ruled out — the positional math makes this nearly free for them. They give up the fifth-best back on their own roster and get the best receiver in the deal by a distance. Name value on Jacobs sweetens it; they can find out about his snap share on their own time."
+    },
+    {
+      "partner": "ccharron33",
+      "give": [
+        "Isaiah Likely",
+        "Jameson Williams"
+      ],
+      "get": [
+        "Jahmyr Gibbs",
+        "or Alvin Kamara plus Keon Coleman"
+      ],
+      "pitch": "You're carrying eight running backs and four receivers, and Davante Adams is Out — you're starting Keon Coleman or Jakobi Meyers in a slot that should be winning you games. I'll send Jameson Williams, who just went for 18.7 and is Detroit's starting field-stretcher, plus Isaiah Likely, who has posted 23.9 and 32.4 in his last two as the Giants' every-down TE1. Back comes Jahmyr Gibbs. If Gibbs is untouchable, I'll do Williams and Likely for Alvin Kamara plus Keon Coleman instead. You already have Brock Bowers, so Likely is pure trade capital or injury insurance for you at the one position where you have zero depth — and you fix your receiver room without touching your top four backs.",
+      "why_it_helps_me": "This is the 2-for-1 consolidation the standing guidance asks for: it turns two startable-but-replaceable pieces into a true weekly RB1 at the thinnest position on my roster. Oronde Gadsden (depth-1 TE in Los Angeles) backs into the TE slot, and Jefferson, Burden and Brian Thomas still cover the receiver spots. At 1-5 I need one dominant asset more than I need three good ones — Gibbs is a weekly 20-point swing in the Weeks 14-17 window.",
+      "why_they_might_accept": "Eight backs, four receivers, one of them ruled out — they are leaving points on their bench every week. A one-TE roster taking back the hottest TE in the league plus a starting WR is a genuine roster-shape fix for a 3-3 team that wants to climb into the top four."
+    },
+    {
+      "partner": "chacetheace48",
+      "give": [
+        "Justin Herbert",
+        "Tyler Allgeier"
+      ],
+      "get": [
+        "Omarion Hampton"
+      ],
+      "pitch": "You're 3-3 and rolling out Kirk Cousins as your only quarterback — that's the single biggest weekly points gap on your roster and you have no backup if he goes down. I'll send you Justin Herbert, a top-five fantasy QB with no bye left on his schedule, plus Tyler Allgeier as backfield cover with Jeremiyah Love out and Will Shipley on IR. I'd like Omarion Hampton back. You upgrade your starting QB by double digits a week, you replace the back you'd be moving, and you keep Garrett Wilson, Jaxon Smith-Njigba and your whole receiving core untouched.",
+      "why_it_helps_me": "Hampton is a lead back with three-down usage and his Week 7 bye is already behind him after this week — he's a plug-and-play RB1 for the entire playoff run. CONDITION: do not send this until Lamar Jackson is confirmed active and practicing in full, because Herbert is our only functioning QB until then. Reporting has Lamar targeting Week 7-8, so this becomes live in the next seven to ten days. Note this is mutually exclusive with the mrkw deal on the Allgeier side — if mrkw lands Hubbard first, substitute Josh Jacobs for Allgeier here.",
+      "why_they_might_accept": "They roster exactly one quarterback, and it's Kirk Cousins. A 3-3 team two games out of first does not win a title starting him, and they have receiver surplus but no QB insurance. Herbert is the cleanest positional upgrade available to them in this league."
+    }
+  ],
+  "watchlist": [
+    {
+      "player": "Lamar Jackson (ours)",
+      "note": "The pivot point of the entire packet. Reporting has him day-to-day with the ankle and roughly 50/50 for Week 7 against Cincinnati, Week 8 at the latest. Full practice + no designation = he starts at QB and McKee becomes a bench stash. Still Out on Friday = McKee starts, no exceptions. His clearance also unlocks the Herbert-for-Hampton trade."
+    },
+    {
+      "player": "Jalen Hurts (eo33, IR)",
+      "note": "Drives Tanner McKee's value. Every week Hurts stays on IR, McKee is a startable QB and our bye/injury insurance; the week Hurts is activated, McKee becomes the drop for the next trending add."
+    },
+    {
+      "player": "Josh Jacobs (ours)",
+      "note": "Two straight 0.0s with no injury designation and a depth-4 listing. Check the Week 7 snap count: if he's genuinely out of the rotation he is the next drop regardless of name value. If he reclaims the backfield, he's back in the RB1 conversation immediately and the mrkw trade should be pulled."
+    },
+    {
+      "player": "A.J. Brown (ours)",
+      "note": "Questionable with limited practices. If he's cleared and runs a full route share in Week 7, he displaces Jameson Williams in the FLEX from Week 8 on and I'd rather keep him than move him to mrkw."
+    },
+    {
+      "player": "Brian Thomas (ours)",
+      "note": "On bye this week. Two consecutive zeros plus a depth-3 listing — Week 8 is his audition. A third dud and he's the drop for a trending receiver rather than a roster-blocking hold."
+    },
+    {
+      "player": "Jaleel McLaughlin (FA, CLE)",
+      "note": "The only depth-1 running back in the free-agent pool, though the 218k drop count says the market is souring. If either waiver drop opens a spot or Jacobs gets cut, he's the first free-agency RB target to cover the Week 10-11 bye gauntlet."
+    },
+    {
+      "player": "New York Jets DEF (FA)",
+      "note": "Top trending defense (285k adds) with a Week 13 bye, which would cover Cleveland's Week 11 bye. Not worth a roster spot this week with two streams already in flight — revisit next Tuesday in free agency."
+    },
+    {
+      "player": "Jake Bates (FA, K) / Andre Szmyt (FA, K)",
+      "note": "Kicker fallbacks if the Chase McLaughlin add fails. Bates is depth-1 in Detroit with his bye already behind him; Szmyt is depth-1 in Cleveland. Either one solves the one-week Dicker bye."
+    },
+    {
+      "player": "Omar Cooper (FA, NYJ) / Konata Mumpfield (FA, LAR)",
+      "note": "Massive trending-add numbers (3.7M and 838k) but both listed as depth-4 and depth-2. If either is confirmed into a starting role, that is the kind of league-winner worth the next waiver priority — verify snap share before spending anything."
+    }
+  ],
+  "confidence_notes": "Highest confidence: the QB claim (we have no startable quarterback otherwise, and McKee is a confirmed starter with Hurts on IR), the kicker stream, and Jefferson/Burden/Likely in the lineup. Biggest risk, in order: (1) LAMAR — reporting puts him near 50/50 for Week 7, so the QB slot is genuinely unresolved until Friday's practice report and Sunday's inactives; the packet lists him as the roster-legal placeholder because Herbert is on bye and league rules forbid putting a non-rostered player in the lineup, but the operational instruction is to install McKee the moment the claim processes unless Lamar is cleared and practicing fully. Do not repeat the Weeks 5-6 mistake. (2) JOSH JACOBS — live injury reports say he's completely healthy, but the league context says depth 4 / bench role and he has back-to-back zeros. I have weighted the context and the box scores over the injury report here because this is a usage problem that injury reporting will never flag; if a Week 7 snap report contradicts that, he goes straight back to RB1 over Allgeier. (3) ALLGEIER vs HARVEY ordering is cosmetic — both start, the slot labels do not affect scoring. (4) A.J. BROWN's designation could flip him into the FLEX over Jameson Williams if he's cleared to a full workload. PROCESS CAVEAT: my live-search budget was exhausted after verifying Lamar's ankle, McKee's starting status, Jacobs' injury report and A.J. Brown's Questionable tag — I was NOT able to verify Week 7 individual matchups, the Cleveland DEF matchup, or kicker game environments, so the DEF hold and the specific choice of Chase McLaughlin over Jake Bates are the least-researched calls in the packet; both are low-leverage. News that changes this packet: Lamar cleared (start him, bench McKee, send the chacetheace48 trade), Lamar ruled out early in the week (McKee is mandatory — confirm the claim landed before Sunday), Hurts activated (McKee's value collapses, keep Geno Smith as the backup plan), or Sleeper offering an IR slot for Tank Bigsby (park him there and keep Keaton Mitchell one more week)."
+}
